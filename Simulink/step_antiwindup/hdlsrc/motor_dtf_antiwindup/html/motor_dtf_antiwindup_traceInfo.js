@@ -1,34 +1,44 @@
 function RTW_Sid2UrlHash() {
 	this.urlHashMap = new Array();
 	/* <S1>/Add */
-	this.urlHashMap["motor_dtf_antiwindup:79"] = "DT.v:202";
+	this.urlHashMap["motor_dtf_antiwindup:79"] = "DT.v:207";
 	/* <S1>/Add1 */
-	this.urlHashMap["motor_dtf_antiwindup:83"] = "DT.v:209";
+	this.urlHashMap["motor_dtf_antiwindup:83"] = "DT.v:214";
 	/* <S1>/Add2 */
-	this.urlHashMap["motor_dtf_antiwindup:119"] = "DT.v:156";
+	this.urlHashMap["motor_dtf_antiwindup:119"] = "DT.v:161";
 	/* <S1>/Add3 */
-	this.urlHashMap["motor_dtf_antiwindup:120"] = "DT.v:145";
+	this.urlHashMap["motor_dtf_antiwindup:120"] = "DT.v:150";
+	/* <S1>/Data Type Conversion1 */
+	this.urlHashMap["motor_dtf_antiwindup:138"] = "DT.v:274";
+	/* <S1>/Data Type Conversion2 */
+	this.urlHashMap["motor_dtf_antiwindup:139"] = "DT.v:269";
+	/* <S1>/Data Type Conversion3 */
+	this.urlHashMap["motor_dtf_antiwindup:137"] = "DT.v:279";
+	/* <S1>/Data Type Conversion4 */
+	this.urlHashMap["motor_dtf_antiwindup:140"] = "DT.v:264";
+	/* <S1>/Data Type Conversion5 */
+	this.urlHashMap["motor_dtf_antiwindup:142"] = "DT.v:284";
 	/* <S1>/Discrete
 Transfer Fcn2 */
-	this.urlHashMap["motor_dtf_antiwindup:99"] = "DT.v:256";
+	this.urlHashMap["motor_dtf_antiwindup:99"] = "DT.v:261";
 	/* <S1>/Discrete-Time
 Integrator */
-	this.urlHashMap["motor_dtf_antiwindup:69"] = "DT.v:234,235,236,237,238,239,240,241,242,243,244";
+	this.urlHashMap["motor_dtf_antiwindup:69"] = "DT.v:239,240,241,242,243,244,245,246,247,248,249";
 	/* <S1>/Discrete-Time
 Integrator1 */
-	this.urlHashMap["motor_dtf_antiwindup:91"] = "DT.v:176,177,178,179,180,181,182,183,184,185,186";
+	this.urlHashMap["motor_dtf_antiwindup:91"] = "DT.v:181,182,183,184,185,186,187,188,189,190,191";
 	/* <S1>/Product */
-	this.urlHashMap["motor_dtf_antiwindup:82"] = "DT.v:205,206";
+	this.urlHashMap["motor_dtf_antiwindup:82"] = "DT.v:210,211";
 	/* <S1>/Product1 */
-	this.urlHashMap["motor_dtf_antiwindup:84"] = "DT.v:152,153";
+	this.urlHashMap["motor_dtf_antiwindup:84"] = "DT.v:157,158";
 	/* <S1>/Product2 */
-	this.urlHashMap["motor_dtf_antiwindup:123"] = "DT.v:148,149";
+	this.urlHashMap["motor_dtf_antiwindup:123"] = "DT.v:153,154";
 	/* <S1>/Product3 */
-	this.urlHashMap["motor_dtf_antiwindup:132"] = "DT.v:118";
+	this.urlHashMap["motor_dtf_antiwindup:132"] = "DT.v:123";
 	/* <S1>/Saturation */
-	this.urlHashMap["motor_dtf_antiwindup:116"] = "DT.v:212,213,214";
+	this.urlHashMap["motor_dtf_antiwindup:116"] = "DT.v:217,218,219";
 	/* <S1>/Unit Delay */
-	this.urlHashMap["motor_dtf_antiwindup:97"] = "DT.v:189,190,191,192,193,194,195,196,197,198,199";
+	this.urlHashMap["motor_dtf_antiwindup:97"] = "DT.v:194,195,196,197,198,199,200,201,202,203,204";
 	this.getUrlHash = function(sid) { return this.urlHashMap[sid];}
 }
 RTW_Sid2UrlHash.instance = new RTW_Sid2UrlHash();
@@ -51,6 +61,16 @@ function RTW_rtwnameSIDMap() {
 	this.sidHashMap["motor_dtf_antiwindup:119"] = {rtwname: "<S1>/Add2"};
 	this.rtwnameHashMap["<S1>/Add3"] = {sid: "motor_dtf_antiwindup:120"};
 	this.sidHashMap["motor_dtf_antiwindup:120"] = {rtwname: "<S1>/Add3"};
+	this.rtwnameHashMap["<S1>/Data Type Conversion1"] = {sid: "motor_dtf_antiwindup:138"};
+	this.sidHashMap["motor_dtf_antiwindup:138"] = {rtwname: "<S1>/Data Type Conversion1"};
+	this.rtwnameHashMap["<S1>/Data Type Conversion2"] = {sid: "motor_dtf_antiwindup:139"};
+	this.sidHashMap["motor_dtf_antiwindup:139"] = {rtwname: "<S1>/Data Type Conversion2"};
+	this.rtwnameHashMap["<S1>/Data Type Conversion3"] = {sid: "motor_dtf_antiwindup:137"};
+	this.sidHashMap["motor_dtf_antiwindup:137"] = {rtwname: "<S1>/Data Type Conversion3"};
+	this.rtwnameHashMap["<S1>/Data Type Conversion4"] = {sid: "motor_dtf_antiwindup:140"};
+	this.sidHashMap["motor_dtf_antiwindup:140"] = {rtwname: "<S1>/Data Type Conversion4"};
+	this.rtwnameHashMap["<S1>/Data Type Conversion5"] = {sid: "motor_dtf_antiwindup:142"};
+	this.sidHashMap["motor_dtf_antiwindup:142"] = {rtwname: "<S1>/Data Type Conversion5"};
 	this.rtwnameHashMap["<S1>/Discrete Transfer Fcn2"] = {sid: "motor_dtf_antiwindup:99"};
 	this.sidHashMap["motor_dtf_antiwindup:99"] = {rtwname: "<S1>/Discrete Transfer Fcn2"};
 	this.rtwnameHashMap["<S1>/Discrete-Time Integrator"] = {sid: "motor_dtf_antiwindup:69"};
@@ -73,12 +93,12 @@ function RTW_rtwnameSIDMap() {
 	this.sidHashMap["motor_dtf_antiwindup:64"] = {rtwname: "<S1>/PV"};
 	this.rtwnameHashMap["<S1>/MV"] = {sid: "motor_dtf_antiwindup:80"};
 	this.sidHashMap["motor_dtf_antiwindup:80"] = {rtwname: "<S1>/MV"};
-	this.rtwnameHashMap["<S1>/i_action"] = {sid: "motor_dtf_antiwindup:125"};
-	this.sidHashMap["motor_dtf_antiwindup:125"] = {rtwname: "<S1>/i_action"};
 	this.rtwnameHashMap["<S1>/p_action"] = {sid: "motor_dtf_antiwindup:134"};
 	this.sidHashMap["motor_dtf_antiwindup:134"] = {rtwname: "<S1>/p_action"};
 	this.rtwnameHashMap["<S1>/error"] = {sid: "motor_dtf_antiwindup:136"};
 	this.sidHashMap["motor_dtf_antiwindup:136"] = {rtwname: "<S1>/error"};
+	this.rtwnameHashMap["<S1>/i_action"] = {sid: "motor_dtf_antiwindup:141"};
+	this.sidHashMap["motor_dtf_antiwindup:141"] = {rtwname: "<S1>/i_action"};
 	this.getSID = function(rtwname) { return this.rtwnameHashMap[rtwname];}
 	this.getRtwname = function(sid) { return this.sidHashMap[sid];}
 }
