@@ -1,0 +1,67 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
+| Date         : Wed Apr 26 22:24:31 2023
+| Host         : Milanesi-Dell running 64-bit major release  (build 9200)
+| Command      : report_drc -file topModule_drc_routed.rpt -pb topModule_drc_routed.pb -rpx topModule_drc_routed.rpx
+| Design       : topModule
+| Device       : xc7s50csga324-1
+| Speed File   : -1
+| Design State : Fully Routed
+---------------------------------------------------------------------------------------------------------------------
+
+Report DRC
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+           Ruledeck: default
+             Max violations: <unlimited>
+             Violations found: 6
++----------+----------+-------------------+------------+
+| Rule     | Severity | Description       | Violations |
++----------+----------+-------------------+------------+
+| DPIP-1   | Warning  | Input pipelining  | 3          |
+| PDRC-153 | Warning  | Gated clock check | 3          |
++----------+----------+-------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+DPIP-1#1 Warning
+Input pipelining  
+DSP controlador_PID/u_k_C1 input controlador_PID/u_k_C1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#2 Warning
+Input pipelining  
+DSP controlador_PID/u_k_D1 input controlador_PID/u_k_D1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#3 Warning
+Input pipelining  
+DSP controlador_PID/u_k_D1__0 input controlador_PID/u_k_D1__0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+PDRC-153#1 Warning
+Gated clock check  
+Net ROM_control/unidades_reg[3]_i_2__0_n_0 is a gated clock net sourced by a combinational pin ROM_control/unidades_reg[3]_i_2__0/O, cell ROM_control/unidades_reg[3]_i_2__0. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#2 Warning
+Gated clock check  
+Net ROM_de_grados/unidades_reg[3]_i_2_n_0 is a gated clock net sourced by a combinational pin ROM_de_grados/unidades_reg[3]_i_2/O, cell ROM_de_grados/unidades_reg[3]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#3 Warning
+Gated clock check  
+Net ROM_error/unidades_reg[3]_i_2__1_n_0 is a gated clock net sourced by a combinational pin ROM_error/unidades_reg[3]_i_2__1/O, cell ROM_error/unidades_reg[3]_i_2__1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+
