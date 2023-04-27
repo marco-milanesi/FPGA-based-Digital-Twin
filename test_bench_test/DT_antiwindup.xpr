@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="61" Path="D:/Github/embeddedFPGA-DT/Vivado/DT_antiwindup/DT_antiwindup.xpr">
+<Project Version="7" Minor="61" Path="D:/Github/embedded-DT/test_bench_test/DT_antiwindup.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="6345ab6c527e49228d2ee2e7cf700700"/>
@@ -58,7 +58,7 @@
     <Option Name="IPStaticSourceDir" Val="$PIPUSERFILESDIR/ipstatic"/>
     <Option Name="EnableBDX" Val="FALSE"/>
     <Option Name="DSABoardId" Val="arty-s7-50"/>
-    <Option Name="WTXSimLaunchSim" Val="3"/>
+    <Option Name="WTXSimLaunchSim" Val="4"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
@@ -91,7 +91,7 @@
       <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/sources_1/imports/motor_dtf_antiwindup/DT.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../Simulink/step_antiwindup/hdlsrc/motor_dtf_antiwindup/DT.v"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../embeddedFPGA-DT/Simulink/step_antiwindup/hdlsrc/motor_dtf_antiwindup/DT.v"/>
           <Attr Name="ImportTime" Val="1682375976"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -100,7 +100,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/motor_dtf_antiwindup/PV_expected.dat">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../Simulink/step_antiwindup/hdlsrc/motor_dtf_antiwindup/PV_expected.dat"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../embeddedFPGA-DT/Simulink/step_antiwindup/hdlsrc/motor_dtf_antiwindup/PV_expected.dat"/>
           <Attr Name="ImportTime" Val="1682376039"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -108,7 +108,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/motor_dtf_antiwindup/SP.dat">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../Simulink/step_antiwindup/hdlsrc/motor_dtf_antiwindup/SP.dat"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../embeddedFPGA-DT/Simulink/step_antiwindup/hdlsrc/motor_dtf_antiwindup/SP.dat"/>
           <Attr Name="ImportTime" Val="1682376038"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -116,7 +116,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/motor_dtf_antiwindup/i_port_expected.dat">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../Simulink/step_antiwindup/hdlsrc/motor_dtf_antiwindup/i_port_expected.dat"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../embeddedFPGA-DT/Simulink/step_antiwindup/hdlsrc/motor_dtf_antiwindup/i_port_expected.dat"/>
           <Attr Name="ImportTime" Val="1682376039"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -124,7 +124,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/motor_dtf_antiwindup/MV_expected.dat">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../Simulink/step_antiwindup/hdlsrc/motor_dtf_antiwindup/MV_expected.dat"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../embeddedFPGA-DT/Simulink/step_antiwindup/hdlsrc/motor_dtf_antiwindup/MV_expected.dat"/>
           <Attr Name="ImportTime" Val="1682376039"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -146,7 +146,7 @@
       <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/sim_1/imports/motor_dtf_antiwindup/DT_tb.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../Simulink/step_antiwindup/hdlsrc/motor_dtf_antiwindup/DT_tb.v"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../embeddedFPGA-DT/Simulink/step_antiwindup/hdlsrc/motor_dtf_antiwindup/DT_tb.v"/>
           <Attr Name="ImportTime" Val="1682376044"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -156,7 +156,7 @@
       <File Path="$PSRCDIR/sim_1/imports/motor_dtf_antiwindup/DT.v">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../Simulink/step_antiwindup/hdlsrc/motor_dtf_antiwindup/DT.v"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../embeddedFPGA-DT/Simulink/step_antiwindup/hdlsrc/motor_dtf_antiwindup/DT.v"/>
           <Attr Name="ImportTime" Val="1682375976"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>

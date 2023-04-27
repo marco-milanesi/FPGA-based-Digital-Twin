@@ -2,6 +2,6 @@
 2020.2
 Oct 14 2022
 05:20:55
-D:/Github/embeddedFPGA-DT/Vivado/DT_antiwindup/DT_antiwindup.sim/sim_1/behav/xsim/glbl.v,1665704903,verilog,,,,glbl,,,,,,,,
-D:/Github/embeddedFPGA-DT/Vivado/DT_antiwindup/DT_antiwindup.srcs/sim_1/imports/motor_dtf_antiwindup/DT_tb.v,1682376044,verilog,,,,DT_tb,,,,,,,,
-D:/Github/embeddedFPGA-DT/Vivado/DT_antiwindup/DT_antiwindup.srcs/sources_1/imports/motor_dtf_antiwindup/DT.v,1682375976,verilog,,D:/Github/embeddedFPGA-DT/Vivado/DT_antiwindup/DT_antiwindup.srcs/sim_1/imports/motor_dtf_antiwindup/DT_tb.v,,DT,,,,,,,,
+D:/Github/embedded-DT/test_bench_test/DT_antiwindup.sim/sim_1/behav/xsim/glbl.v,1665704903,verilog,,,,glbl,,,,,,,,
+D:/Github/embedded-DT/test_bench_test/DT_antiwindup.srcs/sim_1/imports/motor_dtf_antiwindup/DT_tb.v,1682376044,verilog,,,,DT_tb,,,,,,,,
+D:/Github/embedded-DT/test_bench_test/DT_antiwindup.srcs/sources_1/imports/motor_dtf_antiwindup/DT.v,1682375976,verilog,,D:/Github/embedded-DT/test_bench_test/DT_antiwindup.srcs/sim_1/imports/motor_dtf_antiwindup/DT_tb.v,,DT,,,,,,,,
