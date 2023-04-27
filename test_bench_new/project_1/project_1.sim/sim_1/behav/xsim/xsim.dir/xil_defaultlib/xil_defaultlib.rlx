@@ -1,0 +1,7 @@
+0.7
+2020.2
+Oct 14 2022
+05:20:55
+D:/Github/embedded-DT/test_bench_new/project_1/project_1.sim/sim_1/behav/xsim/glbl.v,1665704903,verilog,,,,glbl,,,,,,,,
+D:/Github/embedded-DT/test_bench_new/project_1/project_1.srcs/sim_1/imports/motor_dtf_antiwindup/DT_tb.v,1682630300,verilog,,,,DT_tb,,,,,,,,
+D:/Github/embedded-DT/test_bench_new/project_1/project_1.srcs/sources_1/imports/motor_dtf_antiwindup/DT.v,1682630253,verilog,,D:/Github/embedded-DT/test_bench_new/project_1/project_1.srcs/sim_1/imports/motor_dtf_antiwindup/DT_tb.v,,DT,,,,,,,,
