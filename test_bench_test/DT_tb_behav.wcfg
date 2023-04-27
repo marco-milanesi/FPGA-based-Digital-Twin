@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="DT_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="DT_tb" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000000 us"></ZoomStartTime>
+      <ZoomEndTime time="1,200.060001 us"></ZoomEndTime>
+      <Cursor1Time time="1,200.060000 us"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="244"></NameColumnWidth>
+      <ValueColumnWidth column_width="114"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="65" />
+   <wvobject fp_name="/DT_tb/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DT_tb/reset_x" type="logic">
+      <obj_property name="ElementShortName">reset_x</obj_property>
+      <obj_property name="ObjectShortName">reset_x</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DT_tb/clk_enable" type="logic">
+      <obj_property name="ElementShortName">clk_enable</obj_property>
+      <obj_property name="ObjectShortName">clk_enable</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DT_tb/rawData_kp" type="array">
+      <obj_property name="ElementShortName">rawData_kp[63:0]</obj_property>
+      <obj_property name="ObjectShortName">rawData_kp[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DT_tb/rawData_ti" type="array">
+      <obj_property name="ElementShortName">rawData_ti[63:0]</obj_property>
+      <obj_property name="ObjectShortName">rawData_ti[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DT_tb/i_port_done" type="logic">
+      <obj_property name="ElementShortName">i_port_done</obj_property>
+      <obj_property name="ObjectShortName">i_port_done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DT_tb/rdEnb" type="logic">
+      <obj_property name="ElementShortName">rdEnb</obj_property>
+      <obj_property name="ObjectShortName">rdEnb</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DT_tb/i_port_done_enb" type="logic">
+      <obj_property name="ElementShortName">i_port_done_enb</obj_property>
+      <obj_property name="ObjectShortName">i_port_done_enb</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DT_tb/PV_addr" type="array">
+      <obj_property name="ElementShortName">PV_addr[16:0]</obj_property>
+      <obj_property name="ObjectShortName">PV_addr[16:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DT_tb/i_port_lastAddr" type="logic">
+      <obj_property name="ElementShortName">i_port_lastAddr</obj_property>
+      <obj_property name="ObjectShortName">i_port_lastAddr</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DT_tb/resetn" type="logic">
+      <obj_property name="ElementShortName">resetn</obj_property>
+      <obj_property name="ObjectShortName">resetn</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DT_tb/check3_done" type="logic">
+      <obj_property name="ElementShortName">check3_done</obj_property>
+      <obj_property name="ObjectShortName">check3_done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DT_tb/MV_done" type="logic">
+      <obj_property name="ElementShortName">MV_done</obj_property>
+      <obj_property name="ObjectShortName">MV_done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DT_tb/MV_done_enb" type="logic">
+      <obj_property name="ElementShortName">MV_done_enb</obj_property>
+      <obj_property name="ObjectShortName">MV_done_enb</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DT_tb/MV_lastAddr" type="logic">
+      <obj_property name="ElementShortName">MV_lastAddr</obj_property>
+      <obj_property name="ObjectShortName">MV_lastAddr</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DT_tb/check2_done" type="logic">
+      <obj_property name="ElementShortName">check2_done</obj_property>
+      <obj_property name="ObjectShortName">check2_done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DT_tb/PV_done" type="logic">
+      <obj_property name="ElementShortName">PV_done</obj_property>
+      <obj_property name="ObjectShortName">PV_done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DT_tb/PV_done_enb" type="logic">
+      <obj_property name="ElementShortName">PV_done_enb</obj_property>
+      <obj_property name="ObjectShortName">PV_done_enb</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DT_tb/PV_active" type="logic">
+      <obj_property name="ElementShortName">PV_active</obj_property>
+      <obj_property name="ObjectShortName">PV_active</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DT_tb/holdData_ti" type="array">
+      <obj_property name="ElementShortName">holdData_ti[63:0]</obj_property>
+      <obj_property name="ObjectShortName">holdData_ti[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DT_tb/ti_offset" type="array">
+      <obj_property name="ElementShortName">ti_offset[63:0]</obj_property>
+      <obj_property name="ObjectShortName">ti_offset[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DT_tb/ti_1" type="array">
+      <obj_property name="ElementShortName">ti_1[63:0]</obj_property>
+      <obj_property name="ObjectShortName">ti_1[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DT_tb/holdData_kp" type="array">
+      <obj_property name="ElementShortName">holdData_kp[63:0]</obj_property>
+      <obj_property name="ObjectShortName">holdData_kp[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DT_tb/kp_offset" type="array">
+      <obj_property name="ElementShortName">kp_offset[63:0]</obj_property>
+      <obj_property name="ObjectShortName">kp_offset[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DT_tb/kp_1" type="array">
+      <obj_property name="ElementShortName">kp_1[63:0]</obj_property>
+      <obj_property name="ObjectShortName">kp_1[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DT_tb/SP_addr" type="array">
+      <obj_property name="ElementShortName">SP_addr[16:0]</obj_property>
+      <obj_property name="ObjectShortName">SP_addr[16:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DT_tb/SP_active" type="logic">
+      <obj_property name="ElementShortName">SP_active</obj_property>
+      <obj_property name="ObjectShortName">SP_active</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DT_tb/tb_enb_delay" type="logic">
+      <obj_property name="ElementShortName">tb_enb_delay</obj_property>
+      <obj_property name="ObjectShortName">tb_enb_delay</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DT_tb/SP_enb" type="logic">
+      <obj_property name="ElementShortName">SP_enb</obj_property>
+      <obj_property name="ObjectShortName">SP_enb</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DT_tb/SP_addr_delay_1" type="array">
+      <obj_property name="ElementShortName">SP_addr_delay_1[16:0]</obj_property>
+      <obj_property name="ObjectShortName">SP_addr_delay_1[16:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DT_tb/fp_SP" type="array">
+      <obj_property name="ElementShortName">fp_SP[31:0]</obj_property>
+      <obj_property name="ObjectShortName">fp_SP[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DT_tb/rawData_SP" type="array">
+      <obj_property name="ElementShortName">rawData_SP[63:0]</obj_property>
+      <obj_property name="ObjectShortName">rawData_SP[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DT_tb/status_SP" type="array">
+      <obj_property name="ElementShortName">status_SP[31:0]</obj_property>
+      <obj_property name="ObjectShortName">status_SP[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DT_tb/holdData_SP" type="array">
+      <obj_property name="ElementShortName">holdData_SP[63:0]</obj_property>
+      <obj_property name="ObjectShortName">holdData_SP[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DT_tb/SP_offset" type="array">
+      <obj_property name="ElementShortName">SP_offset[63:0]</obj_property>
+      <obj_property name="ObjectShortName">SP_offset[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DT_tb/snkDone" type="logic">
+      <obj_property name="ElementShortName">snkDone</obj_property>
+      <obj_property name="ObjectShortName">snkDone</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DT_tb/snkDonen" type="logic">
+      <obj_property name="ElementShortName">snkDonen</obj_property>
+      <obj_property name="ObjectShortName">snkDonen</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DT_tb/tb_enb" type="logic">
+      <obj_property name="ElementShortName">tb_enb</obj_property>
+      <obj_property name="ObjectShortName">tb_enb</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DT_tb/ce_out" type="logic">
+      <obj_property name="ElementShortName">ce_out</obj_property>
+      <obj_property name="ObjectShortName">ce_out</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DT_tb/i_port" type="array">
+      <obj_property name="ElementShortName">i_port[63:0]</obj_property>
+      <obj_property name="ObjectShortName">i_port[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DT_tb/PV_enb" type="logic">
+      <obj_property name="ElementShortName">PV_enb</obj_property>
+      <obj_property name="ObjectShortName">PV_enb</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DT_tb/PV_lastAddr" type="logic">
+      <obj_property name="ElementShortName">PV_lastAddr</obj_property>
+      <obj_property name="ObjectShortName">PV_lastAddr</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DT_tb/check1_done" type="logic">
+      <obj_property name="ElementShortName">check1_done</obj_property>
+      <obj_property name="ObjectShortName">check1_done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DT_tb/PV_addr_delay_1" type="array">
+      <obj_property name="ElementShortName">PV_addr_delay_1[16:0]</obj_property>
+      <obj_property name="ObjectShortName">PV_addr_delay_1[16:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DT_tb/fp_PV_expected" type="array">
+      <obj_property name="ElementShortName">fp_PV_expected[31:0]</obj_property>
+      <obj_property name="ObjectShortName">fp_PV_expected[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DT_tb/PV_expected" type="array">
+      <obj_property name="ElementShortName">PV_expected[63:0]</obj_property>
+      <obj_property name="ObjectShortName">PV_expected[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DT_tb/status_PV_expected" type="array">
+      <obj_property name="ElementShortName">status_PV_expected[31:0]</obj_property>
+      <obj_property name="ObjectShortName">status_PV_expected[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DT_tb/PV_ref" type="array">
+      <obj_property name="ElementShortName">PV_ref[63:0]</obj_property>
+      <obj_property name="ObjectShortName">PV_ref[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DT_tb/PV_testFailure" type="logic">
+      <obj_property name="ElementShortName">PV_testFailure</obj_property>
+      <obj_property name="ObjectShortName">PV_testFailure</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DT_tb/MV_addr_delay_1" type="array">
+      <obj_property name="ElementShortName">MV_addr_delay_1[16:0]</obj_property>
+      <obj_property name="ObjectShortName">MV_addr_delay_1[16:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DT_tb/fp_MV_expected" type="array">
+      <obj_property name="ElementShortName">fp_MV_expected[31:0]</obj_property>
+      <obj_property name="ObjectShortName">fp_MV_expected[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DT_tb/MV_expected" type="array">
+      <obj_property name="ElementShortName">MV_expected[63:0]</obj_property>
+      <obj_property name="ObjectShortName">MV_expected[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DT_tb/status_MV_expected" type="array">
+      <obj_property name="ElementShortName">status_MV_expected[31:0]</obj_property>
+      <obj_property name="ObjectShortName">status_MV_expected[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DT_tb/MV_ref" type="array">
+      <obj_property name="ElementShortName">MV_ref[63:0]</obj_property>
+      <obj_property name="ObjectShortName">MV_ref[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DT_tb/MV_testFailure" type="logic">
+      <obj_property name="ElementShortName">MV_testFailure</obj_property>
+      <obj_property name="ObjectShortName">MV_testFailure</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DT_tb/i_port_addr_delay_1" type="array">
+      <obj_property name="ElementShortName">i_port_addr_delay_1[16:0]</obj_property>
+      <obj_property name="ObjectShortName">i_port_addr_delay_1[16:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DT_tb/fp_i_port_expected" type="array">
+      <obj_property name="ElementShortName">fp_i_port_expected[31:0]</obj_property>
+      <obj_property name="ObjectShortName">fp_i_port_expected[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DT_tb/i_port_expected" type="array">
+      <obj_property name="ElementShortName">i_port_expected[63:0]</obj_property>
+      <obj_property name="ObjectShortName">i_port_expected[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DT_tb/status_i_port_expected" type="array">
+      <obj_property name="ElementShortName">status_i_port_expected[31:0]</obj_property>
+      <obj_property name="ObjectShortName">status_i_port_expected[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DT_tb/i_port_ref" type="array">
+      <obj_property name="ElementShortName">i_port_ref[63:0]</obj_property>
+      <obj_property name="ObjectShortName">i_port_ref[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DT_tb/i_port_testFailure" type="logic">
+      <obj_property name="ElementShortName">i_port_testFailure</obj_property>
+      <obj_property name="ObjectShortName">i_port_testFailure</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DT_tb/testFailure" type="logic">
+      <obj_property name="ElementShortName">testFailure</obj_property>
+      <obj_property name="ObjectShortName">testFailure</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DT_tb/SP" type="array">
+      <obj_property name="ElementShortName">SP[63:0]</obj_property>
+      <obj_property name="ObjectShortName">SP[63:0]</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">150</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">32</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+      <obj_property name="AnalogYRangeType">ANALOG_YRANGETYPE_FIXED</obj_property>
+      <obj_property name="AnalogYRangeMin">-800.000000</obj_property>
+      <obj_property name="AnalogYRRangeMax">800.000000</obj_property>
+      <obj_property name="AnalogInterpolation">ANALOG_INTERPOLATION_HOLD</obj_property>
+      <obj_property name="AnalogOffscale">ANALOG_OFFSCALE_HIDE</obj_property>
+      <obj_property name="AnalogHorizLine">0.000000</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DT_tb/PV" type="array">
+      <obj_property name="ElementShortName">PV[63:0]</obj_property>
+      <obj_property name="ObjectShortName">PV[63:0]</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">150</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">32</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+      <obj_property name="AnalogYRangeType">ANALOG_YRANGETYPE_FIXED</obj_property>
+      <obj_property name="AnalogYRangeMin">-800.000000</obj_property>
+      <obj_property name="AnalogYRRangeMax">800.000000</obj_property>
+      <obj_property name="AnalogInterpolation">ANALOG_INTERPOLATION_LINEAR</obj_property>
+      <obj_property name="AnalogOffscale">ANALOG_OFFSCALE_HIDE</obj_property>
+      <obj_property name="AnalogHorizLine">0.000000</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DT_tb/MV" type="array">
+      <obj_property name="ElementShortName">MV[63:0]</obj_property>
+      <obj_property name="ObjectShortName">MV[63:0]</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">150</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">SIGNEDFIXEDPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">32</obj_property>
+      <obj_property name="radix_otherWidth">0</obj_property>
+      <obj_property name="AnalogYRangeType">ANALOG_YRANGETYPE_FIXED</obj_property>
+      <obj_property name="AnalogYRangeMin">-800.000000</obj_property>
+      <obj_property name="AnalogYRRangeMax">800.000000</obj_property>
+      <obj_property name="AnalogInterpolation">ANALOG_INTERPOLATION_LINEAR</obj_property>
+      <obj_property name="AnalogOffscale">ANALOG_OFFSCALE_HIDE</obj_property>
+      <obj_property name="AnalogHorizLine">0.000000</obj_property>
+   </wvobject>
+</wave_config>

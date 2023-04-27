@@ -1,12 +1,13 @@
-0.6
-2019.2
-Nov  6 2019
-21:57:16
-C:/FPGACodes/testScript/callPWM/callPWM.sim/sim_1/behav/xsim/glbl.v,1573089660,verilog,,,,glbl,,,,,,,,
-C:/FPGACodes/testScript/callPWM/callPWM.srcs/sources_1/imports/Submodulos/ROM_grados_numericos.v,1669747896,verilog,,C:/FPGACodes/testScript/callPWM/callPWM.srcs/sources_1/imports/Submodulos/controlador.v,,ROM_grados_numericos,,,,,,,,
-C:/FPGACodes/testScript/callPWM/callPWM.srcs/sources_1/imports/Submodulos/controlador.v,1673298821,verilog,,C:/FPGACodes/testScript/callPWM/callPWM.srcs/sources_1/imports/Submodulos/divisor_freq.v,,controlador,,,,,,,,
-C:/FPGACodes/testScript/callPWM/callPWM.srcs/sources_1/imports/Submodulos/divisor_freq.v,1669747896,verilog,,C:/FPGACodes/testScript/callPWM/callPWM.srcs/sources_1/imports/Submodulos/pwm.v,,divisor_freq,,,,,,,,
-C:/FPGACodes/testScript/callPWM/callPWM.srcs/sources_1/imports/Submodulos/pwm.v,1669747896,verilog,,C:/FPGACodes/testScript/callPWM/callPWM.srcs/sources_1/imports/Submodulos/rotary_decoder.v,,pwm,,,,,,,,
-C:/FPGACodes/testScript/callPWM/callPWM.srcs/sources_1/imports/Submodulos/rotary_decoder.v,1673301118,verilog,,C:/FPGACodes/testScript/callPWM/callPWM.srcs/sources_1/imports/Submodulos/transmisor_async.v,,rotary_decoder,,,,,,,,
-C:/FPGACodes/testScript/callPWM/callPWM.srcs/sources_1/imports/Submodulos/transmisor_async.v,1669747896,verilog,,C:/FPGACodes/testScript/callPWM/callPWM.srcs/sources_1/new/topModule.v,,transmisor_async,,,,,,,,
-C:/FPGACodes/testScript/callPWM/callPWM.srcs/sources_1/new/topModule.v,1673391259,verilog,,,,topModule,,,,,,,,
+0.7
+2020.2
+Oct 14 2022
+05:20:55
+D:/Github/embedded-DT/Vivado/callPWM.sim/sim_1/behav/xsim/glbl.v,1679500266,verilog,,,,glbl,,,,,,,,
+D:/Github/embedded-DT/Vivado/callPWM.srcs/sources_1/imports/Submodulos/ROM_grados_numericos.v,1679500273,verilog,,D:/Github/embedded-DT/Vivado/callPWM.srcs/sources_1/imports/Submodulos/controlador.v,,ROM_grados_numericos,,,,,,,,
+D:/Github/embedded-DT/Vivado/callPWM.srcs/sources_1/imports/Submodulos/controlador.v,1682468480,verilog,,D:/Github/embedded-DT/Vivado/callPWM.srcs/sources_1/imports/Submodulos/divisor_freq.v,,controlador,,,,,,,,
+D:/Github/embedded-DT/Vivado/callPWM.srcs/sources_1/imports/Submodulos/divisor_freq.v,1679500273,verilog,,D:/Github/embedded-DT/Vivado/callPWM.srcs/sources_1/new/pwm8bits.v,,divisor_freq,,,,,,,,
+D:/Github/embedded-DT/Vivado/callPWM.srcs/sources_1/imports/Submodulos/rotary_decoder.v,1682529256,verilog,,D:/Github/embedded-DT/Vivado/callPWM.srcs/sources_1/imports/Submodulos/transmisor_async.v,,rotary_decoder,,,,,,,,
+D:/Github/embedded-DT/Vivado/callPWM.srcs/sources_1/imports/Submodulos/transmisor_async.v,1679500273,verilog,,D:/Github/embedded-DT/Vivado/callPWM.srcs/sources_1/new/topModule.v,,transmisor_async,,,,,,,,
+D:/Github/embedded-DT/Vivado/callPWM.srcs/sources_1/imports/motor_dtf_antiwindup/DT.v,1682530569,verilog,,D:/Github/embedded-DT/Vivado/callPWM.srcs/sources_1/imports/Submodulos/ROM_grados_numericos.v,,DT,,,,,,,,
+D:/Github/embedded-DT/Vivado/callPWM.srcs/sources_1/new/pwm8bits.v,1679500274,verilog,,D:/Github/embedded-DT/Vivado/callPWM.srcs/sources_1/imports/Submodulos/rotary_decoder.v,,pwm8bits,,,,,,,,
+D:/Github/embedded-DT/Vivado/callPWM.srcs/sources_1/new/topModule.v,1682536699,verilog,,,,topModule,,,,,,,,

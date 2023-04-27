@@ -2,15 +2,22 @@
 # Vivado v2022.2 (64-bit)
 # SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
 # IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
-# Start of session at: Thu Mar 23 15:27:49 2023
-# Process ID: 19696
-# Current directory: D:/Github/PID-MotorControl/FPGA_source/Vivado
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent20016 D:\Github\PID-MotorControl\FPGA_source\Vivado\callPWM.xpr
-# Log file: D:/Github/PID-MotorControl/FPGA_source/Vivado/vivado.log
-# Journal file: D:/Github/PID-MotorControl/FPGA_source/Vivado\vivado.jou
+# Start of session at: Thu Apr 27 07:55:25 2023
+# Process ID: 7876
+# Current directory: D:/Github/embedded-DT/Vivado
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent20348 D:\Github\embedded-DT\Vivado\callPWM.xpr
+# Log file: D:/Github/embedded-DT/Vivado/vivado.log
+# Journal file: D:/Github/embedded-DT/Vivado\vivado.jou
 # Running On: Milanesi-Dell, OS: Windows, CPU Frequency: 2208 MHz, CPU Physical cores: 6, Host memory: 16879 MB
 #-----------------------------------------------------------
 start_gui
-open_project D:/Github/PID-MotorControl/FPGA_source/Vivado/callPWM.xpr
-upgrade_project -migrate_output_products
+open_project D:/Github/embedded-DT/Vivado/callPWM.xpr
+update_compile_order -fileset sources_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+import_files -fileset sim_1 -norecurse {D:/Github/embedded-DT/Simulink/step_antiwindup/hdlsrc/motor_dtf_antiwindup/i_port_expected.dat D:/Github/embedded-DT/Simulink/step_antiwindup/hdlsrc/motor_dtf_antiwindup/PV_expected.dat D:/Github/embedded-DT/Simulink/step_antiwindup/hdlsrc/motor_dtf_antiwindup/error_expected.dat D:/Github/embedded-DT/Simulink/step_antiwindup/hdlsrc/motor_dtf_antiwindup/i_action_expected.dat D:/Github/embedded-DT/Simulink/step_antiwindup/hdlsrc/motor_dtf_antiwindup/p_action_expected.dat D:/Github/embedded-DT/Simulink/step_antiwindup/hdlsrc/motor_dtf_antiwindup/SP.dat D:/Github/embedded-DT/Simulink/step_antiwindup/hdlsrc/motor_dtf_antiwindup/MV_expected.dat}
+import_files -fileset sim_1 -norecurse D:/Github/embedded-DT/Simulink/step_antiwindup/hdlsrc/motor_dtf_antiwindup/DT_tb.v
+update_compile_order -fileset sim_1
+launch_simulation
+close_project
+open_project D:/Github/embeddedFPGA-DT/Vivado/DT_antiwindup/DT_antiwindup.xpr
 update_compile_order -fileset sources_1
