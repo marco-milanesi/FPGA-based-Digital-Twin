@@ -13,6 +13,10 @@ add wave sim:/DT_tb/u_DT/PV
 add wave sim:/DT_tb/PV_ref
 add wave sim:/DT_tb/u_DT/MV
 add wave sim:/DT_tb/MV_ref
-add wave sim:/DT_tb/u_DT/i_port
-add wave sim:/DT_tb/i_port_ref
+add wave sim:/DT_tb/u_DT/p_action
+add wave sim:/DT_tb/p_action_ref
+add wave sim:/DT_tb/u_DT/error
+add wave sim:/DT_tb/error_ref
+add wave sim:/DT_tb/u_DT/i_action
+add wave sim:/DT_tb/i_action_ref
 run -all
