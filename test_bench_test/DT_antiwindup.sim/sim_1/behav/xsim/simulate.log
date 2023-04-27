@@ -1,0 +1,3 @@
+Time resolution is 1 ps
+**************TEST COMPLETED (PASSED)**************
+$stop called at time : 1200060 ns : File "D:/Github/embedded-DT/test_bench_test/DT_antiwindup.srcs/sim_1/imports/motor_dtf_antiwindup/DT_tb.v" Line 350

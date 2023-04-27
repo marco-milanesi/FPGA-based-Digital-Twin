@@ -18,3 +18,4 @@ launch_simulation
 open_wave_config D:/Github/embedded-DT/test_bench_test/DT_tb_behav.wcfg
 source DT_tb.tcl
 run all
+close_sim
