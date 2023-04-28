@@ -48,17 +48,23 @@
  <div class="page_container"><div class="content_frame">
 <h1>HDL Code Generation Check Report for 'motor_dtf_antiwindup/DT'
 <a href="matlab:open_system('motor_dtf_antiwindup/DT');">open model 'motor_dtf_antiwindup/DT'</a><BR>
-Generated on 2023-04-27 23:17:34</h1>
-<H2>HDL check for 'motor_dtf_antiwindup' complete with 0 errors, 0 warnings, and 2 messages.</H2><BR>
+Generated on 2023-04-29 01:25:43</h1>
+<H2>HDL check for 'motor_dtf_antiwindup' complete with 0 errors, 1 warnings, and 2 messages.</H2><BR>
 <H3>The following table describes blocks for which errors, warnings or messages were reported.</H3><BR>
 <TABLE>
 <TR><TD> <B>Simulink Blocks and resources</B> </TD><TD> <B>Level</B> </TD><TD> <B>Description</B> </TD></TR><TR bgcolor="#F0F0F0"><TD>
+<a alt="HDLShared:hdlshared:AutoRateTransfer" href="matlab:hilite(get_param(char([109 111 116 111 114 95 100 116 102 95 97 110 116 105 119 105 110 100 117 112]),'object'),'none');open_system(char([109 111 116 111 114 95 100 116 102 95 97 110 116 105 119 105 110 100 117 112 47 68 84]))">motor_dtf_antiwindup/DT</a>
+</TD>
+<TD>Warning</TD>
+<TD>To guarantee data integrity in generated HDL code, turn off the option "Automatically handle rate transition for data transfer". You can set this option in Simulation -> Model Configuration Parameters -> Solver.</TD>
+</TR>
+<TR bgcolor="#FFFFFF"><TD>
 <a alt="hdlcoder:workflow:AdaptivePipelineOffMessage" href="matlab:hilite(get_param(char([109 111 116 111 114 95 100 116 102 95 97 110 116 105 119 105 110 100 117 112]),'object'),'none');open_system(char([109 111 116 111 114 95 100 116 102 95 97 110 116 105 119 105 110 100 117 112]))">motor_dtf_antiwindup</a>
 </TD>
 <TD>Message</TD>
 <TD><a href="matlab:configset.internal.open('motor_dtf_antiwindup','AdaptivePipelining')">'AdaptivePipelining'</a> is set to 'Off' for the model. 'AdaptivePipelining' can improve the achievable clock frequency and reduce the area usage on FPGA boards. To enable adaptive pipelining, set the option to 'On'. When adaptive pipelining is enabled, it inserts pipeline registers to create patterns that efficiently map blocks to DSP units on the target FPGA device.</TD>
 </TR>
-<TR bgcolor="#FFFFFF"><TD>
+<TR bgcolor="#F0F0F0"><TD>
 <a alt="hdlcoder:workflow:LUTMapToRAMOffMessage" href="matlab:hilite(get_param(char([109 111 116 111 114 95 100 116 102 95 97 110 116 105 119 105 110 100 117 112]),'object'),'none');open_system(char([109 111 116 111 114 95 100 116 102 95 97 110 116 105 119 105 110 100 117 112]))">motor_dtf_antiwindup</a>
 </TD>
 <TD>Message</TD>

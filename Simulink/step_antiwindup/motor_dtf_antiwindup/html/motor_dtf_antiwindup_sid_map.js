@@ -24,8 +24,8 @@ function RTW_SidParentMap() {
     this.sidParentMap["motor_dtf_antiwindup:64"] = "motor_dtf_antiwindup:39";
     this.sidParentMap["motor_dtf_antiwindup:80"] = "motor_dtf_antiwindup:39";
     this.sidParentMap["motor_dtf_antiwindup:134"] = "motor_dtf_antiwindup:39";
-    this.sidParentMap["motor_dtf_antiwindup:136"] = "motor_dtf_antiwindup:39";
     this.sidParentMap["motor_dtf_antiwindup:141"] = "motor_dtf_antiwindup:39";
+    this.sidParentMap["motor_dtf_antiwindup:136"] = "motor_dtf_antiwindup:39";
     this.getParentSid = function(sid) { return this.sidParentMap[sid];}
 }
     RTW_SidParentMap.instance = new RTW_SidParentMap();
