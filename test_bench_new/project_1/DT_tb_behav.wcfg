@@ -11,13 +11,13 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0.000000 us"></ZoomStartTime>
-      <ZoomEndTime time="2,472.000001 us"></ZoomEndTime>
-      <Cursor1Time time="0.000000 us"></Cursor1Time>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="82.268 ns"></ZoomEndTime>
+      <Cursor1Time time="15.600 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="234"></NameColumnWidth>
-      <ValueColumnWidth column_width="110"></ValueColumnWidth>
+      <ValueColumnWidth column_width="102"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="78" />
    <wvobject fp_name="/DT_tb/reset_x" type="logic">
@@ -176,10 +176,6 @@
       <obj_property name="ElementShortName">tb_enb</obj_property>
       <obj_property name="ObjectShortName">tb_enb</obj_property>
    </wvobject>
-   <wvobject fp_name="/DT_tb/ce_out" type="logic">
-      <obj_property name="ElementShortName">ce_out</obj_property>
-      <obj_property name="ObjectShortName">ce_out</obj_property>
-   </wvobject>
    <wvobject fp_name="/DT_tb/p_action" type="array">
       <obj_property name="ElementShortName">p_action[9:0]</obj_property>
       <obj_property name="ObjectShortName">p_action[9:0]</obj_property>
@@ -335,6 +331,10 @@
       <obj_property name="AnalogInterpolation">ANALOG_INTERPOLATION_LINEAR</obj_property>
       <obj_property name="AnalogOffscale">ANALOG_OFFSCALE_HIDE</obj_property>
       <obj_property name="AnalogHorizLine">0.000000</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DT_tb/ce_out" type="logic">
+      <obj_property name="ElementShortName">ce_out</obj_property>
+      <obj_property name="ObjectShortName">ce_out</obj_property>
    </wvobject>
    <wvobject fp_name="/DT_tb/PV" type="array">
       <obj_property name="ElementShortName">PV[9:0]</obj_property>

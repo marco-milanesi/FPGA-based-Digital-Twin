@@ -1,0 +1,21 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Fri Apr 28 08:04:33 2023
+# Process ID: 15184
+# Current directory: D:/Github/embedded-DT/test_bench_new/project_1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent21476 D:\Github\embedded-DT\test_bench_new\project_1\project_1.xpr
+# Log file: D:/Github/embedded-DT/test_bench_new/project_1/vivado.log
+# Journal file: D:/Github/embedded-DT/test_bench_new/project_1\vivado.jou
+# Running On: Milanesi-Dell, OS: Windows, CPU Frequency: 2208 MHz, CPU Physical cores: 6, Host memory: 16879 MB
+#-----------------------------------------------------------
+start_gui
+open_project D:/Github/embedded-DT/test_bench_new/project_1/project_1.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+open_wave_config D:/Github/embedded-DT/test_bench_new/project_1/DT_tb_behav.wcfg
+source DT_tb.tcl
+run 10 s
+save_wave_config {D:/Github/embedded-DT/test_bench_new/project_1/DT_tb_behav.wcfg}
+close_sim
