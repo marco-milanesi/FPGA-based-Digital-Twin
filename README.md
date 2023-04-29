@@ -84,7 +84,7 @@ Both folders contain detailed instructions on how to set up the hardware and run
 <!-- LICENSE -->
 ## License
 
-Distributed under the MIT License. See <a href=https://github.com/marco-milanesi/PID-MotorControl/blob/main/LICENSE>`LICENSE.txt`</a>  for more information.
+Distributed under the MIT License. See <a href=https://github.com/marco-milanesi/FPGA-based-Digital-Twin/blob/main/LICENSE>`LICENSE.txt`</a>  for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
