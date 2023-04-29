@@ -4,7 +4,7 @@
 
 <div align = center>
 
-# PID Motor Control
+# FPGA-based Digital Twin Implementation for Mechatronic System Monitoring
 
 _Source code and hardware configuration files for implementing a PID control algorithm on Arduino and FPGA boards to control a DC motor._
 
