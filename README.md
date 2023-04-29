@@ -14,6 +14,7 @@ _Source code and hardware configuration files for implementing a PID control alg
 
 [![Badge Marco]][marco]
 [![Badge Jairo]][jairo]
+[![Badge Justus]][justus]
 
 <br>
 
@@ -105,13 +106,14 @@ Distributed under the MIT License. See <a href=https://github.com/marco-milanesi
 
 [marco]: https://github.com/marco-milanesi
 [jairo]: https://github.com/tartanus
+[justus]: https://github.com/jnwok
 
 [license]: LICENSE
 
 <!---------------------------------{ Badges }---------------------------------->
 
 [badge license]: https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge
-[badge marco]: https://img.shields.io/badge/Marco_Milanesi-4776c1?style=for-the-badge
+[badge marco]: https://img.shields.io/badge/Marco_Milanesi-2930c1?style=for-the-badge
 [badge jairo]: https://img.shields.io/badge/Jairo_Viola-2930c1?style=for-the-badge
-
+[badge justus]: https://img.shields.io/badge/Justus_Nwoke-2930c1?style=for-the-badge
 
