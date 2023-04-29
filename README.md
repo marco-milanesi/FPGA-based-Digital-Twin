@@ -95,6 +95,7 @@ Distributed under the MIT License. See <a href=https://github.com/marco-milanesi
 
 - Marco Milanesi - <a href = "mailto: marco.milanesi.99@gmail.com">marco.milanesi.99@gmail.com</a>
 - Jairo Viola - <a href = "mailto: "></a>
+- Justus Nwoke - <a href = "mailto: "></a>
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
