@@ -97,8 +97,8 @@ Distributed under the MIT License. See <a href=https://github.com/marco-milanesi
 ## Contact
 
 - Marco Milanesi - <a href = "mailto: mmilanesi2@ucmerced.edu">mmilanesi2@ucmerced.edu</a>
-- Jairo Viola - <a href = jviola@ucmerced.edu"mailto: jviola@ucmerced.edu"></a>
-- Justus Nwoke - <a href = jnwoke@ucmerced.edu"mailto: jnwoke@ucmerced.edu"></a>
+- Jairo Viola - <a href = "mailto:jviola@ucmerced.edu" jviola@ucmerced.edu"></a>
+- Justus Nwoke - <a href = "mailto:jnwoke@ucmerced.edu" jnwoke@ucmerced.edu"></a>
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
