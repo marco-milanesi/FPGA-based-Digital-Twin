@@ -6,7 +6,7 @@
 
 # FPGA-based Digital Twin Implementation for Mechatronic System Monitoring
 
-_Source code and hardware configuration files for implementing a PID control algorithm on Arduino and FPGA boards to control a DC motor._
+_Source code and hardware configuration files for implementing an embedded DT on FPGA boards to control a DC motor._
 
 <br>
 
@@ -47,7 +47,10 @@ _Source code and hardware configuration files for implementing a PID control alg
 
 <div align = left>
 
- This project aims to compare the performance of DC motor control using both Arduino and FPGA boards. The objective is to implement a simple control algorithm for the DC motor and evaluate the performance of the system in terms of accuracy, speed, and efficiency. The project includes the source code and hardware configuration files for both implementations, as well as detailed instructions on how to set up the hardware and run the code. This project is suitable for anyone interested in learning about embedded systems, control systems, and FPGA programming.
+This project aims to propose an embedded digital twin implementation on a Field Programmable Gate Array (FPGA) for mechatronics system monitoring. The Digital Twin of the physical system is built using MATLAB/Simulink. The obtained DT model is translated into HDL code using Matlab HDL coder toolbox for its implementation in a Xilinx FPGA for the position control of a DC motor. Thus,  the digital twin implementation acts as a reference for the physical asset performance, enabling event awareness capabilities.
+The main contribution of this paper is the digital twin implementation at the hardware level using an FPGA, which is fed with real-time data exchanged directly from physical assets, eliminating the need for an intermediary cloud exchange that introduces latency and data privacy issues. This work contributes to the framework of smart control engineering, where controllers are equipped with information for smarter decision-making.
+
+The project includes the source code and hardware configuration files for the implementation, as well as detailed instructions on how to set up the hardware and run the code. This project is suitable for anyone interested in learning about embedded systems, control systems, and FPGA programming.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
