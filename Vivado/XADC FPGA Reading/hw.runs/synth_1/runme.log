@@ -1,0 +1,338 @@
+
+*** Running vivado
+    with args -log top_module.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_module.tcl
+
+
+
+****** Vivado v2022.2 (64-bit)
+  **** SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+  **** IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+source top_module.tcl -notrace
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 558.457 ; gain = 125.465
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'c:/repo'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Vivado/2022.2/data/ip'.
+Command: synth_design -top top_module -part xc7s50csga324-1 -flatten_hierarchy none -directive RuntimeOptimized -fsm_extraction off
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7s50'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7s50'
+INFO: [Device 21-403] Loading part xc7s50csga324-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 20376
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [D:/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1368.168 ; gain = 405.941
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'top_module' [C:/Users/Marco Milanesi/Downloads/Arty-S7-50-XADC-hw.xpr/hw/hw.srcs/sources_1/new/top_module.v:23]
+INFO: [Synth 8-6157] synthesizing module 'XADCdemo' [C:/Users/Marco Milanesi/Downloads/Arty-S7-50-XADC-hw.xpr/hw/hw.srcs/sources_1/imports/hdl/XADCdemo.v:22]
+INFO: [Synth 8-6157] synthesizing module 'xadc_wiz_0' [C:/Users/Marco Milanesi/Downloads/Arty-S7-50-XADC-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-3272-Milanesi-Dell/realtime/xadc_wiz_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'xadc_wiz_0' (0#1) [C:/Users/Marco Milanesi/Downloads/Arty-S7-50-XADC-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-3272-Milanesi-Dell/realtime/xadc_wiz_0_stub.v:5]
+WARNING: [Synth 8-7071] port 'vccaux_alarm_out' of module 'xadc_wiz_0' is unconnected for instance 'xadc' [C:/Users/Marco Milanesi/Downloads/Arty-S7-50-XADC-hw.xpr/hw/hw.srcs/sources_1/imports/hdl/XADCdemo.v:57]
+WARNING: [Synth 8-7071] port 'vccint_alarm_out' of module 'xadc_wiz_0' is unconnected for instance 'xadc' [C:/Users/Marco Milanesi/Downloads/Arty-S7-50-XADC-hw.xpr/hw/hw.srcs/sources_1/imports/hdl/XADCdemo.v:57]
+WARNING: [Synth 8-7023] instance 'xadc' of module 'xadc_wiz_0' has 33 connections declared, but only 31 given [C:/Users/Marco Milanesi/Downloads/Arty-S7-50-XADC-hw.xpr/hw/hw.srcs/sources_1/imports/hdl/XADCdemo.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'XADCdemo' (0#1) [C:/Users/Marco Milanesi/Downloads/Arty-S7-50-XADC-hw.xpr/hw/hw.srcs/sources_1/imports/hdl/XADCdemo.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'top_module' (0#1) [C:/Users/Marco Milanesi/Downloads/Arty-S7-50-XADC-hw.xpr/hw/hw.srcs/sources_1/new/top_module.v:23]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1458.473 ; gain = 496.246
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1458.473 ; gain = 496.246
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1458.473 ; gain = 496.246
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1458.473 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/Users/Marco Milanesi/Downloads/Arty-S7-50-XADC-hw.xpr/hw/hw.gen/xadc_wiz_0/ip/xadc_wiz_0/xadc_wiz_0/xadc_wiz_0_in_context.xdc] for cell 'u1/xadc'
+Finished Parsing XDC File [c:/Users/Marco Milanesi/Downloads/Arty-S7-50-XADC-hw.xpr/hw/hw.gen/xadc_wiz_0/ip/xadc_wiz_0/xadc_wiz_0/xadc_wiz_0_in_context.xdc] for cell 'u1/xadc'
+Parsing XDC File [C:/Users/Marco Milanesi/Downloads/Arty-S7-50-XADC-hw.xpr/hw/hw.srcs/constrs_1/imports/constraints/Arty-S7-50-Master.xdc]
+Finished Parsing XDC File [C:/Users/Marco Milanesi/Downloads/Arty-S7-50-XADC-hw.xpr/hw/hw.srcs/constrs_1/imports/constraints/Arty-S7-50-Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Marco Milanesi/Downloads/Arty-S7-50-XADC-hw.xpr/hw/hw.srcs/constrs_1/imports/constraints/Arty-S7-50-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_module_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/top_module_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1542.879 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1542.879 ; gain = 0.000
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [D:/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1542.879 ; gain = 580.652
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7s50csga324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1542.879 ; gain = 580.652
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for u1/xadc. (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1542.879 ; gain = 580.652
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1542.879 ; gain = 580.652
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Registers : 
+	                7 Bit    Registers := 1     
+	                6 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   7 Input    6 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 120 (col length:60)
+BRAMs: 150 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1542.879 ; gain = 580.652
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 1542.879 ; gain = 580.652
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 1542.879 ; gain = 580.652
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+
+*** Running vivado
+    with args -log top_module.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_module.tcl
+
+
+
+****** Vivado v2022.2 (64-bit)
+  **** SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+  **** IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+source top_module.tcl -notrace
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 558.543 ; gain = 125.320
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'c:/repo'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Vivado/2022.2/data/ip'.
+Command: synth_design -top top_module -part xc7s50csga324-1 -flatten_hierarchy none -directive RuntimeOptimized -fsm_extraction off
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7s50'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7s50'
+INFO: [Device 21-403] Loading part xc7s50csga324-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 24372
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [D:/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1368.492 ; gain = 407.426
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'top_module' [C:/Users/Marco Milanesi/Downloads/Arty-S7-50-XADC-hw.xpr/hw/hw.srcs/sources_1/new/top_module.v:23]
+INFO: [Synth 8-6157] synthesizing module 'XADCdemo' [C:/Users/Marco Milanesi/Downloads/Arty-S7-50-XADC-hw.xpr/hw/hw.srcs/sources_1/imports/hdl/XADCdemo.v:22]
+INFO: [Synth 8-6157] synthesizing module 'xadc_wiz_0' [C:/Users/Marco Milanesi/Downloads/Arty-S7-50-XADC-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-22344-Milanesi-Dell/realtime/xadc_wiz_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'xadc_wiz_0' (0#1) [C:/Users/Marco Milanesi/Downloads/Arty-S7-50-XADC-hw.xpr/hw/hw.runs/synth_1/.Xil/Vivado-22344-Milanesi-Dell/realtime/xadc_wiz_0_stub.v:5]
+WARNING: [Synth 8-7071] port 'vccaux_alarm_out' of module 'xadc_wiz_0' is unconnected for instance 'xadc' [C:/Users/Marco Milanesi/Downloads/Arty-S7-50-XADC-hw.xpr/hw/hw.srcs/sources_1/imports/hdl/XADCdemo.v:57]
+WARNING: [Synth 8-7071] port 'vccint_alarm_out' of module 'xadc_wiz_0' is unconnected for instance 'xadc' [C:/Users/Marco Milanesi/Downloads/Arty-S7-50-XADC-hw.xpr/hw/hw.srcs/sources_1/imports/hdl/XADCdemo.v:57]
+WARNING: [Synth 8-7023] instance 'xadc' of module 'xadc_wiz_0' has 33 connections declared, but only 31 given [C:/Users/Marco Milanesi/Downloads/Arty-S7-50-XADC-hw.xpr/hw/hw.srcs/sources_1/imports/hdl/XADCdemo.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'XADCdemo' (0#1) [C:/Users/Marco Milanesi/Downloads/Arty-S7-50-XADC-hw.xpr/hw/hw.srcs/sources_1/imports/hdl/XADCdemo.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'top_module' (0#1) [C:/Users/Marco Milanesi/Downloads/Arty-S7-50-XADC-hw.xpr/hw/hw.srcs/sources_1/new/top_module.v:23]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1458.137 ; gain = 497.070
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1458.137 ; gain = 497.070
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1458.137 ; gain = 497.070
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1458.137 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/Users/Marco Milanesi/Downloads/Arty-S7-50-XADC-hw.xpr/hw/hw.gen/xadc_wiz_0/ip/xadc_wiz_0/xadc_wiz_0/xadc_wiz_0_in_context.xdc] for cell 'u1/xadc'
+Finished Parsing XDC File [c:/Users/Marco Milanesi/Downloads/Arty-S7-50-XADC-hw.xpr/hw/hw.gen/xadc_wiz_0/ip/xadc_wiz_0/xadc_wiz_0/xadc_wiz_0_in_context.xdc] for cell 'u1/xadc'
+Parsing XDC File [C:/Users/Marco Milanesi/Downloads/Arty-S7-50-XADC-hw.xpr/hw/hw.srcs/constrs_1/imports/constraints/Arty-S7-50-Master.xdc]
+Finished Parsing XDC File [C:/Users/Marco Milanesi/Downloads/Arty-S7-50-XADC-hw.xpr/hw/hw.srcs/constrs_1/imports/constraints/Arty-S7-50-Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Marco Milanesi/Downloads/Arty-S7-50-XADC-hw.xpr/hw/hw.srcs/constrs_1/imports/constraints/Arty-S7-50-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_module_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/top_module_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1544.586 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1544.586 ; gain = 0.000
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [D:/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1544.586 ; gain = 583.520
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7s50csga324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1544.586 ; gain = 583.520
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for u1/xadc. (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1544.586 ; gain = 583.520
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1544.586 ; gain = 583.520
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Registers : 
+	                7 Bit    Registers := 1     
+	                6 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   7 Input    6 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 120 (col length:60)
+BRAMs: 150 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1544.586 ; gain = 583.520
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1544.586 ; gain = 583.520
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1544.586 ; gain = 583.520
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 1544.586 ; gain = 583.520
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 1544.586 ; gain = 583.520
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 1544.586 ; gain = 583.520
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |xadc_wiz_0    |         1|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |xadc_wiz |     1|
+|2     |BUFG     |     1|
+|3     |LUT2     |     3|
+|4     |LUT3     |     3|
+|5     |FDRE     |     7|
+|6     |IBUF     |    19|
+|7     |OBUF     |     6|
++------+---------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 1544.586 ; gain = 583.520
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:20 ; elapsed = 00:00:29 . Memory (MB): peak = 1544.586 ; gain = 497.070
+Synthesis Optimization Complete : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 1544.586 ; gain = 583.520
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1544.586 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1544.586 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete, checksum: 3c39aec8
+INFO: [Common 17-83] Releasing license: Synthesis
+23 Infos, 5 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 1544.586 ; gain = 956.199
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Marco Milanesi/Downloads/Arty-S7-50-XADC-hw.xpr/hw/hw.runs/synth_1/top_module.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file top_module_utilization_synth.rpt -pb top_module_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Tue May 30 14:21:41 2023...

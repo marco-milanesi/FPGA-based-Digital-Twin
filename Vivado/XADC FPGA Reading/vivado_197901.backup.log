@@ -1,0 +1,3056 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:35 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Thu Nov  5 13:06:40 2020
+# Process ID: 197901
+# Current directory: /home/ciprian/Documents/Github/Arty-S7/hw/scripts
+# Command line: vivado -mode tcl
+# Log file: /home/ciprian/Documents/Github/Arty-S7/hw/scripts/vivado.log
+# Journal file: /home/ciprian/Documents/Github/Arty-S7/hw/scripts/vivado.jou
+#-----------------------------------------------------------
+set argv "-r ~/Documents/Github/Arty-S7/hw/"
+-r ~/Documents/Github/Arty-S7/hw/
+source digilent_vivado_checkout.tcl
+# set idx [lsearch ${argv} "-r"]
+# if {${idx} != -1} {
+#     set repo_path [glob -nocomplain [file normalize [lindex ${argv} [expr {${idx}+1}]]]]
+# } else {
+#     # Default
+#     set repo_path [file normalize [file dirname [info script]]/..]
+# }
+# set idx [lsearch ${argv} "-x"]
+# if {${idx} != -1} {
+#     set xpr_path [file normalize [lindex ${argv} [expr {${idx}+1}]]]
+# } else {
+#     # Default
+#     set xpr_path [file join ${repo_path} proj [file tail $repo_path]].xpr]
+# }
+# set idx [lsearch ${argv} "-v"]
+# if {${idx} != -1} {
+#     set vivado_version [lindex ${argv} [expr {${idx}+1}]]
+# } else {
+#     # Default
+#     set vivado_version [version -short]
+# }
+# set vivado_year [lindex [split $vivado_version "."] 0]
+# set proj_name [file rootname [file tail $xpr_path]]
+# puts "INFO: Creating new project \"$proj_name\" in [file dirname $xpr_path]"
+INFO: Creating new project "hw" in /home/ciprian/Documents/Github/Arty-S7/hw/proj
+# create_project $proj_name [file dirname $xpr_path]
+# source $repo_path/project_info.tcl
+## proc set_project_properties_post_create_project {proj_name} {
+##     set project_obj [get_projects $proj_name]
+##     set_property "part" "xc7s25csga324-1" $project_obj
+##     set_property "board_part" "digilentinc.com:arty-s7-25:part0:1.0" $project_obj
+##     set_property "default_lib" "xil_defaultlib" $project_obj
+##     set_property "simulator_language" "Mixed" $project_obj
+##     set_property "target_language" "VHDL" $project_obj
+## }
+## proc set_project_properties_pre_add_repo {proj_name} {
+##     set project_obj [get_projects $proj_name]
+##     # default nothing
+## }
+## proc set_project_properties_post_create_runs {proj_name} {
+##     set project_obj [get_projects $proj_name]
+##     # default nothing
+## }
+# puts "INFO: Capturing board information from $repo_path/project_info.tcl"
+INFO: Capturing board information from /home/ciprian/Documents/Github/Arty-S7/hw/project_info.tcl
+# set_project_properties_post_create_project $proj_name
+# set obj [get_projects $proj_name]
+# set part_name [get_property "part" $obj]
+# puts "INFO: Configuring project IP handling properties"
+INFO: Configuring project IP handling properties
+# set_property "corecontainer.enable" "0" $obj
+# set_property "ip_cache_permissions" "read write" $obj
+# set_property "ip_output_repo" "[file normalize "$repo_path/proj/cache"]" $obj
+# if {[string equal [get_filesets -quiet sources_1] ""]} {
+#     puts "INFO: Creating sources_1 fileset"
+#     create_fileset -srcset sources_1
+# }
+# if {[string equal [get_filesets -quiet constrs_1] ""]} {
+#     puts "INFO: Creating constrs_1 fileset"
+#     create_fileset -constrset constrs_1
+# }
+# puts "INFO: capturing IP-related settings from $repo_path/project_info.tcl"
+INFO: capturing IP-related settings from /home/ciprian/Documents/Github/Arty-S7/hw/project_info.tcl
+# set_project_properties_pre_add_repo $proj_name
+# puts "INFO: Setting IP repository paths"
+INFO: Setting IP repository paths
+# set obj [get_filesets sources_1]
+# set_property "ip_repo_paths" "[file normalize $repo_path/repo]" $obj
+# puts "INFO: Refreshing IP repositories"
+INFO: Refreshing IP repositories
+# update_ip_catalog -rebuild
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/ciprian/Documents/Github/Arty-S7/hw/repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2020.1/data/ip'.
+# puts "INFO: Adding HDL sources"
+INFO: Adding HDL sources
+# add_files -quiet -norecurse $repo_path/src/hdl
+# puts "INFO: Adding XCI IP sources"
+INFO: Adding XCI IP sources
+# add_files -quiet [glob -nocomplain $repo_path/src/ip/*/*.xci]
+# puts "INFO: Adding constraints"
+INFO: Adding constraints
+# add_files -quiet -norecurse -fileset constrs_1 $repo_path/src/constraints
+# set ipi_tcl_files [glob -nocomplain "$repo_path/src/bd/*.tcl"]
+# set ipi_bd_files [glob -nocomplain "$repo_path/src/bd/*/*.bd"]
+# if {[llength $ipi_tcl_files] > 1} {
+#     # TODO: quit and log the error
+#     puts "ERROR: This script cannot handle projects containing more than one block design! More than one tcl script foudn in src/bd"
+# } elseif {[llength $ipi_tcl_files] == 1} {
+#     # Use TCL script to rebuild block design
+#     puts "INFO: Rebuilding block design from script"
+#     # Create local source directory for bd
+#     if {[file exist "[file rootname $xpr_path].srcs"] == 0} {
+#         file mkdir "[file rootname $xpr_path].srcs"
+#     }
+#     if {[file exist "[file rootname $xpr_path].srcs/sources_1"] == 0} {
+#         file mkdir "[file rootname $xpr_path].srcs/sources_1"
+#     }
+#     if {[file exist "[file rootname $xpr_path].srcs/sources_1/bd"] == 0} {
+#         file mkdir "[file rootname $xpr_path].srcs/sources_1/bd"
+#     }
+#     # Force Non-Remote BD Flow
+#     set origin_dir [pwd]
+#     cd "[file rootname $xpr_path].srcs/sources_1"
+#     set run_remote_bd_flow 0
+#     source [lindex $ipi_tcl_files 0]
+#     cd $origin_dir
+# } elseif {[llength $ipi_bd_files] > 1} {
+#     # TODO: quit and log the error
+#     puts "ERROR: This script cannot handle projects containing more than one block design! More than one bd file foudn in src/bd"
+# } elseif {[llength $ipi_bd_files] == 1} {
+#     # Add block design from .bd file and sources
+#     puts "INFO: Rebuilding block design from BD fileset"
+#     add_files -norecurse -quiet -fileset sources_1 [glob -nocomplain $repo_path/src/bd/*/*.bd]
+#     open_bd_design [glob -nocomplain $repo_path/src/bd/*/*.bd]
+#     set design_name [get_bd_designs]
+#     set file "$repo_path/src/bd/$design_name/$design_name.bd"
+#     set file [file normalize $file]
+#     set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
+#     if { ![get_property "is_locked" $file_obj] } {
+#         set_property "synth_checkpoint_mode" "Hierarchical" $file_obj
+#     }
+# }
+WARNING: [Coretcl 2-176] No IPs found
+# foreach ip [get_ips -filter "IS_LOCKED==1"] {
+#     upgrade_ip -vlnv [get_property UPGRADE_VERSIONS $ip] $ip
+#     export_ip_user_files -of_objects $ip -no_script -sync -force -quiet
+# }
+# catch {
+# 	# catch block prevents projects without a block design from erroring at this step
+# 	set bd_name [get_bd_designs -of_objects [get_bd_cells /]]
+# 	set bd_file [get_files $bd_name.bd]
+# 	set wrapper_file [make_wrapper -files $bd_file -top -force]
+# 	import_files -quiet -force -norecurse $wrapper_file
+# 
+# 	set obj [get_filesets sources_1]
+# 	set_property "top" "${bd_name}_wrapper" $obj
+# }
+ERROR: [BD 5-104] A block design must be open to run this command. Please create/open a block design.
+# if {[string equal [get_runs -quiet synth_1] ""]} {
+#     puts "INFO: Creating synth_1 run"
+#     create_run -name synth_1 -part $part_name -flow {Vivado Synthesis $vivado_year} -strategy "Vivado Synthesis Defaults" -constrset constrs_1
+# } else {
+#     set_property strategy "Vivado Synthesis Defaults" [get_runs synth_1]
+#     set_property flow "Vivado Synthesis $vivado_year" [get_runs synth_1]
+# }
+# puts "INFO: Configuring synth_1 run"
+INFO: Configuring synth_1 run
+# set obj [get_runs synth_1]
+# set_property "part" $part_name $obj
+# set_property "steps.synth_design.args.flatten_hierarchy" "none" $obj
+# set_property "steps.synth_design.args.directive" "RuntimeOptimized" $obj
+# set_property "steps.synth_design.args.fsm_extraction" "off" $obj
+# puts "INFO: Setting current synthesis run"
+INFO: Setting current synthesis run
+# current_run -synthesis [get_runs synth_1]
+# if {[string equal [get_runs -quiet impl_1] ""]} {
+#     puts "INFO: Creating impl_1 run"
+#     create_run -name impl_1 -part $part_name -flow {Vivado Implementation $vivado_year} -strategy "Vivado Implementation Defaults" -constrset constrs_1 -parent_run synth_1
+# } else {
+#     set_property strategy "Vivado Implementation Defaults" [get_runs impl_1]
+#     set_property flow "Vivado Implementation $vivado_year" [get_runs impl_1]
+# }
+# puts "INFO: Configuring impl_1 run"
+INFO: Configuring impl_1 run
+# set obj [get_runs impl_1]
+# set_property "part" $part_name $obj
+# set_property "steps.opt_design.args.directive" "RuntimeOptimized" $obj
+# set_property "steps.place_design.args.directive" "RuntimeOptimized" $obj
+# set_property "steps.route_design.args.directive" "RuntimeOptimized" $obj
+# puts "INFO: Setting current implementation run"
+INFO: Setting current implementation run
+# current_run -implementation [get_runs impl_1]
+# puts "INFO: capturing run settings from $repo_path/project_info.tcl"
+INFO: capturing run settings from /home/ciprian/Documents/Github/Arty-S7/hw/project_info.tcl
+# set_project_properties_post_create_runs $proj_name
+# puts "INFO: Project created: [file tail $proj_name]"
+INFO: Project created: hw
+# puts "INFO: Exiting Vivado"
+INFO: Exiting Vivado
+close_project
+open_project /home/ciprian/Documents/Github/Arty-S7/hw/proj/hw.xpr
+Scanning sources...
+Finished scanning sources
+WARNING: [filemgmt 56-3] IP Output Repository Path: Could not find the directory '/home/ciprian/Documents/Github/Arty-S7/hw/proj/cache'.
+WARNING: [filemgmt 56-3] Default IP Output Path : Could not find the directory '/home/ciprian/Documents/Github/Arty-S7/hw/proj/hw.srcs/sources_1'.
+hw
+update_compile_order -fileset sources_1
+launch_runs impl_1 -to_step write_bitstream -jobs 9
+[Thu Nov  5 13:09:24 2020] Launched synth_1...
+Run output will be captured here: /home/ciprian/Documents/Github/Arty-S7/hw/proj/hw.runs/synth_1/runme.log
+[Thu Nov  5 13:09:24 2020] Launched impl_1...
+Run output will be captured here: /home/ciprian/Documents/Github/Arty-S7/hw/proj/hw.runs/impl_1/runme.log
+wait_on_run impl_1 
+[Thu Nov  5 13:09:24 2020] Waiting for impl_1 to finish...
+
+*** Running vivado
+    with args -log GPIO_demo.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source GPIO_demo.tcl -notrace
+
+
+****** Vivado v2020.1 (64-bit)
+  **** SW Build 2902540 on Wed May 27 19:54:35 MDT 2020
+  **** IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source GPIO_demo.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/ciprian/Documents/Github/Arty-S7/hw/repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2020.1/data/ip'.
+Command: link_design -top GPIO_demo -part xc7s25csga324-1
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Device 21-403] Loading part xc7s25csga324-1
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2116.680 ; gain = 0.000 ; free physical = 4990 ; free virtual = 14699
+INFO: [Netlist 29-17] Analyzing 55 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2020.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/ciprian/Documents/Github/Arty-S7/hw/src/constraints/Arty-S7-25-Master.xdc]
+Finished Parsing XDC File [/home/ciprian/Documents/Github/Arty-S7/hw/src/constraints/Arty-S7-25-Master.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2172.574 ; gain = 0.000 ; free physical = 4873 ; free virtual = 14590
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+10 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+Command: opt_design -directive RuntimeOptimized
+INFO: [Vivado_Tcl 4-136] Directive used for opt_design is: RuntimeOptimized
+Attempting to get a license for feature 'Implementation' and/or device 'xc7s25'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7s25'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.87 . Memory (MB): peak = 2236.605 ; gain = 64.031 ; free physical = 4861 ; free virtual = 14579
+
+Starting Logic Optimization Task
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 1 Retarget
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 1 Retarget | Checksum: 12dd5808f
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2645.145 ; gain = 408.539 ; free physical = 4363 ; free virtual = 14099
+INFO: [Opt 31-389] Phase Retarget created 0 cells and removed 0 cells
+
+Phase 2 Constant propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Phase 2 Constant propagation | Checksum: 12dd5808f
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2645.145 ; gain = 408.539 ; free physical = 4363 ; free virtual = 14099
+INFO: [Opt 31-389] Phase Constant propagation created 0 cells and removed 0 cells
+
+Phase 3 Sweep
+Phase 3 Sweep | Checksum: 17bf37fc8
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2645.145 ; gain = 408.539 ; free physical = 4363 ; free virtual = 14099
+INFO: [Opt 31-389] Phase Sweep created 3 cells and removed 0 cells
+
+Phase 4 BUFG optimization
+Phase 4 BUFG optimization | Checksum: 17bf37fc8
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2645.145 ; gain = 408.539 ; free physical = 4363 ; free virtual = 14099
+INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
+
+Phase 5 Shift Register Optimization
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+Phase 5 Shift Register Optimization | Checksum: 17bf37fc8
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2645.145 ; gain = 408.539 ; free physical = 4363 ; free virtual = 14099
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Phase 6 Post Processing Netlist
+Phase 6 Post Processing Netlist | Checksum: 167ed9589
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2645.145 ; gain = 408.539 ; free physical = 4363 ; free virtual = 14099
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |               0  |               0  |                                              0  |
+|  Constant propagation         |               0  |               0  |                                              0  |
+|  Sweep                        |               3  |               0  |                                              0  |
+|  BUFG optimization            |               0  |               0  |                                              0  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               0  |                                              0  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2645.145 ; gain = 0.000 ; free physical = 4363 ; free virtual = 14099
+Ending Logic Optimization Task | Checksum: dcd8759b
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2645.145 ; gain = 408.539 ; free physical = 4363 ; free virtual = 14099
+
+Starting Netlist Obfuscation Task
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2645.145 ; gain = 0.000 ; free physical = 4363 ; free virtual = 14099
+Ending Netlist Obfuscation Task | Checksum: dcd8759b
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2645.145 ; gain = 0.000 ; free physical = 4363 ; free virtual = 14099
+INFO: [Common 17-83] Releasing license: Implementation
+27 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2645.145 ; gain = 472.570 ; free physical = 4363 ; free virtual = 14099
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2685.164 ; gain = 0.000 ; free physical = 4355 ; free virtual = 14093
+INFO: [Common 17-1381] The checkpoint '/home/ciprian/Documents/Github/Arty-S7/hw/proj/hw.runs/impl_1/GPIO_demo_opt.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_drc -file GPIO_demo_drc_opted.rpt -pb GPIO_demo_drc_opted.pb -rpx GPIO_demo_drc_opted.rpx
+Command: report_drc -file GPIO_demo_drc_opted.rpt -pb GPIO_demo_drc_opted.pb -rpx GPIO_demo_drc_opted.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Coretcl 2-168] The results of DRC are in file /home/ciprian/Documents/Github/Arty-S7/hw/proj/hw.runs/impl_1/GPIO_demo_drc_opted.rpt.
+report_drc completed successfully
+Command: place_design -directive RuntimeOptimized
+Attempting to get a license for feature 'Implementation' and/or device 'xc7s25'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7s25'
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+Starting Placer Task
+INFO: [Place 46-5] The placer was invoked with the 'RuntimeOptimized' directive.
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 8 CPUs
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2765.203 ; gain = 0.000 ; free physical = 4344 ; free virtual = 14077
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 8304deee
+
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2765.203 ; gain = 0.000 ; free physical = 4344 ; free virtual = 14077
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2765.203 ; gain = 0.000 ; free physical = 4344 ; free virtual = 14077
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: baddaa86
+
+Time (s): cpu = 00:00:00.39 ; elapsed = 00:00:00.14 . Memory (MB): peak = 2765.203 ; gain = 0.000 ; free physical = 4328 ; free virtual = 14061
+
+Phase 1.3 Build Placer Netlist Model
+Phase 1.3 Build Placer Netlist Model | Checksum: 1a6ac1b2f
+
+Time (s): cpu = 00:00:00.62 ; elapsed = 00:00:00.21 . Memory (MB): peak = 2765.203 ; gain = 0.000 ; free physical = 4342 ; free virtual = 14076
+
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: 1a6ac1b2f
+
+Time (s): cpu = 00:00:00.62 ; elapsed = 00:00:00.21 . Memory (MB): peak = 2765.203 ; gain = 0.000 ; free physical = 4342 ; free virtual = 14076
+Phase 1 Placer Initialization | Checksum: 1a6ac1b2f
+
+Time (s): cpu = 00:00:00.62 ; elapsed = 00:00:00.21 . Memory (MB): peak = 2765.203 ; gain = 0.000 ; free physical = 4342 ; free virtual = 14076
+
+Phase 2 Global Placement
+
+Phase 2.1 Floorplanning
+Phase 2.1 Floorplanning | Checksum: 112e1e0d8
+
+Time (s): cpu = 00:00:00.98 ; elapsed = 00:00:00.26 . Memory (MB): peak = 2765.203 ; gain = 0.000 ; free physical = 4335 ; free virtual = 14068
+
+Phase 2.2 Global Placement Core
+Phase 2.2 Global Placement Core | Checksum: d1363626
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:00.81 . Memory (MB): peak = 2765.203 ; gain = 0.000 ; free physical = 4334 ; free virtual = 14067
+Phase 2 Global Placement | Checksum: d1363626
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:00.81 . Memory (MB): peak = 2765.203 ; gain = 0.000 ; free physical = 4334 ; free virtual = 14067
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: 1b8df3507
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:00.83 . Memory (MB): peak = 2765.203 ; gain = 0.000 ; free physical = 4335 ; free virtual = 14068
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 2769aba23
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:00.86 . Memory (MB): peak = 2765.203 ; gain = 0.000 ; free physical = 4335 ; free virtual = 14068
+
+Phase 3.3 Area Swap Optimization
+Phase 3.3 Area Swap Optimization | Checksum: 285cd196a
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:00.87 . Memory (MB): peak = 2765.203 ; gain = 0.000 ; free physical = 4335 ; free virtual = 14068
+
+Phase 3.4 Pipeline Register Optimization
+Phase 3.4 Pipeline Register Optimization | Checksum: 285cd196a
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:00.87 . Memory (MB): peak = 2765.203 ; gain = 0.000 ; free physical = 4335 ; free virtual = 14068
+
+Phase 3.5 Small Shape Detail Placement
+Phase 3.5 Small Shape Detail Placement | Checksum: 1e766c911
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:00.93 . Memory (MB): peak = 2765.203 ; gain = 0.000 ; free physical = 4335 ; free virtual = 14068
+
+Phase 3.6 Re-assign LUT pins
+Phase 3.6 Re-assign LUT pins | Checksum: 23a960660
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:00.94 . Memory (MB): peak = 2765.203 ; gain = 0.000 ; free physical = 4335 ; free virtual = 14068
+
+Phase 3.7 Pipeline Register Optimization
+Phase 3.7 Pipeline Register Optimization | Checksum: 23a960660
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:00.94 . Memory (MB): peak = 2765.203 ; gain = 0.000 ; free physical = 4335 ; free virtual = 14068
+Phase 3 Detail Placement | Checksum: 23a960660
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:00.94 . Memory (MB): peak = 2765.203 ; gain = 0.000 ; free physical = 4335 ; free virtual = 14068
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 4.1.1 Post Placement Optimization
+Post Placement Optimization Initialization | Checksum: 1790cfc9a
+
+Phase 4.1.1.1 BUFG Insertion
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 8 CPUs
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=5.760 | TNS=0.000 |
+Phase 1 Physical Synthesis Initialization | Checksum: ecd4666a
+
+Time (s): cpu = 00:00:00.12 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2765.203 ; gain = 0.000 ; free physical = 4334 ; free virtual = 14067
+INFO: [Place 46-56] BUFG insertion identified 0 candidate nets. Inserted BUFG: 0, Replicated BUFG Driver: 0, Skipped due to Placement/Routing Conflicts: 0, Skipped due to Timing Degradation: 0, Skipped due to Illegal Netlist: 0.
+Ending Physical Synthesis Task | Checksum: 1871950ff
+
+Time (s): cpu = 00:00:00.12 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2765.203 ; gain = 0.000 ; free physical = 4334 ; free virtual = 14067
+Phase 4.1.1.1 BUFG Insertion | Checksum: 1790cfc9a
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:01 . Memory (MB): peak = 2765.203 ; gain = 0.000 ; free physical = 4334 ; free virtual = 14067
+INFO: [Place 30-746] Post Placement Timing Summary WNS=5.760. For the most accurate timing information please run report_timing.
+Phase 4.1.1 Post Placement Optimization | Checksum: 19af01e81
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:01 . Memory (MB): peak = 2765.203 ; gain = 0.000 ; free physical = 4334 ; free virtual = 14067
+Phase 4.1 Post Commit Optimization | Checksum: 19af01e81
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:01 . Memory (MB): peak = 2765.203 ; gain = 0.000 ; free physical = 4334 ; free virtual = 14067
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: 19af01e81
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:01 . Memory (MB): peak = 2765.203 ; gain = 0.000 ; free physical = 4334 ; free virtual = 14067
+
+Phase 4.3 Placer Reporting
+Phase 4.3 Placer Reporting | Checksum: 19af01e81
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:01 . Memory (MB): peak = 2765.203 ; gain = 0.000 ; free physical = 4334 ; free virtual = 14067
+
+Phase 4.4 Final Placement Cleanup
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2765.203 ; gain = 0.000 ; free physical = 4334 ; free virtual = 14067
+Phase 4.4 Final Placement Cleanup | Checksum: 239b8b5dc
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:01 . Memory (MB): peak = 2765.203 ; gain = 0.000 ; free physical = 4334 ; free virtual = 14067
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 239b8b5dc
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:01 . Memory (MB): peak = 2765.203 ; gain = 0.000 ; free physical = 4334 ; free virtual = 14067
+Ending Placer Task | Checksum: 1cc0e51ad
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:01 . Memory (MB): peak = 2765.203 ; gain = 0.000 ; free physical = 4334 ; free virtual = 14067
+INFO: [Common 17-83] Releasing license: Implementation
+49 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2765.203 ; gain = 0.000 ; free physical = 4333 ; free virtual = 14067
+INFO: [Common 17-1381] The checkpoint '/home/ciprian/Documents/Github/Arty-S7/hw/proj/hw.runs/impl_1/GPIO_demo_placed.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_io -file GPIO_demo_io_placed.rpt
+report_io: Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.07 . Memory (MB): peak = 2765.203 ; gain = 0.000 ; free physical = 4327 ; free virtual = 14061
+INFO: [runtcl-4] Executing : report_utilization -file GPIO_demo_utilization_placed.rpt -pb GPIO_demo_utilization_placed.pb
+INFO: [runtcl-4] Executing : report_control_sets -verbose -file GPIO_demo_control_sets_placed.rpt
+report_control_sets: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2765.203 ; gain = 0.000 ; free physical = 4333 ; free virtual = 14067
+Command: phys_opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7s25'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7s25'
+INFO: [Vivado_Tcl 4-383] Design worst setup slack (WNS) is greater than or equal to 0.000 ns. Skipping all physical synthesis optimizations.
+INFO: [Vivado_Tcl 4-232] No setup violation found. The netlist was not modified.
+INFO: [Common 17-83] Releasing license: Implementation
+58 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+phys_opt_design completed successfully
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00.13 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2765.203 ; gain = 0.000 ; free physical = 4295 ; free virtual = 14029
+INFO: [Common 17-1381] The checkpoint '/home/ciprian/Documents/Github/Arty-S7/hw/proj/hw.runs/impl_1/GPIO_demo_physopt.dcp' has been generated.
+Command: route_design -directive RuntimeOptimized
+Attempting to get a license for feature 'Implementation' and/or device 'xc7s25'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7s25'
+Running DRC as a precondition to command route_design
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+INFO: [Route 35-270] Using Router directive 'RuntimeOptimized'.
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 8 CPUs
+Checksum: PlaceDB: e60c2cdd ConstDB: 0 ShapeSum: e60224d0 RouteDB: 0
+
+Phase 1 Build RT Design
+Phase 1 Build RT Design | Checksum: 846ac3b6
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 2855.148 ; gain = 16.008 ; free physical = 4216 ; free virtual = 13961
+Post Restoration Checksum: NetGraph: 4a542f44 NumContArr: 3a169472 Constraints: 0 Timing: 0
+
+Phase 2 Router Initialization
+
+Phase 2.1 Create Timer
+Phase 2.1 Create Timer | Checksum: 846ac3b6
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 2855.148 ; gain = 16.008 ; free physical = 4217 ; free virtual = 13962
+
+Phase 2.2 Fix Topology Constraints
+Phase 2.2 Fix Topology Constraints | Checksum: 846ac3b6
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 2855.148 ; gain = 16.008 ; free physical = 4185 ; free virtual = 13930
+
+Phase 2.3 Pre Route Cleanup
+Phase 2.3 Pre Route Cleanup | Checksum: 846ac3b6
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 2855.148 ; gain = 16.008 ; free physical = 4185 ; free virtual = 13930
+ Number of Nodes with overlaps = 0
+
+Phase 2.4 Update Timing
+Phase 2.4 Update Timing | Checksum: 138c7dece
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 2855.148 ; gain = 16.008 ; free physical = 4179 ; free virtual = 13924
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=5.768  | TNS=0.000  | WHS=-0.091 | THS=-1.953 |
+
+Phase 2 Router Initialization | Checksum: ee1fed70
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2855.148 ; gain = 16.008 ; free physical = 4179 ; free virtual = 13924
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0 %
+  Global Horizontal Routing Utilization  = 0 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 374
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 374
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+
+Phase 3 Initial Routing
+Phase 3 Initial Routing | Checksum: cd034108
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2855.148 ; gain = 16.008 ; free physical = 4177 ; free virtual = 13924
+
+Phase 4 Rip-up And Reroute
+
+Phase 4.1 Global Iteration 0
+ Number of Nodes with overlaps = 16
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=5.207  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 4.1 Global Iteration 0 | Checksum: 15f1be768
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2855.148 ; gain = 16.008 ; free physical = 4178 ; free virtual = 13925
+Phase 4 Rip-up And Reroute | Checksum: 15f1be768
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2855.148 ; gain = 16.008 ; free physical = 4178 ; free virtual = 13925
+
+Phase 5 Delay and Skew Optimization
+
+Phase 5.1 Delay CleanUp
+Phase 5.1 Delay CleanUp | Checksum: 15f1be768
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2855.148 ; gain = 16.008 ; free physical = 4178 ; free virtual = 13925
+
+Phase 5.2 Clock Skew Optimization
+Phase 5.2 Clock Skew Optimization | Checksum: 15f1be768
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2855.148 ; gain = 16.008 ; free physical = 4178 ; free virtual = 13925
+Phase 5 Delay and Skew Optimization | Checksum: 15f1be768
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2855.148 ; gain = 16.008 ; free physical = 4178 ; free virtual = 13925
+
+Phase 6 Post Hold Fix
+
+Phase 6.1 Hold Fix Iter
+
+Phase 6.1.1 Update Timing
+Phase 6.1.1 Update Timing | Checksum: 16b29e6d5
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2855.148 ; gain = 16.008 ; free physical = 4178 ; free virtual = 13925
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=5.301  | TNS=0.000  | WHS=0.171  | THS=0.000  |
+
+Phase 6.1 Hold Fix Iter | Checksum: 11aadb6ab
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2855.148 ; gain = 16.008 ; free physical = 4178 ; free virtual = 13925
+Phase 6 Post Hold Fix | Checksum: 11aadb6ab
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2855.148 ; gain = 16.008 ; free physical = 4178 ; free virtual = 13925
+
+Phase 7 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0.119646 %
+  Global Horizontal Routing Utilization  = 0.0957172 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Phase 7 Route finalize | Checksum: 13417b6b2
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 2855.148 ; gain = 16.008 ; free physical = 4178 ; free virtual = 13925
+
+Phase 8 Verifying routed nets
+
+ Verification completed successfully
+Phase 8 Verifying routed nets | Checksum: 13417b6b2
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 2855.148 ; gain = 16.008 ; free physical = 4177 ; free virtual = 13924
+
+Phase 9 Depositing Routes
+Phase 9 Depositing Routes | Checksum: 136f3ffd2
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 2855.148 ; gain = 16.008 ; free physical = 4177 ; free virtual = 13924
+
+Phase 10 Post Router Timing
+INFO: [Route 35-57] Estimated Timing Summary | WNS=5.301  | TNS=0.000  | WHS=0.171  | THS=0.000  |
+
+INFO: [Route 35-327] The final timing numbers are based on the router estimated timing analysis. For a complete and accurate timing signoff, please run report_timing_summary.
+Phase 10 Post Router Timing | Checksum: 136f3ffd2
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 2855.148 ; gain = 16.008 ; free physical = 4177 ; free virtual = 13924
+INFO: [Route 35-16] Router Completed Successfully
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 2855.148 ; gain = 16.008 ; free physical = 4208 ; free virtual = 13956
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+73 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 2855.148 ; gain = 89.945 ; free physical = 4208 ; free virtual = 13956
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2855.148 ; gain = 0.000 ; free physical = 4202 ; free virtual = 13951
+INFO: [Common 17-1381] The checkpoint '/home/ciprian/Documents/Github/Arty-S7/hw/proj/hw.runs/impl_1/GPIO_demo_routed.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_drc -file GPIO_demo_drc_routed.rpt -pb GPIO_demo_drc_routed.pb -rpx GPIO_demo_drc_routed.rpx
+Command: report_drc -file GPIO_demo_drc_routed.rpt -pb GPIO_demo_drc_routed.pb -rpx GPIO_demo_drc_routed.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Coretcl 2-168] The results of DRC are in file /home/ciprian/Documents/Github/Arty-S7/hw/proj/hw.runs/impl_1/GPIO_demo_drc_routed.rpt.
+report_drc completed successfully
+INFO: [runtcl-4] Executing : report_methodology -file GPIO_demo_methodology_drc_routed.rpt -pb GPIO_demo_methodology_drc_routed.pb -rpx GPIO_demo_methodology_drc_routed.rpx
+Command: report_methodology -file GPIO_demo_methodology_drc_routed.rpt -pb GPIO_demo_methodology_drc_routed.pb -rpx GPIO_demo_methodology_drc_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [DRC 23-133] Running Methodology with 8 threads
+INFO: [Coretcl 2-1520] The results of Report Methodology are in file /home/ciprian/Documents/Github/Arty-S7/hw/proj/hw.runs/impl_1/GPIO_demo_methodology_drc_routed.rpt.
+report_methodology completed successfully
+INFO: [runtcl-4] Executing : report_power -file GPIO_demo_power_routed.rpt -pb GPIO_demo_power_summary_routed.pb -rpx GPIO_demo_power_routed.rpx
+Command: report_power -file GPIO_demo_power_routed.rpt -pb GPIO_demo_power_summary_routed.pb -rpx GPIO_demo_power_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+85 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+INFO: [runtcl-4] Executing : report_route_status -file GPIO_demo_route_status.rpt -pb GPIO_demo_route_status.pb
+INFO: [runtcl-4] Executing : report_timing_summary -max_paths 10 -file GPIO_demo_timing_summary_routed.rpt -pb GPIO_demo_timing_summary_routed.pb -rpx GPIO_demo_timing_summary_routed.rpx -warn_on_violation 
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+INFO: [runtcl-4] Executing : report_incremental_reuse -file GPIO_demo_incremental_reuse_routed.rpt
+INFO: [Vivado_Tcl 4-1062] Incremental flow is disabled. No incremental reuse Info to report.
+INFO: [runtcl-4] Executing : report_clock_utilization -file GPIO_demo_clock_utilization_routed.rpt
+INFO: [runtcl-4] Executing : report_bus_skew -warn_on_violation -file GPIO_demo_bus_skew_routed.rpt -pb GPIO_demo_bus_skew_routed.pb -rpx GPIO_demo_bus_skew_routed.rpx
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+Command: write_bitstream -force GPIO_demo.bit
+Attempting to get a license for feature 'Implementation' and/or device 'xc7s25'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7s25'
+Running DRC as a precondition to command write_bitstream
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado 12-3199] DRC finished with 0 Errors
+INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
+INFO: [Designutils 20-2272] Running write_bitstream with 8 threads.
+Loading data files...
+Loading site data...
+Loading route data...
+Processing options...
+Creating bitmap...
+Creating bitstream...
+Writing bitstream ./GPIO_demo.bit...
+INFO: [Vivado 12-1842] Bitgen Completed Successfully.
+INFO: [Project 1-120] WebTalk data collection is mandatory when using a WebPACK part without a full Vivado license. To see the specific WebTalk data collected for your design, open the usage_statistics_webtalk.html or usage_statistics_webtalk.xml file in the implementation directory.
+INFO: [Common 17-186] '/home/ciprian/Documents/Github/Arty-S7/hw/proj/hw.runs/impl_1/usage_statistics_webtalk.xml' has been successfully sent to Xilinx on Thu Nov  5 13:10:51 2020. For additional details about this file, please refer to the WebTalk help file at /opt/Xilinx/Vivado/2020.1/doc/webtalk_introduction.html.
+INFO: [Common 17-83] Releasing license: Implementation
+105 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+write_bitstream completed successfully
+write_bitstream: Time (s): cpu = 00:00:07 ; elapsed = 00:00:19 . Memory (MB): peak = 3138.910 ; gain = 160.426 ; free physical = 4058 ; free virtual = 13839
+INFO: [Common 17-206] Exiting Vivado at Thu Nov  5 13:10:51 2020...
+[Thu Nov  5 13:10:56 2020] impl_1 finished
+wait_on_run: Time (s): cpu = 00:00:28 ; elapsed = 00:01:32 . Memory (MB): peak = 2161.516 ; gain = 0.000 ; free physical = 5534 ; free virtual = 15337
+archive_project /home/ciprian/Documents/Github/release/Arty-S7/Arty-S7-25-GPIO-hw.xpr.zip -force -include_local_ip_cache -include_config_settings
+INFO: [Coretcl 2-137] starting archive...
+INFO: [Coretcl 2-1499] Saving project copy to temporary location './.Xil/Vivado-197901-K-Legion' for archiving project
+Scanning sources...
+Finished scanning sources
+WARNING: [filemgmt 56-3] Default IP Output Path : Could not find the directory '/home/ciprian/Documents/Github/Arty-S7/hw/proj/hw.srcs/sources_1'.
+INFO: [Coretcl 2-1211] Creating project copy for archival...
+INFO: [Coretcl 2-1213] Including run results for 'synth_1'
+INFO: [Coretcl 2-1213] Including run results for 'impl_1'
+INFO: [Coretcl 2-1212] Importing remotely added design sources and verilog include files (if any)...
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'constrs_1'
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sources_1'
+INFO: [Coretcl 2-1209] Adding archive summary file to the project...
+INFO: [Coretcl 2-1214] Preparing project files for archive...
+INFO: [Coretcl 2-1210] Compressing project files and data...
+INFO: [Coretcl 2-1215] Project archived (/home/ciprian/Documents/Github/release/Arty-S7/Arty-S7-25-GPIO-hw.xpr.zip)
+INFO: [Coretcl 2-1216] To view the archive summary log in GUI, double click on 'Design Sources->Text->archive_project_summary.txt', or open this file from the archived project directory.
+/home/ciprian/Documents/Github/release/Arty-S7/Arty-S7-25-GPIO-hw.xpr.zip
+close_project
+exec rm -rf ../proj/*
+set argv "-r ~/Documents/Github/Arty-S7/hw/"
+-r ~/Documents/Github/Arty-S7/hw/
+source digilent_vivado_checkout.tcl
+# set idx [lsearch ${argv} "-r"]
+# if {${idx} != -1} {
+#     set repo_path [glob -nocomplain [file normalize [lindex ${argv} [expr {${idx}+1}]]]]
+# } else {
+#     # Default
+#     set repo_path [file normalize [file dirname [info script]]/..]
+# }
+# set idx [lsearch ${argv} "-x"]
+# if {${idx} != -1} {
+#     set xpr_path [file normalize [lindex ${argv} [expr {${idx}+1}]]]
+# } else {
+#     # Default
+#     set xpr_path [file join ${repo_path} proj [file tail $repo_path]].xpr]
+# }
+# set idx [lsearch ${argv} "-v"]
+# if {${idx} != -1} {
+#     set vivado_version [lindex ${argv} [expr {${idx}+1}]]
+# } else {
+#     # Default
+#     set vivado_version [version -short]
+# }
+# set vivado_year [lindex [split $vivado_version "."] 0]
+# set proj_name [file rootname [file tail $xpr_path]]
+# puts "INFO: Creating new project \"$proj_name\" in [file dirname $xpr_path]"
+INFO: Creating new project "hw" in /home/ciprian/Documents/Github/Arty-S7/hw/proj
+# create_project $proj_name [file dirname $xpr_path]
+# source $repo_path/project_info.tcl
+## proc set_project_properties_post_create_project {proj_name} {
+##     set project_obj [get_projects $proj_name]
+##     set_property "part" "xc7s25csga324-1" $project_obj
+##     set_property "board_part" "digilentinc.com:arty-s7-25:part0:1.0" $project_obj
+##     set_property "default_lib" "xil_defaultlib" $project_obj
+##     set_property "simulator_language" "Mixed" $project_obj
+##     set_property "target_language" "Verilog" $project_obj
+## }
+## proc set_project_properties_pre_add_repo {proj_name} {
+##     set project_obj [get_projects $proj_name]
+##     # default nothing
+## }
+## proc set_project_properties_post_create_runs {proj_name} {
+##     set project_obj [get_projects $proj_name]
+##     # default nothing
+## }
+# puts "INFO: Capturing board information from $repo_path/project_info.tcl"
+INFO: Capturing board information from /home/ciprian/Documents/Github/Arty-S7/hw/project_info.tcl
+# set_project_properties_post_create_project $proj_name
+# set obj [get_projects $proj_name]
+# set part_name [get_property "part" $obj]
+# puts "INFO: Configuring project IP handling properties"
+INFO: Configuring project IP handling properties
+# set_property "corecontainer.enable" "0" $obj
+# set_property "ip_cache_permissions" "read write" $obj
+# set_property "ip_output_repo" "[file normalize "$repo_path/proj/cache"]" $obj
+# if {[string equal [get_filesets -quiet sources_1] ""]} {
+#     puts "INFO: Creating sources_1 fileset"
+#     create_fileset -srcset sources_1
+# }
+# if {[string equal [get_filesets -quiet constrs_1] ""]} {
+#     puts "INFO: Creating constrs_1 fileset"
+#     create_fileset -constrset constrs_1
+# }
+# puts "INFO: capturing IP-related settings from $repo_path/project_info.tcl"
+INFO: capturing IP-related settings from /home/ciprian/Documents/Github/Arty-S7/hw/project_info.tcl
+# set_project_properties_pre_add_repo $proj_name
+# puts "INFO: Setting IP repository paths"
+INFO: Setting IP repository paths
+# set obj [get_filesets sources_1]
+# set_property "ip_repo_paths" "[file normalize $repo_path/repo]" $obj
+# puts "INFO: Refreshing IP repositories"
+INFO: Refreshing IP repositories
+# update_ip_catalog -rebuild
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/ciprian/Documents/Github/Arty-S7/hw/repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2020.1/data/ip'.
+# puts "INFO: Adding HDL sources"
+INFO: Adding HDL sources
+# add_files -quiet -norecurse $repo_path/src/hdl
+# puts "INFO: Adding XCI IP sources"
+INFO: Adding XCI IP sources
+# add_files -quiet [glob -nocomplain $repo_path/src/ip/*/*.xci]
+# puts "INFO: Adding constraints"
+INFO: Adding constraints
+# add_files -quiet -norecurse -fileset constrs_1 $repo_path/src/constraints
+# set ipi_tcl_files [glob -nocomplain "$repo_path/src/bd/*.tcl"]
+# set ipi_bd_files [glob -nocomplain "$repo_path/src/bd/*/*.bd"]
+# if {[llength $ipi_tcl_files] > 1} {
+#     # TODO: quit and log the error
+#     puts "ERROR: This script cannot handle projects containing more than one block design! More than one tcl script foudn in src/bd"
+# } elseif {[llength $ipi_tcl_files] == 1} {
+#     # Use TCL script to rebuild block design
+#     puts "INFO: Rebuilding block design from script"
+#     # Create local source directory for bd
+#     if {[file exist "[file rootname $xpr_path].srcs"] == 0} {
+#         file mkdir "[file rootname $xpr_path].srcs"
+#     }
+#     if {[file exist "[file rootname $xpr_path].srcs/sources_1"] == 0} {
+#         file mkdir "[file rootname $xpr_path].srcs/sources_1"
+#     }
+#     if {[file exist "[file rootname $xpr_path].srcs/sources_1/bd"] == 0} {
+#         file mkdir "[file rootname $xpr_path].srcs/sources_1/bd"
+#     }
+#     # Force Non-Remote BD Flow
+#     set origin_dir [pwd]
+#     cd "[file rootname $xpr_path].srcs/sources_1"
+#     set run_remote_bd_flow 0
+#     source [lindex $ipi_tcl_files 0]
+#     cd $origin_dir
+# } elseif {[llength $ipi_bd_files] > 1} {
+#     # TODO: quit and log the error
+#     puts "ERROR: This script cannot handle projects containing more than one block design! More than one bd file foudn in src/bd"
+# } elseif {[llength $ipi_bd_files] == 1} {
+#     # Add block design from .bd file and sources
+#     puts "INFO: Rebuilding block design from BD fileset"
+#     add_files -norecurse -quiet -fileset sources_1 [glob -nocomplain $repo_path/src/bd/*/*.bd]
+#     open_bd_design [glob -nocomplain $repo_path/src/bd/*/*.bd]
+#     set design_name [get_bd_designs]
+#     set file "$repo_path/src/bd/$design_name/$design_name.bd"
+#     set file [file normalize $file]
+#     set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
+#     if { ![get_property "is_locked" $file_obj] } {
+#         set_property "synth_checkpoint_mode" "Hierarchical" $file_obj
+#     }
+# }
+WARNING: [Coretcl 2-176] No IPs found
+# foreach ip [get_ips -filter "IS_LOCKED==1"] {
+#     upgrade_ip -vlnv [get_property UPGRADE_VERSIONS $ip] $ip
+#     export_ip_user_files -of_objects $ip -no_script -sync -force -quiet
+# }
+# catch {
+# 	# catch block prevents projects without a block design from erroring at this step
+# 	set bd_name [get_bd_designs -of_objects [get_bd_cells /]]
+# 	set bd_file [get_files $bd_name.bd]
+# 	set wrapper_file [make_wrapper -files $bd_file -top -force]
+# 	import_files -quiet -force -norecurse $wrapper_file
+# 
+# 	set obj [get_filesets sources_1]
+# 	set_property "top" "${bd_name}_wrapper" $obj
+# }
+ERROR: [BD 5-104] A block design must be open to run this command. Please create/open a block design.
+# if {[string equal [get_runs -quiet synth_1] ""]} {
+#     puts "INFO: Creating synth_1 run"
+#     create_run -name synth_1 -part $part_name -flow {Vivado Synthesis $vivado_year} -strategy "Vivado Synthesis Defaults" -constrset constrs_1
+# } else {
+#     set_property strategy "Vivado Synthesis Defaults" [get_runs synth_1]
+#     set_property flow "Vivado Synthesis $vivado_year" [get_runs synth_1]
+# }
+# puts "INFO: Configuring synth_1 run"
+INFO: Configuring synth_1 run
+# set obj [get_runs synth_1]
+# set_property "part" $part_name $obj
+# set_property "steps.synth_design.args.flatten_hierarchy" "none" $obj
+# set_property "steps.synth_design.args.directive" "RuntimeOptimized" $obj
+# set_property "steps.synth_design.args.fsm_extraction" "off" $obj
+# puts "INFO: Setting current synthesis run"
+INFO: Setting current synthesis run
+# current_run -synthesis [get_runs synth_1]
+# if {[string equal [get_runs -quiet impl_1] ""]} {
+#     puts "INFO: Creating impl_1 run"
+#     create_run -name impl_1 -part $part_name -flow {Vivado Implementation $vivado_year} -strategy "Vivado Implementation Defaults" -constrset constrs_1 -parent_run synth_1
+# } else {
+#     set_property strategy "Vivado Implementation Defaults" [get_runs impl_1]
+#     set_property flow "Vivado Implementation $vivado_year" [get_runs impl_1]
+# }
+# puts "INFO: Configuring impl_1 run"
+INFO: Configuring impl_1 run
+# set obj [get_runs impl_1]
+# set_property "part" $part_name $obj
+# set_property "steps.opt_design.args.directive" "RuntimeOptimized" $obj
+# set_property "steps.place_design.args.directive" "RuntimeOptimized" $obj
+# set_property "steps.route_design.args.directive" "RuntimeOptimized" $obj
+# puts "INFO: Setting current implementation run"
+INFO: Setting current implementation run
+# current_run -implementation [get_runs impl_1]
+# puts "INFO: capturing run settings from $repo_path/project_info.tcl"
+INFO: capturing run settings from /home/ciprian/Documents/Github/Arty-S7/hw/project_info.tcl
+# set_project_properties_post_create_runs $proj_name
+# puts "INFO: Project created: [file tail $proj_name]"
+INFO: Project created: hw
+# puts "INFO: Exiting Vivado"
+INFO: Exiting Vivado
+close_project
+open_project /home/ciprian/Documents/Github/Arty-S7/hw/proj/hw.xpr
+Scanning sources...
+Finished scanning sources
+WARNING: [filemgmt 56-3] IP Output Repository Path: Could not find the directory '/home/ciprian/Documents/Github/Arty-S7/hw/proj/cache'.
+WARNING: [filemgmt 56-3] Default IP Output Path : Could not find the directory '/home/ciprian/Documents/Github/Arty-S7/hw/proj/hw.srcs/sources_1'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/ciprian/Documents/Github/Arty-S7/hw/repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2020.1/data/ip'.
+hw
+update_compile_order -fileset sources_1
+launch_runs impl_1 -to_step write_bitstream -jobs 9
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'xadc_wiz_0'...
+[Thu Nov  5 13:15:58 2020] Launched xadc_wiz_0_synth_1, synth_1...
+Run output will be captured here:
+xadc_wiz_0_synth_1: /home/ciprian/Documents/Github/Arty-S7/hw/proj/hw.runs/xadc_wiz_0_synth_1/runme.log
+synth_1: /home/ciprian/Documents/Github/Arty-S7/hw/proj/hw.runs/synth_1/runme.log
+[Thu Nov  5 13:15:58 2020] Launched impl_1...
+Run output will be captured here: /home/ciprian/Documents/Github/Arty-S7/hw/proj/hw.runs/impl_1/runme.log
+0
+wait_on_run impl_1 
+[Thu Nov  5 13:15:58 2020] Waiting for impl_1 to finish...
+
+*** Running vivado
+    with args -log XADCdemo.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source XADCdemo.tcl -notrace
+
+
+****** Vivado v2020.1 (64-bit)
+  **** SW Build 2902540 on Wed May 27 19:54:35 MDT 2020
+  **** IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source XADCdemo.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/ciprian/Documents/Github/Arty-S7/hw/repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2020.1/data/ip'.
+Command: link_design -top XADCdemo -part xc7s25csga324-1
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Device 21-403] Loading part xc7s25csga324-1
+INFO: [Project 1-454] Reading design checkpoint '/home/ciprian/Documents/Github/Arty-S7/hw/src/ip/xadc_wiz_0/xadc_wiz_0.dcp' for cell 'xadc'
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2116.676 ; gain = 0.000 ; free physical = 4580 ; free virtual = 14281
+INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2020.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/ciprian/Documents/Github/Arty-S7/hw/src/ip/xadc_wiz_0/xadc_wiz_0.xdc] for cell 'xadc/inst'
+Finished Parsing XDC File [/home/ciprian/Documents/Github/Arty-S7/hw/src/ip/xadc_wiz_0/xadc_wiz_0.xdc] for cell 'xadc/inst'
+Parsing XDC File [/home/ciprian/Documents/Github/Arty-S7/hw/src/constraints/Arty-S7-25-Master.xdc]
+Finished Parsing XDC File [/home/ciprian/Documents/Github/Arty-S7/hw/src/constraints/Arty-S7-25-Master.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2172.570 ; gain = 0.000 ; free physical = 4470 ; free virtual = 14172
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+11 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+Command: opt_design -directive RuntimeOptimized
+INFO: [Vivado_Tcl 4-136] Directive used for opt_design is: RuntimeOptimized
+Attempting to get a license for feature 'Implementation' and/or device 'xc7s25'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7s25'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 2236.602 ; gain = 64.031 ; free physical = 4456 ; free virtual = 14158
+
+Starting Logic Optimization Task
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 1 Retarget
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 1 Retarget | Checksum: e8e4c0e0
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2624.172 ; gain = 387.570 ; free physical = 3980 ; free virtual = 13691
+INFO: [Opt 31-389] Phase Retarget created 0 cells and removed 0 cells
+
+Phase 2 Constant propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Phase 2 Constant propagation | Checksum: e8e4c0e0
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2624.172 ; gain = 387.570 ; free physical = 3980 ; free virtual = 13691
+INFO: [Opt 31-389] Phase Constant propagation created 0 cells and removed 0 cells
+
+Phase 3 Sweep
+Phase 3 Sweep | Checksum: 1d7fff82f
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2624.172 ; gain = 387.570 ; free physical = 3980 ; free virtual = 13691
+INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 0 cells
+
+Phase 4 BUFG optimization
+Phase 4 BUFG optimization | Checksum: 1d7fff82f
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2624.172 ; gain = 387.570 ; free physical = 3980 ; free virtual = 13691
+INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
+
+Phase 5 Shift Register Optimization
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+Phase 5 Shift Register Optimization | Checksum: 1d7fff82f
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2624.172 ; gain = 387.570 ; free physical = 3980 ; free virtual = 13691
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Phase 6 Post Processing Netlist
+Phase 6 Post Processing Netlist | Checksum: 1d7fff82f
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2624.172 ; gain = 387.570 ; free physical = 3980 ; free virtual = 13691
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |               0  |               0  |                                              0  |
+|  Constant propagation         |               0  |               0  |                                              0  |
+|  Sweep                        |               0  |               0  |                                              0  |
+|  BUFG optimization            |               0  |               0  |                                              0  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               0  |                                              0  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2624.172 ; gain = 0.000 ; free physical = 3980 ; free virtual = 13691
+Ending Logic Optimization Task | Checksum: 1a99c65fd
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2624.172 ; gain = 387.570 ; free physical = 3980 ; free virtual = 13691
+
+Starting Netlist Obfuscation Task
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2624.172 ; gain = 0.000 ; free physical = 3980 ; free virtual = 13691
+Ending Netlist Obfuscation Task | Checksum: 1a99c65fd
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2624.172 ; gain = 0.000 ; free physical = 3980 ; free virtual = 13691
+INFO: [Common 17-83] Releasing license: Implementation
+28 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2624.172 ; gain = 451.602 ; free physical = 3980 ; free virtual = 13691
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2664.191 ; gain = 0.000 ; free physical = 3975 ; free virtual = 13687
+INFO: [Common 17-1381] The checkpoint '/home/ciprian/Documents/Github/Arty-S7/hw/proj/hw.runs/impl_1/XADCdemo_opt.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_drc -file XADCdemo_drc_opted.rpt -pb XADCdemo_drc_opted.pb -rpx XADCdemo_drc_opted.rpx
+Command: report_drc -file XADCdemo_drc_opted.rpt -pb XADCdemo_drc_opted.pb -rpx XADCdemo_drc_opted.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Coretcl 2-168] The results of DRC are in file /home/ciprian/Documents/Github/Arty-S7/hw/proj/hw.runs/impl_1/XADCdemo_drc_opted.rpt.
+report_drc completed successfully
+Command: place_design -directive RuntimeOptimized
+Attempting to get a license for feature 'Implementation' and/or device 'xc7s25'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7s25'
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+Starting Placer Task
+INFO: [Place 46-5] The placer was invoked with the 'RuntimeOptimized' directive.
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 8 CPUs
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2768.781 ; gain = 0.000 ; free physical = 3973 ; free virtual = 13674
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 10a2d166d
+
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2768.781 ; gain = 0.000 ; free physical = 3973 ; free virtual = 13674
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2768.781 ; gain = 0.000 ; free physical = 3973 ; free virtual = 13674
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 14f515a90
+
+Time (s): cpu = 00:00:00.37 ; elapsed = 00:00:00.13 . Memory (MB): peak = 2768.781 ; gain = 0.000 ; free physical = 3962 ; free virtual = 13664
+
+Phase 1.3 Build Placer Netlist Model
+Phase 1.3 Build Placer Netlist Model | Checksum: 1f50335f5
+
+Time (s): cpu = 00:00:00.53 ; elapsed = 00:00:00.17 . Memory (MB): peak = 2768.781 ; gain = 0.000 ; free physical = 3971 ; free virtual = 13673
+
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: 1f50335f5
+
+Time (s): cpu = 00:00:00.53 ; elapsed = 00:00:00.17 . Memory (MB): peak = 2768.781 ; gain = 0.000 ; free physical = 3971 ; free virtual = 13673
+Phase 1 Placer Initialization | Checksum: 1f50335f5
+
+Time (s): cpu = 00:00:00.53 ; elapsed = 00:00:00.18 . Memory (MB): peak = 2768.781 ; gain = 0.000 ; free physical = 3971 ; free virtual = 13673
+
+Phase 2 Global Placement
+
+Phase 2.1 Floorplanning
+Phase 2.1 Floorplanning | Checksum: 1c3fce668
+
+Time (s): cpu = 00:00:00.81 ; elapsed = 00:00:00.21 . Memory (MB): peak = 2768.781 ; gain = 0.000 ; free physical = 3967 ; free virtual = 13669
+
+Phase 2.2 Global Placement Core
+Phase 2.2 Global Placement Core | Checksum: 184f1224e
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:00.39 . Memory (MB): peak = 2768.781 ; gain = 0.000 ; free physical = 3966 ; free virtual = 13669
+Phase 2 Global Placement | Checksum: 184f1224e
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:00.39 . Memory (MB): peak = 2768.781 ; gain = 0.000 ; free physical = 3966 ; free virtual = 13669
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: 184f1224e
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:00.39 . Memory (MB): peak = 2768.781 ; gain = 0.000 ; free physical = 3966 ; free virtual = 13669
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 2164edd2b
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:00.40 . Memory (MB): peak = 2768.781 ; gain = 0.000 ; free physical = 3965 ; free virtual = 13668
+
+Phase 3.3 Area Swap Optimization
+Phase 3.3 Area Swap Optimization | Checksum: 19e26a6a9
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:00.40 . Memory (MB): peak = 2768.781 ; gain = 0.000 ; free physical = 3965 ; free virtual = 13668
+
+Phase 3.4 Pipeline Register Optimization
+Phase 3.4 Pipeline Register Optimization | Checksum: 19e26a6a9
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:00.40 . Memory (MB): peak = 2768.781 ; gain = 0.000 ; free physical = 3965 ; free virtual = 13668
+
+Phase 3.5 Small Shape Detail Placement
+Phase 3.5 Small Shape Detail Placement | Checksum: 1e9276482
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:00.43 . Memory (MB): peak = 2768.781 ; gain = 0.000 ; free physical = 3963 ; free virtual = 13666
+
+Phase 3.6 Re-assign LUT pins
+Phase 3.6 Re-assign LUT pins | Checksum: 1e9276482
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:00.43 . Memory (MB): peak = 2768.781 ; gain = 0.000 ; free physical = 3963 ; free virtual = 13666
+
+Phase 3.7 Pipeline Register Optimization
+Phase 3.7 Pipeline Register Optimization | Checksum: 1e9276482
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:00.43 . Memory (MB): peak = 2768.781 ; gain = 0.000 ; free physical = 3963 ; free virtual = 13666
+Phase 3 Detail Placement | Checksum: 1e9276482
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:00.43 . Memory (MB): peak = 2768.781 ; gain = 0.000 ; free physical = 3963 ; free virtual = 13666
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 4.1.1 Post Placement Optimization
+Post Placement Optimization Initialization | Checksum: 1f0728451
+
+Phase 4.1.1.1 BUFG Insertion
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 8 CPUs
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=6.251 | TNS=0.000 |
+Phase 1 Physical Synthesis Initialization | Checksum: 19b23ff4c
+
+Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.05 . Memory (MB): peak = 2768.781 ; gain = 0.000 ; free physical = 3963 ; free virtual = 13666
+INFO: [Place 46-56] BUFG insertion identified 0 candidate nets. Inserted BUFG: 0, Replicated BUFG Driver: 0, Skipped due to Placement/Routing Conflicts: 0, Skipped due to Timing Degradation: 0, Skipped due to Illegal Netlist: 0.
+Ending Physical Synthesis Task | Checksum: 2206bc1ca
+
+Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.05 . Memory (MB): peak = 2768.781 ; gain = 0.000 ; free physical = 3963 ; free virtual = 13666
+Phase 4.1.1.1 BUFG Insertion | Checksum: 1f0728451
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:00.52 . Memory (MB): peak = 2768.781 ; gain = 0.000 ; free physical = 3963 ; free virtual = 13666
+INFO: [Place 30-746] Post Placement Timing Summary WNS=6.251. For the most accurate timing information please run report_timing.
+Phase 4.1.1 Post Placement Optimization | Checksum: 252538577
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:00.52 . Memory (MB): peak = 2768.781 ; gain = 0.000 ; free physical = 3963 ; free virtual = 13666
+Phase 4.1 Post Commit Optimization | Checksum: 252538577
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:00.52 . Memory (MB): peak = 2768.781 ; gain = 0.000 ; free physical = 3963 ; free virtual = 13666
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: 252538577
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:00.53 . Memory (MB): peak = 2768.781 ; gain = 0.000 ; free physical = 3965 ; free virtual = 13667
+
+Phase 4.3 Placer Reporting
+Phase 4.3 Placer Reporting | Checksum: 252538577
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:00.53 . Memory (MB): peak = 2768.781 ; gain = 0.000 ; free physical = 3965 ; free virtual = 13667
+
+Phase 4.4 Final Placement Cleanup
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2768.781 ; gain = 0.000 ; free physical = 3965 ; free virtual = 13667
+Phase 4.4 Final Placement Cleanup | Checksum: 23b31aceb
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:00.53 . Memory (MB): peak = 2768.781 ; gain = 0.000 ; free physical = 3965 ; free virtual = 13667
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 23b31aceb
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:00.53 . Memory (MB): peak = 2768.781 ; gain = 0.000 ; free physical = 3965 ; free virtual = 13667
+Ending Placer Task | Checksum: 169da99ae
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:00.53 . Memory (MB): peak = 2768.781 ; gain = 0.000 ; free physical = 3965 ; free virtual = 13667
+INFO: [Common 17-83] Releasing license: Implementation
+50 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2768.781 ; gain = 0.000 ; free physical = 3967 ; free virtual = 13670
+INFO: [Common 17-1381] The checkpoint '/home/ciprian/Documents/Github/Arty-S7/hw/proj/hw.runs/impl_1/XADCdemo_placed.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_io -file XADCdemo_io_placed.rpt
+report_io: Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.08 . Memory (MB): peak = 2768.781 ; gain = 0.000 ; free physical = 3958 ; free virtual = 13661
+INFO: [runtcl-4] Executing : report_utilization -file XADCdemo_utilization_placed.rpt -pb XADCdemo_utilization_placed.pb
+INFO: [runtcl-4] Executing : report_control_sets -verbose -file XADCdemo_control_sets_placed.rpt
+report_control_sets: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2768.781 ; gain = 0.000 ; free physical = 3966 ; free virtual = 13669
+Command: phys_opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7s25'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7s25'
+INFO: [Vivado_Tcl 4-383] Design worst setup slack (WNS) is greater than or equal to 0.000 ns. Skipping all physical synthesis optimizations.
+INFO: [Vivado_Tcl 4-232] No setup violation found. The netlist was not modified.
+INFO: [Common 17-83] Releasing license: Implementation
+59 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+phys_opt_design completed successfully
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2768.781 ; gain = 0.000 ; free physical = 3948 ; free virtual = 13651
+INFO: [Common 17-1381] The checkpoint '/home/ciprian/Documents/Github/Arty-S7/hw/proj/hw.runs/impl_1/XADCdemo_physopt.dcp' has been generated.
+Command: route_design -directive RuntimeOptimized
+Attempting to get a license for feature 'Implementation' and/or device 'xc7s25'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7s25'
+Running DRC as a precondition to command route_design
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+INFO: [Route 35-270] Using Router directive 'RuntimeOptimized'.
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 8 CPUs
+Checksum: PlaceDB: f4bdd495 ConstDB: 0 ShapeSum: 751cc519 RouteDB: 0
+
+Phase 1 Build RT Design
+Phase 1 Build RT Design | Checksum: f4334c4c
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 2830.121 ; gain = 16.008 ; free physical = 3877 ; free virtual = 13579
+Post Restoration Checksum: NetGraph: a89f672e NumContArr: 4b93e51e Constraints: 0 Timing: 0
+
+Phase 2 Router Initialization
+
+Phase 2.1 Create Timer
+Phase 2.1 Create Timer | Checksum: f4334c4c
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 2830.121 ; gain = 16.008 ; free physical = 3878 ; free virtual = 13580
+
+Phase 2.2 Fix Topology Constraints
+Phase 2.2 Fix Topology Constraints | Checksum: f4334c4c
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 2830.121 ; gain = 16.008 ; free physical = 3846 ; free virtual = 13548
+
+Phase 2.3 Pre Route Cleanup
+Phase 2.3 Pre Route Cleanup | Checksum: f4334c4c
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 2830.121 ; gain = 16.008 ; free physical = 3846 ; free virtual = 13548
+ Number of Nodes with overlaps = 0
+
+Phase 2.4 Update Timing
+Phase 2.4 Update Timing | Checksum: 23105f105
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 2830.121 ; gain = 16.008 ; free physical = 3839 ; free virtual = 13541
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=6.159  | TNS=0.000  | WHS=0.061  | THS=0.000  |
+
+Phase 2 Router Initialization | Checksum: 19ce909e2
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 2830.121 ; gain = 16.008 ; free physical = 3839 ; free virtual = 13541
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0 %
+  Global Horizontal Routing Utilization  = 0 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 43
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 43
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+
+Phase 3 Initial Routing
+Phase 3 Initial Routing | Checksum: 2b1246fe2
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 2830.121 ; gain = 16.008 ; free physical = 3840 ; free virtual = 13542
+
+Phase 4 Rip-up And Reroute
+
+Phase 4.1 Global Iteration 0
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=6.014  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 4.1 Global Iteration 0 | Checksum: 175c0fd3c
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 2830.121 ; gain = 16.008 ; free physical = 3840 ; free virtual = 13542
+Phase 4 Rip-up And Reroute | Checksum: 175c0fd3c
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 2830.121 ; gain = 16.008 ; free physical = 3840 ; free virtual = 13542
+
+Phase 5 Delay and Skew Optimization
+
+Phase 5.1 Delay CleanUp
+Phase 5.1 Delay CleanUp | Checksum: 175c0fd3c
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 2830.121 ; gain = 16.008 ; free physical = 3840 ; free virtual = 13542
+
+Phase 5.2 Clock Skew Optimization
+Phase 5.2 Clock Skew Optimization | Checksum: 175c0fd3c
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 2830.121 ; gain = 16.008 ; free physical = 3840 ; free virtual = 13542
+Phase 5 Delay and Skew Optimization | Checksum: 175c0fd3c
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 2830.121 ; gain = 16.008 ; free physical = 3840 ; free virtual = 13542
+
+Phase 6 Post Hold Fix
+
+Phase 6.1 Hold Fix Iter
+
+Phase 6.1.1 Update Timing
+Phase 6.1.1 Update Timing | Checksum: 25c6d3379
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 2830.121 ; gain = 16.008 ; free physical = 3840 ; free virtual = 13542
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=6.108  | TNS=0.000  | WHS=0.068  | THS=0.000  |
+
+Phase 6.1 Hold Fix Iter | Checksum: 25c6d3379
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 2830.121 ; gain = 16.008 ; free physical = 3840 ; free virtual = 13542
+Phase 6 Post Hold Fix | Checksum: 25c6d3379
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 2830.121 ; gain = 16.008 ; free physical = 3840 ; free virtual = 13542
+
+Phase 7 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0.0230757 %
+  Global Horizontal Routing Utilization  = 0.0472136 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Phase 7 Route finalize | Checksum: 226289339
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 2830.121 ; gain = 16.008 ; free physical = 3840 ; free virtual = 13542
+
+Phase 8 Verifying routed nets
+
+ Verification completed successfully
+Phase 8 Verifying routed nets | Checksum: 226289339
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 2830.121 ; gain = 16.008 ; free physical = 3839 ; free virtual = 13541
+
+Phase 9 Depositing Routes
+Phase 9 Depositing Routes | Checksum: 24232e8a8
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 2830.121 ; gain = 16.008 ; free physical = 3839 ; free virtual = 13541
+
+Phase 10 Post Router Timing
+INFO: [Route 35-57] Estimated Timing Summary | WNS=6.108  | TNS=0.000  | WHS=0.068  | THS=0.000  |
+
+INFO: [Route 35-327] The final timing numbers are based on the router estimated timing analysis. For a complete and accurate timing signoff, please run report_timing_summary.
+Phase 10 Post Router Timing | Checksum: 24232e8a8
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 2830.121 ; gain = 16.008 ; free physical = 3839 ; free virtual = 13541
+INFO: [Route 35-16] Router Completed Successfully
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 2830.121 ; gain = 16.008 ; free physical = 3869 ; free virtual = 13571
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+74 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 2830.121 ; gain = 61.340 ; free physical = 3869 ; free virtual = 13571
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2830.121 ; gain = 0.000 ; free physical = 3869 ; free virtual = 13572
+INFO: [Common 17-1381] The checkpoint '/home/ciprian/Documents/Github/Arty-S7/hw/proj/hw.runs/impl_1/XADCdemo_routed.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_drc -file XADCdemo_drc_routed.rpt -pb XADCdemo_drc_routed.pb -rpx XADCdemo_drc_routed.rpx
+Command: report_drc -file XADCdemo_drc_routed.rpt -pb XADCdemo_drc_routed.pb -rpx XADCdemo_drc_routed.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Coretcl 2-168] The results of DRC are in file /home/ciprian/Documents/Github/Arty-S7/hw/proj/hw.runs/impl_1/XADCdemo_drc_routed.rpt.
+report_drc completed successfully
+INFO: [runtcl-4] Executing : report_methodology -file XADCdemo_methodology_drc_routed.rpt -pb XADCdemo_methodology_drc_routed.pb -rpx XADCdemo_methodology_drc_routed.rpx
+Command: report_methodology -file XADCdemo_methodology_drc_routed.rpt -pb XADCdemo_methodology_drc_routed.pb -rpx XADCdemo_methodology_drc_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [DRC 23-133] Running Methodology with 8 threads
+INFO: [Coretcl 2-1520] The results of Report Methodology are in file /home/ciprian/Documents/Github/Arty-S7/hw/proj/hw.runs/impl_1/XADCdemo_methodology_drc_routed.rpt.
+report_methodology completed successfully
+INFO: [runtcl-4] Executing : report_power -file XADCdemo_power_routed.rpt -pb XADCdemo_power_summary_routed.pb -rpx XADCdemo_power_routed.rpx
+Command: report_power -file XADCdemo_power_routed.rpt -pb XADCdemo_power_summary_routed.pb -rpx XADCdemo_power_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+86 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+INFO: [runtcl-4] Executing : report_route_status -file XADCdemo_route_status.rpt -pb XADCdemo_route_status.pb
+INFO: [runtcl-4] Executing : report_timing_summary -max_paths 10 -file XADCdemo_timing_summary_routed.rpt -pb XADCdemo_timing_summary_routed.pb -rpx XADCdemo_timing_summary_routed.rpx -warn_on_violation 
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+INFO: [runtcl-4] Executing : report_incremental_reuse -file XADCdemo_incremental_reuse_routed.rpt
+INFO: [Vivado_Tcl 4-1062] Incremental flow is disabled. No incremental reuse Info to report.
+INFO: [runtcl-4] Executing : report_clock_utilization -file XADCdemo_clock_utilization_routed.rpt
+INFO: [runtcl-4] Executing : report_bus_skew -warn_on_violation -file XADCdemo_bus_skew_routed.rpt -pb XADCdemo_bus_skew_routed.pb -rpx XADCdemo_bus_skew_routed.rpx
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+Command: write_bitstream -force XADCdemo.bit
+Attempting to get a license for feature 'Implementation' and/or device 'xc7s25'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7s25'
+Running DRC as a precondition to command write_bitstream
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado 12-3199] DRC finished with 0 Errors
+INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
+INFO: [Designutils 20-2272] Running write_bitstream with 8 threads.
+Loading data files...
+Loading site data...
+Loading route data...
+Processing options...
+Creating bitmap...
+Creating bitstream...
+Writing bitstream ./XADCdemo.bit...
+INFO: [Vivado 12-1842] Bitgen Completed Successfully.
+INFO: [Project 1-120] WebTalk data collection is mandatory when using a WebPACK part without a full Vivado license. To see the specific WebTalk data collected for your design, open the usage_statistics_webtalk.html or usage_statistics_webtalk.xml file in the implementation directory.
+INFO: [Common 17-186] '/home/ciprian/Documents/Github/Arty-S7/hw/proj/hw.runs/impl_1/usage_statistics_webtalk.xml' has been successfully sent to Xilinx on Thu Nov  5 13:18:01 2020. For additional details about this file, please refer to the WebTalk help file at /opt/Xilinx/Vivado/2020.1/doc/webtalk_introduction.html.
+INFO: [Common 17-83] Releasing license: Implementation
+106 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+write_bitstream completed successfully
+write_bitstream: Time (s): cpu = 00:00:06 ; elapsed = 00:00:18 . Memory (MB): peak = 3115.875 ; gain = 167.301 ; free physical = 3827 ; free virtual = 13538
+INFO: [Common 17-206] Exiting Vivado at Thu Nov  5 13:18:01 2020...
+[Thu Nov  5 13:18:02 2020] impl_1 finished
+wait_on_run: Time (s): cpu = 00:01:36 ; elapsed = 00:02:04 . Memory (MB): peak = 2169.387 ; gain = 0.000 ; free physical = 5301 ; free virtual = 15012
+archive_project /home/ciprian/Documents/Github/release/Arty-S7/Arty-S7-25-XADC-hw.xpr.zip -force -include_local_ip_cache -include_config_settings
+INFO: [Coretcl 2-137] starting archive...
+INFO: [Coretcl 2-1499] Saving project copy to temporary location './.Xil/Vivado-197901-K-Legion' for archiving project
+Scanning sources...
+Finished scanning sources
+WARNING: [filemgmt 56-3] Default IP Output Path : Could not find the directory '/home/ciprian/Documents/Github/Arty-S7/hw/proj/hw.srcs/sources_1'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/ciprian/Documents/Github/Arty-S7/hw/repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2020.1/data/ip'.
+INFO: [Coretcl 2-1211] Creating project copy for archival...
+INFO: [Coretcl 2-1213] Including run results for 'synth_1'
+INFO: [Coretcl 2-1213] Including run results for 'xadc_wiz_0_synth_1'
+INFO: [Coretcl 2-1213] Including run results for 'impl_1'
+INFO: [Coretcl 2-133] re-setting run 'xadc_wiz_0_impl_1'...
+INFO: [Coretcl 2-1212] Importing remotely added design sources and verilog include files (if any)...
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'xadc_wiz_0'
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'constrs_1'
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sources_1'
+INFO: [Coretcl 2-1209] Adding archive summary file to the project...
+INFO: [Coretcl 2-1214] Preparing project files for archive...
+INFO: [Coretcl 2-1210] Compressing project files and data...
+INFO: [Coretcl 2-1215] Project archived (/home/ciprian/Documents/Github/release/Arty-S7/Arty-S7-25-XADC-hw.xpr.zip)
+INFO: [Coretcl 2-1216] To view the archive summary log in GUI, double click on 'Design Sources->Text->archive_project_summary.txt', or open this file from the archived project directory.
+/home/ciprian/Documents/Github/release/Arty-S7/Arty-S7-25-XADC-hw.xpr.zip
+close_project
+set argv "-r ~/Documents/Github/Arty-S7/hw/"
+-r ~/Documents/Github/Arty-S7/hw/
+source digilent_vivado_checkout.tcl
+# set idx [lsearch ${argv} "-r"]
+# if {${idx} != -1} {
+#     set repo_path [glob -nocomplain [file normalize [lindex ${argv} [expr {${idx}+1}]]]]
+# } else {
+#     # Default
+#     set repo_path [file normalize [file dirname [info script]]/..]
+# }
+# set idx [lsearch ${argv} "-x"]
+# if {${idx} != -1} {
+#     set xpr_path [file normalize [lindex ${argv} [expr {${idx}+1}]]]
+# } else {
+#     # Default
+#     set xpr_path [file join ${repo_path} proj [file tail $repo_path]].xpr]
+# }
+# set idx [lsearch ${argv} "-v"]
+# if {${idx} != -1} {
+#     set vivado_version [lindex ${argv} [expr {${idx}+1}]]
+# } else {
+#     # Default
+#     set vivado_version [version -short]
+# }
+# set vivado_year [lindex [split $vivado_version "."] 0]
+# set proj_name [file rootname [file tail $xpr_path]]
+# puts "INFO: Creating new project \"$proj_name\" in [file dirname $xpr_path]"
+INFO: Creating new project "hw" in /home/ciprian/Documents/Github/Arty-S7/hw/proj
+# create_project $proj_name [file dirname $xpr_path]
+# source $repo_path/project_info.tcl
+## proc set_project_properties_post_create_project {proj_name} {
+##     set project_obj [get_projects $proj_name]
+## 	set_property "part" "xc7s50csga324-1" $project_obj
+## 	set_property "board_part" "digilentinc.com:arty-s7-50:part0:1.0" $project_obj
+## 	set_property "default_lib" "xil_defaultlib" $project_obj
+## 	set_property "simulator_language" "Mixed" $project_obj
+## 	set_property "target_language" "VHDL" $project_obj
+## }
+## proc set_project_properties_pre_add_repo {proj_name} {
+##     set project_obj [get_projects $proj_name]
+##     # default nothing
+## }
+## proc set_project_properties_post_create_runs {proj_name} {
+##     set project_obj [get_projects $proj_name]
+##     # default nothing
+## }
+# puts "INFO: Capturing board information from $repo_path/project_info.tcl"
+INFO: Capturing board information from /home/ciprian/Documents/Github/Arty-S7/hw/project_info.tcl
+# set_project_properties_post_create_project $proj_name
+# set obj [get_projects $proj_name]
+# set part_name [get_property "part" $obj]
+# puts "INFO: Configuring project IP handling properties"
+INFO: Configuring project IP handling properties
+# set_property "corecontainer.enable" "0" $obj
+# set_property "ip_cache_permissions" "read write" $obj
+# set_property "ip_output_repo" "[file normalize "$repo_path/proj/cache"]" $obj
+# if {[string equal [get_filesets -quiet sources_1] ""]} {
+#     puts "INFO: Creating sources_1 fileset"
+#     create_fileset -srcset sources_1
+# }
+# if {[string equal [get_filesets -quiet constrs_1] ""]} {
+#     puts "INFO: Creating constrs_1 fileset"
+#     create_fileset -constrset constrs_1
+# }
+# puts "INFO: capturing IP-related settings from $repo_path/project_info.tcl"
+INFO: capturing IP-related settings from /home/ciprian/Documents/Github/Arty-S7/hw/project_info.tcl
+# set_project_properties_pre_add_repo $proj_name
+# puts "INFO: Setting IP repository paths"
+INFO: Setting IP repository paths
+# set obj [get_filesets sources_1]
+# set_property "ip_repo_paths" "[file normalize $repo_path/repo]" $obj
+# puts "INFO: Refreshing IP repositories"
+INFO: Refreshing IP repositories
+# update_ip_catalog -rebuild
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/ciprian/Documents/Github/Arty-S7/hw/repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2020.1/data/ip'.
+# puts "INFO: Adding HDL sources"
+INFO: Adding HDL sources
+# add_files -quiet -norecurse $repo_path/src/hdl
+# puts "INFO: Adding XCI IP sources"
+INFO: Adding XCI IP sources
+# add_files -quiet [glob -nocomplain $repo_path/src/ip/*/*.xci]
+# puts "INFO: Adding constraints"
+INFO: Adding constraints
+# add_files -quiet -norecurse -fileset constrs_1 $repo_path/src/constraints
+# set ipi_tcl_files [glob -nocomplain "$repo_path/src/bd/*.tcl"]
+# set ipi_bd_files [glob -nocomplain "$repo_path/src/bd/*/*.bd"]
+# if {[llength $ipi_tcl_files] > 1} {
+#     # TODO: quit and log the error
+#     puts "ERROR: This script cannot handle projects containing more than one block design! More than one tcl script foudn in src/bd"
+# } elseif {[llength $ipi_tcl_files] == 1} {
+#     # Use TCL script to rebuild block design
+#     puts "INFO: Rebuilding block design from script"
+#     # Create local source directory for bd
+#     if {[file exist "[file rootname $xpr_path].srcs"] == 0} {
+#         file mkdir "[file rootname $xpr_path].srcs"
+#     }
+#     if {[file exist "[file rootname $xpr_path].srcs/sources_1"] == 0} {
+#         file mkdir "[file rootname $xpr_path].srcs/sources_1"
+#     }
+#     if {[file exist "[file rootname $xpr_path].srcs/sources_1/bd"] == 0} {
+#         file mkdir "[file rootname $xpr_path].srcs/sources_1/bd"
+#     }
+#     # Force Non-Remote BD Flow
+#     set origin_dir [pwd]
+#     cd "[file rootname $xpr_path].srcs/sources_1"
+#     set run_remote_bd_flow 0
+#     source [lindex $ipi_tcl_files 0]
+#     cd $origin_dir
+# } elseif {[llength $ipi_bd_files] > 1} {
+#     # TODO: quit and log the error
+#     puts "ERROR: This script cannot handle projects containing more than one block design! More than one bd file foudn in src/bd"
+# } elseif {[llength $ipi_bd_files] == 1} {
+#     # Add block design from .bd file and sources
+#     puts "INFO: Rebuilding block design from BD fileset"
+#     add_files -norecurse -quiet -fileset sources_1 [glob -nocomplain $repo_path/src/bd/*/*.bd]
+#     open_bd_design [glob -nocomplain $repo_path/src/bd/*/*.bd]
+#     set design_name [get_bd_designs]
+#     set file "$repo_path/src/bd/$design_name/$design_name.bd"
+#     set file [file normalize $file]
+#     set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
+#     if { ![get_property "is_locked" $file_obj] } {
+#         set_property "synth_checkpoint_mode" "Hierarchical" $file_obj
+#     }
+# }
+WARNING: [Coretcl 2-176] No IPs found
+# foreach ip [get_ips -filter "IS_LOCKED==1"] {
+#     upgrade_ip -vlnv [get_property UPGRADE_VERSIONS $ip] $ip
+#     export_ip_user_files -of_objects $ip -no_script -sync -force -quiet
+# }
+# catch {
+# 	# catch block prevents projects without a block design from erroring at this step
+# 	set bd_name [get_bd_designs -of_objects [get_bd_cells /]]
+# 	set bd_file [get_files $bd_name.bd]
+# 	set wrapper_file [make_wrapper -files $bd_file -top -force]
+# 	import_files -quiet -force -norecurse $wrapper_file
+# 
+# 	set obj [get_filesets sources_1]
+# 	set_property "top" "${bd_name}_wrapper" $obj
+# }
+ERROR: [BD 5-104] A block design must be open to run this command. Please create/open a block design.
+# if {[string equal [get_runs -quiet synth_1] ""]} {
+#     puts "INFO: Creating synth_1 run"
+#     create_run -name synth_1 -part $part_name -flow {Vivado Synthesis $vivado_year} -strategy "Vivado Synthesis Defaults" -constrset constrs_1
+# } else {
+#     set_property strategy "Vivado Synthesis Defaults" [get_runs synth_1]
+#     set_property flow "Vivado Synthesis $vivado_year" [get_runs synth_1]
+# }
+# puts "INFO: Configuring synth_1 run"
+INFO: Configuring synth_1 run
+# set obj [get_runs synth_1]
+# set_property "part" $part_name $obj
+# set_property "steps.synth_design.args.flatten_hierarchy" "none" $obj
+# set_property "steps.synth_design.args.directive" "RuntimeOptimized" $obj
+# set_property "steps.synth_design.args.fsm_extraction" "off" $obj
+# puts "INFO: Setting current synthesis run"
+INFO: Setting current synthesis run
+# current_run -synthesis [get_runs synth_1]
+# if {[string equal [get_runs -quiet impl_1] ""]} {
+#     puts "INFO: Creating impl_1 run"
+#     create_run -name impl_1 -part $part_name -flow {Vivado Implementation $vivado_year} -strategy "Vivado Implementation Defaults" -constrset constrs_1 -parent_run synth_1
+# } else {
+#     set_property strategy "Vivado Implementation Defaults" [get_runs impl_1]
+#     set_property flow "Vivado Implementation $vivado_year" [get_runs impl_1]
+# }
+# puts "INFO: Configuring impl_1 run"
+INFO: Configuring impl_1 run
+# set obj [get_runs impl_1]
+# set_property "part" $part_name $obj
+# set_property "steps.opt_design.args.directive" "RuntimeOptimized" $obj
+# set_property "steps.place_design.args.directive" "RuntimeOptimized" $obj
+# set_property "steps.route_design.args.directive" "RuntimeOptimized" $obj
+# puts "INFO: Setting current implementation run"
+INFO: Setting current implementation run
+# current_run -implementation [get_runs impl_1]
+# puts "INFO: capturing run settings from $repo_path/project_info.tcl"
+INFO: capturing run settings from /home/ciprian/Documents/Github/Arty-S7/hw/project_info.tcl
+# set_project_properties_post_create_runs $proj_name
+# puts "INFO: Project created: [file tail $proj_name]"
+INFO: Project created: hw
+# puts "INFO: Exiting Vivado"
+INFO: Exiting Vivado
+close_project
+open_project /home/ciprian/Documents/Github/Arty-S7/hw/proj/hw.xpr
+Scanning sources...
+Finished scanning sources
+WARNING: [filemgmt 56-3] IP Output Repository Path: Could not find the directory '/home/ciprian/Documents/Github/Arty-S7/hw/proj/cache'.
+WARNING: [filemgmt 56-3] Default IP Output Path : Could not find the directory '/home/ciprian/Documents/Github/Arty-S7/hw/proj/hw.srcs/sources_1'.
+hw
+update_compile_order -fileset sources_1
+launch_runs impl_1 -to_step write_bitstream -jobs 9
+[Thu Nov  5 13:24:07 2020] Launched synth_1...
+Run output will be captured here: /home/ciprian/Documents/Github/Arty-S7/hw/proj/hw.runs/synth_1/runme.log
+[Thu Nov  5 13:24:07 2020] Launched impl_1...
+Run output will be captured here: /home/ciprian/Documents/Github/Arty-S7/hw/proj/hw.runs/impl_1/runme.log
+wait_on_run impl_1 
+[Thu Nov  5 13:24:07 2020] Waiting for impl_1 to finish...
+
+*** Running vivado
+    with args -log GPIO_demo.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source GPIO_demo.tcl -notrace
+
+
+****** Vivado v2020.1 (64-bit)
+  **** SW Build 2902540 on Wed May 27 19:54:35 MDT 2020
+  **** IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source GPIO_demo.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/ciprian/Documents/Github/Arty-S7/hw/repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2020.1/data/ip'.
+Command: link_design -top GPIO_demo -part xc7s50csga324-1
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Device 21-403] Loading part xc7s50csga324-1
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2116.680 ; gain = 0.000 ; free physical = 4626 ; free virtual = 14337
+INFO: [Netlist 29-17] Analyzing 55 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2020.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/ciprian/Documents/Github/Arty-S7/hw/src/constraints/Arty-S7-50-Master.xdc]
+Finished Parsing XDC File [/home/ciprian/Documents/Github/Arty-S7/hw/src/constraints/Arty-S7-50-Master.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2172.574 ; gain = 0.000 ; free physical = 4501 ; free virtual = 14224
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+10 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+Command: opt_design -directive RuntimeOptimized
+INFO: [Vivado_Tcl 4-136] Directive used for opt_design is: RuntimeOptimized
+Attempting to get a license for feature 'Implementation' and/or device 'xc7s50'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7s50'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:00.99 ; elapsed = 00:00:00.91 . Memory (MB): peak = 2236.605 ; gain = 64.031 ; free physical = 4496 ; free virtual = 14211
+
+Starting Logic Optimization Task
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 1 Retarget
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 1 Retarget | Checksum: 12dd5808f
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2661.176 ; gain = 424.570 ; free physical = 3891 ; free virtual = 13633
+INFO: [Opt 31-389] Phase Retarget created 0 cells and removed 0 cells
+
+Phase 2 Constant propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Phase 2 Constant propagation | Checksum: 12dd5808f
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2661.176 ; gain = 424.570 ; free physical = 3897 ; free virtual = 13633
+INFO: [Opt 31-389] Phase Constant propagation created 0 cells and removed 0 cells
+
+Phase 3 Sweep
+Phase 3 Sweep | Checksum: 17bf37fc8
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2661.176 ; gain = 424.570 ; free physical = 3897 ; free virtual = 13633
+INFO: [Opt 31-389] Phase Sweep created 3 cells and removed 0 cells
+
+Phase 4 BUFG optimization
+Phase 4 BUFG optimization | Checksum: 17bf37fc8
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2661.176 ; gain = 424.570 ; free physical = 3897 ; free virtual = 13633
+INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
+
+Phase 5 Shift Register Optimization
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+Phase 5 Shift Register Optimization | Checksum: 17bf37fc8
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2661.176 ; gain = 424.570 ; free physical = 3897 ; free virtual = 13633
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Phase 6 Post Processing Netlist
+Phase 6 Post Processing Netlist | Checksum: 167ed9589
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2661.176 ; gain = 424.570 ; free physical = 3897 ; free virtual = 13633
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |               0  |               0  |                                              0  |
+|  Constant propagation         |               0  |               0  |                                              0  |
+|  Sweep                        |               3  |               0  |                                              0  |
+|  BUFG optimization            |               0  |               0  |                                              0  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               0  |                                              0  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2661.176 ; gain = 0.000 ; free physical = 3881 ; free virtual = 13634
+Ending Logic Optimization Task | Checksum: dcd8759b
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2661.176 ; gain = 424.570 ; free physical = 3880 ; free virtual = 13634
+
+Starting Netlist Obfuscation Task
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2661.176 ; gain = 0.000 ; free physical = 3876 ; free virtual = 13634
+Ending Netlist Obfuscation Task | Checksum: dcd8759b
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2661.176 ; gain = 0.000 ; free physical = 3875 ; free virtual = 13634
+INFO: [Common 17-83] Releasing license: Implementation
+27 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2661.176 ; gain = 488.602 ; free physical = 3874 ; free virtual = 13634
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00 . Memory (MB): peak = 2701.195 ; gain = 0.000 ; free physical = 3843 ; free virtual = 13632
+INFO: [Common 17-1381] The checkpoint '/home/ciprian/Documents/Github/Arty-S7/hw/proj/hw.runs/impl_1/GPIO_demo_opt.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_drc -file GPIO_demo_drc_opted.rpt -pb GPIO_demo_drc_opted.pb -rpx GPIO_demo_drc_opted.rpx
+Command: report_drc -file GPIO_demo_drc_opted.rpt -pb GPIO_demo_drc_opted.pb -rpx GPIO_demo_drc_opted.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Coretcl 2-168] The results of DRC are in file /home/ciprian/Documents/Github/Arty-S7/hw/proj/hw.runs/impl_1/GPIO_demo_drc_opted.rpt.
+report_drc completed successfully
+Command: place_design -directive RuntimeOptimized
+Attempting to get a license for feature 'Implementation' and/or device 'xc7s50'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7s50'
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+Starting Placer Task
+INFO: [Place 46-5] The placer was invoked with the 'RuntimeOptimized' directive.
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 8 CPUs
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2799.047 ; gain = 0.000 ; free physical = 3882 ; free virtual = 13619
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 8304deee
+
+Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.06 . Memory (MB): peak = 2799.047 ; gain = 0.000 ; free physical = 3882 ; free virtual = 13619
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2799.047 ; gain = 0.000 ; free physical = 3882 ; free virtual = 13619
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: baddaa86
+
+Time (s): cpu = 00:00:00.53 ; elapsed = 00:00:00.24 . Memory (MB): peak = 2799.047 ; gain = 0.000 ; free physical = 3845 ; free virtual = 13600
+
+Phase 1.3 Build Placer Netlist Model
+Phase 1.3 Build Placer Netlist Model | Checksum: 145d79b37
+
+Time (s): cpu = 00:00:00.78 ; elapsed = 00:00:00.31 . Memory (MB): peak = 2799.047 ; gain = 0.000 ; free physical = 3864 ; free virtual = 13615
+
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: 145d79b37
+
+Time (s): cpu = 00:00:00.79 ; elapsed = 00:00:00.31 . Memory (MB): peak = 2799.047 ; gain = 0.000 ; free physical = 3864 ; free virtual = 13615
+Phase 1 Placer Initialization | Checksum: 145d79b37
+
+Time (s): cpu = 00:00:00.79 ; elapsed = 00:00:00.31 . Memory (MB): peak = 2799.047 ; gain = 0.000 ; free physical = 3864 ; free virtual = 13615
+
+Phase 2 Global Placement
+
+Phase 2.1 Floorplanning
+Phase 2.1 Floorplanning | Checksum: 137fe99b3
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.37 . Memory (MB): peak = 2799.047 ; gain = 0.000 ; free physical = 3857 ; free virtual = 13608
+
+Phase 2.2 Global Placement Core
+Phase 2.2 Global Placement Core | Checksum: 143305b46
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:01 . Memory (MB): peak = 2799.047 ; gain = 0.000 ; free physical = 3855 ; free virtual = 13626
+Phase 2 Global Placement | Checksum: 143305b46
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:01 . Memory (MB): peak = 2799.047 ; gain = 0.000 ; free physical = 3855 ; free virtual = 13626
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: 11ae95c67
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:01 . Memory (MB): peak = 2799.047 ; gain = 0.000 ; free physical = 3856 ; free virtual = 13627
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 183379774
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:01 . Memory (MB): peak = 2799.047 ; gain = 0.000 ; free physical = 3856 ; free virtual = 13627
+
+Phase 3.3 Area Swap Optimization
+Phase 3.3 Area Swap Optimization | Checksum: 1cd94cf7e
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:01 . Memory (MB): peak = 2799.047 ; gain = 0.000 ; free physical = 3856 ; free virtual = 13627
+
+Phase 3.4 Pipeline Register Optimization
+Phase 3.4 Pipeline Register Optimization | Checksum: 1cd94cf7e
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:01 . Memory (MB): peak = 2799.047 ; gain = 0.000 ; free physical = 3856 ; free virtual = 13627
+
+Phase 3.5 Small Shape Detail Placement
+Phase 3.5 Small Shape Detail Placement | Checksum: 25b09ca6e
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:01 . Memory (MB): peak = 2799.047 ; gain = 0.000 ; free physical = 3854 ; free virtual = 13625
+
+Phase 3.6 Re-assign LUT pins
+Phase 3.6 Re-assign LUT pins | Checksum: 1aa49b826
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:01 . Memory (MB): peak = 2799.047 ; gain = 0.000 ; free physical = 3854 ; free virtual = 13625
+
+Phase 3.7 Pipeline Register Optimization
+Phase 3.7 Pipeline Register Optimization | Checksum: 1aa49b826
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:01 . Memory (MB): peak = 2799.047 ; gain = 0.000 ; free physical = 3854 ; free virtual = 13625
+Phase 3 Detail Placement | Checksum: 1aa49b826
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:01 . Memory (MB): peak = 2799.047 ; gain = 0.000 ; free physical = 3854 ; free virtual = 13625
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 4.1.1 Post Placement Optimization
+Post Placement Optimization Initialization | Checksum: 87124690
+
+Phase 4.1.1.1 BUFG Insertion
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 8 CPUs
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=6.128 | TNS=0.000 |
+Phase 1 Physical Synthesis Initialization | Checksum: cd65a0d9
+
+Time (s): cpu = 00:00:00.11 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2799.047 ; gain = 0.000 ; free physical = 3854 ; free virtual = 13625
+INFO: [Place 46-56] BUFG insertion identified 0 candidate nets. Inserted BUFG: 0, Replicated BUFG Driver: 0, Skipped due to Placement/Routing Conflicts: 0, Skipped due to Timing Degradation: 0, Skipped due to Illegal Netlist: 0.
+Ending Physical Synthesis Task | Checksum: b48d6086
+
+Time (s): cpu = 00:00:00.11 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2799.047 ; gain = 0.000 ; free physical = 3854 ; free virtual = 13625
+Phase 4.1.1.1 BUFG Insertion | Checksum: 87124690
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:01 . Memory (MB): peak = 2799.047 ; gain = 0.000 ; free physical = 3854 ; free virtual = 13625
+INFO: [Place 30-746] Post Placement Timing Summary WNS=6.128. For the most accurate timing information please run report_timing.
+Phase 4.1.1 Post Placement Optimization | Checksum: cfbae3b9
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:01 . Memory (MB): peak = 2799.047 ; gain = 0.000 ; free physical = 3854 ; free virtual = 13625
+Phase 4.1 Post Commit Optimization | Checksum: cfbae3b9
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:01 . Memory (MB): peak = 2799.047 ; gain = 0.000 ; free physical = 3854 ; free virtual = 13625
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: cfbae3b9
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:01 . Memory (MB): peak = 2799.047 ; gain = 0.000 ; free physical = 3854 ; free virtual = 13625
+
+Phase 4.3 Placer Reporting
+Phase 4.3 Placer Reporting | Checksum: cfbae3b9
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:01 . Memory (MB): peak = 2799.047 ; gain = 0.000 ; free physical = 3854 ; free virtual = 13625
+
+Phase 4.4 Final Placement Cleanup
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2799.047 ; gain = 0.000 ; free physical = 3855 ; free virtual = 13625
+Phase 4.4 Final Placement Cleanup | Checksum: 16e837b14
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:01 . Memory (MB): peak = 2799.047 ; gain = 0.000 ; free physical = 3855 ; free virtual = 13625
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 16e837b14
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:01 . Memory (MB): peak = 2799.047 ; gain = 0.000 ; free physical = 3855 ; free virtual = 13625
+Ending Placer Task | Checksum: f9826134
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:01 . Memory (MB): peak = 2799.047 ; gain = 0.000 ; free physical = 3855 ; free virtual = 13625
+INFO: [Common 17-83] Releasing license: Implementation
+49 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2799.047 ; gain = 0.000 ; free physical = 3858 ; free virtual = 13630
+INFO: [Common 17-1381] The checkpoint '/home/ciprian/Documents/Github/Arty-S7/hw/proj/hw.runs/impl_1/GPIO_demo_placed.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_io -file GPIO_demo_io_placed.rpt
+report_io: Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.07 . Memory (MB): peak = 2799.047 ; gain = 0.000 ; free physical = 3853 ; free virtual = 13624
+INFO: [runtcl-4] Executing : report_utilization -file GPIO_demo_utilization_placed.rpt -pb GPIO_demo_utilization_placed.pb
+INFO: [runtcl-4] Executing : report_control_sets -verbose -file GPIO_demo_control_sets_placed.rpt
+report_control_sets: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2799.047 ; gain = 0.000 ; free physical = 3862 ; free virtual = 13634
+Command: phys_opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7s50'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7s50'
+INFO: [Vivado_Tcl 4-383] Design worst setup slack (WNS) is greater than or equal to 0.000 ns. Skipping all physical synthesis optimizations.
+INFO: [Vivado_Tcl 4-232] No setup violation found. The netlist was not modified.
+INFO: [Common 17-83] Releasing license: Implementation
+58 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+phys_opt_design completed successfully
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2799.047 ; gain = 0.000 ; free physical = 3816 ; free virtual = 13588
+INFO: [Common 17-1381] The checkpoint '/home/ciprian/Documents/Github/Arty-S7/hw/proj/hw.runs/impl_1/GPIO_demo_physopt.dcp' has been generated.
+Command: route_design -directive RuntimeOptimized
+Attempting to get a license for feature 'Implementation' and/or device 'xc7s50'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7s50'
+Running DRC as a precondition to command route_design
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+INFO: [Route 35-270] Using Router directive 'RuntimeOptimized'.
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 8 CPUs
+Checksum: PlaceDB: 13803c64 ConstDB: 0 ShapeSum: e60224d0 RouteDB: 0
+
+Phase 1 Build RT Design
+Phase 1 Build RT Design | Checksum: 188521f34
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 2870.148 ; gain = 16.008 ; free physical = 3802 ; free virtual = 13535
+Post Restoration Checksum: NetGraph: c43953e6 NumContArr: c418cb4e Constraints: 0 Timing: 0
+
+Phase 2 Router Initialization
+
+Phase 2.1 Create Timer
+Phase 2.1 Create Timer | Checksum: 188521f34
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 2870.148 ; gain = 16.008 ; free physical = 3805 ; free virtual = 13538
+
+Phase 2.2 Fix Topology Constraints
+Phase 2.2 Fix Topology Constraints | Checksum: 188521f34
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 2870.148 ; gain = 16.008 ; free physical = 3771 ; free virtual = 13505
+
+Phase 2.3 Pre Route Cleanup
+Phase 2.3 Pre Route Cleanup | Checksum: 188521f34
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 2870.148 ; gain = 16.008 ; free physical = 3771 ; free virtual = 13505
+ Number of Nodes with overlaps = 0
+
+Phase 2.4 Update Timing
+Phase 2.4 Update Timing | Checksum: 96e67be9
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 2870.148 ; gain = 16.008 ; free physical = 3760 ; free virtual = 13495
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=6.155  | TNS=0.000  | WHS=-0.143 | THS=-2.202 |
+
+Phase 2 Router Initialization | Checksum: 13fe8c70f
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 2870.148 ; gain = 16.008 ; free physical = 3761 ; free virtual = 13495
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0 %
+  Global Horizontal Routing Utilization  = 0 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 375
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 375
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+
+Phase 3 Initial Routing
+Phase 3 Initial Routing | Checksum: 171a7c3b5
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:07 . Memory (MB): peak = 2870.148 ; gain = 16.008 ; free physical = 3763 ; free virtual = 13497
+
+Phase 4 Rip-up And Reroute
+
+Phase 4.1 Global Iteration 0
+ Number of Nodes with overlaps = 20
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=5.597  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 4.1 Global Iteration 0 | Checksum: 21035a312
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:07 . Memory (MB): peak = 2870.148 ; gain = 16.008 ; free physical = 3763 ; free virtual = 13498
+
+Phase 4.2 Global Iteration 1
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=5.597  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 4.2 Global Iteration 1 | Checksum: d9c28b1d
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:07 . Memory (MB): peak = 2870.148 ; gain = 16.008 ; free physical = 3763 ; free virtual = 13498
+Phase 4 Rip-up And Reroute | Checksum: d9c28b1d
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:07 . Memory (MB): peak = 2870.148 ; gain = 16.008 ; free physical = 3763 ; free virtual = 13498
+
+Phase 5 Delay and Skew Optimization
+
+Phase 5.1 Delay CleanUp
+Phase 5.1 Delay CleanUp | Checksum: d9c28b1d
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:07 . Memory (MB): peak = 2870.148 ; gain = 16.008 ; free physical = 3763 ; free virtual = 13498
+
+Phase 5.2 Clock Skew Optimization
+Phase 5.2 Clock Skew Optimization | Checksum: d9c28b1d
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:07 . Memory (MB): peak = 2870.148 ; gain = 16.008 ; free physical = 3763 ; free virtual = 13498
+Phase 5 Delay and Skew Optimization | Checksum: d9c28b1d
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:07 . Memory (MB): peak = 2870.148 ; gain = 16.008 ; free physical = 3763 ; free virtual = 13498
+
+Phase 6 Post Hold Fix
+
+Phase 6.1 Hold Fix Iter
+
+Phase 6.1.1 Update Timing
+Phase 6.1.1 Update Timing | Checksum: 14aee6375
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:07 . Memory (MB): peak = 2870.148 ; gain = 16.008 ; free physical = 3763 ; free virtual = 13498
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=5.677  | TNS=0.000  | WHS=0.172  | THS=0.000  |
+
+Phase 6.1 Hold Fix Iter | Checksum: 12494bf7e
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:07 . Memory (MB): peak = 2870.148 ; gain = 16.008 ; free physical = 3763 ; free virtual = 13498
+Phase 6 Post Hold Fix | Checksum: 12494bf7e
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:07 . Memory (MB): peak = 2870.148 ; gain = 16.008 ; free physical = 3763 ; free virtual = 13498
+
+Phase 7 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0.055808 %
+  Global Horizontal Routing Utilization  = 0.0533576 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Phase 7 Route finalize | Checksum: 135b1cdee
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:07 . Memory (MB): peak = 2870.148 ; gain = 16.008 ; free physical = 3763 ; free virtual = 13498
+
+Phase 8 Verifying routed nets
+
+ Verification completed successfully
+Phase 8 Verifying routed nets | Checksum: 135b1cdee
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:07 . Memory (MB): peak = 2870.148 ; gain = 16.008 ; free physical = 3762 ; free virtual = 13496
+
+Phase 9 Depositing Routes
+Phase 9 Depositing Routes | Checksum: ea3b58ba
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:07 . Memory (MB): peak = 2870.148 ; gain = 16.008 ; free physical = 3763 ; free virtual = 13497
+
+Phase 10 Post Router Timing
+INFO: [Route 35-57] Estimated Timing Summary | WNS=5.677  | TNS=0.000  | WHS=0.172  | THS=0.000  |
+
+INFO: [Route 35-327] The final timing numbers are based on the router estimated timing analysis. For a complete and accurate timing signoff, please run report_timing_summary.
+Phase 10 Post Router Timing | Checksum: ea3b58ba
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:07 . Memory (MB): peak = 2870.148 ; gain = 16.008 ; free physical = 3763 ; free virtual = 13497
+INFO: [Route 35-16] Router Completed Successfully
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:07 . Memory (MB): peak = 2870.148 ; gain = 16.008 ; free physical = 3796 ; free virtual = 13531
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+74 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:00:10 ; elapsed = 00:00:08 . Memory (MB): peak = 2870.148 ; gain = 71.102 ; free physical = 3796 ; free virtual = 13531
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2870.148 ; gain = 0.000 ; free physical = 3792 ; free virtual = 13527
+INFO: [Common 17-1381] The checkpoint '/home/ciprian/Documents/Github/Arty-S7/hw/proj/hw.runs/impl_1/GPIO_demo_routed.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_drc -file GPIO_demo_drc_routed.rpt -pb GPIO_demo_drc_routed.pb -rpx GPIO_demo_drc_routed.rpx
+Command: report_drc -file GPIO_demo_drc_routed.rpt -pb GPIO_demo_drc_routed.pb -rpx GPIO_demo_drc_routed.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Coretcl 2-168] The results of DRC are in file /home/ciprian/Documents/Github/Arty-S7/hw/proj/hw.runs/impl_1/GPIO_demo_drc_routed.rpt.
+report_drc completed successfully
+INFO: [runtcl-4] Executing : report_methodology -file GPIO_demo_methodology_drc_routed.rpt -pb GPIO_demo_methodology_drc_routed.pb -rpx GPIO_demo_methodology_drc_routed.rpx
+Command: report_methodology -file GPIO_demo_methodology_drc_routed.rpt -pb GPIO_demo_methodology_drc_routed.pb -rpx GPIO_demo_methodology_drc_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [DRC 23-133] Running Methodology with 8 threads
+INFO: [Coretcl 2-1520] The results of Report Methodology are in file /home/ciprian/Documents/Github/Arty-S7/hw/proj/hw.runs/impl_1/GPIO_demo_methodology_drc_routed.rpt.
+report_methodology completed successfully
+INFO: [runtcl-4] Executing : report_power -file GPIO_demo_power_routed.rpt -pb GPIO_demo_power_summary_routed.pb -rpx GPIO_demo_power_routed.rpx
+Command: report_power -file GPIO_demo_power_routed.rpt -pb GPIO_demo_power_summary_routed.pb -rpx GPIO_demo_power_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+86 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+INFO: [runtcl-4] Executing : report_route_status -file GPIO_demo_route_status.rpt -pb GPIO_demo_route_status.pb
+INFO: [runtcl-4] Executing : report_timing_summary -max_paths 10 -file GPIO_demo_timing_summary_routed.rpt -pb GPIO_demo_timing_summary_routed.pb -rpx GPIO_demo_timing_summary_routed.rpx -warn_on_violation 
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+INFO: [runtcl-4] Executing : report_incremental_reuse -file GPIO_demo_incremental_reuse_routed.rpt
+INFO: [Vivado_Tcl 4-1062] Incremental flow is disabled. No incremental reuse Info to report.
+INFO: [runtcl-4] Executing : report_clock_utilization -file GPIO_demo_clock_utilization_routed.rpt
+INFO: [runtcl-4] Executing : report_bus_skew -warn_on_violation -file GPIO_demo_bus_skew_routed.rpt -pb GPIO_demo_bus_skew_routed.pb -rpx GPIO_demo_bus_skew_routed.rpx
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+Command: write_bitstream -force GPIO_demo.bit
+Attempting to get a license for feature 'Implementation' and/or device 'xc7s50'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7s50'
+Running DRC as a precondition to command write_bitstream
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado 12-3199] DRC finished with 0 Errors
+INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
+INFO: [Designutils 20-2272] Running write_bitstream with 8 threads.
+Loading data files...
+Loading site data...
+Loading route data...
+Processing options...
+Creating bitmap...
+Creating bitstream...
+Writing bitstream ./GPIO_demo.bit...
+INFO: [Vivado 12-1842] Bitgen Completed Successfully.
+INFO: [Project 1-120] WebTalk data collection is mandatory when using a WebPACK part without a full Vivado license. To see the specific WebTalk data collected for your design, open the usage_statistics_webtalk.html or usage_statistics_webtalk.xml file in the implementation directory.
+INFO: [Common 17-186] '/home/ciprian/Documents/Github/Arty-S7/hw/proj/hw.runs/impl_1/usage_statistics_webtalk.xml' has been successfully sent to Xilinx on Thu Nov  5 13:25:37 2020. For additional details about this file, please refer to the WebTalk help file at /opt/Xilinx/Vivado/2020.1/doc/webtalk_introduction.html.
+INFO: [Common 17-83] Releasing license: Implementation
+106 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+write_bitstream completed successfully
+write_bitstream: Time (s): cpu = 00:00:06 ; elapsed = 00:00:19 . Memory (MB): peak = 3201.848 ; gain = 171.363 ; free physical = 3739 ; free virtual = 13510
+INFO: [Common 17-206] Exiting Vivado at Thu Nov  5 13:25:38 2020...
+[Thu Nov  5 13:25:38 2020] impl_1 finished
+wait_on_run: Time (s): cpu = 00:01:17 ; elapsed = 00:01:30 . Memory (MB): peak = 2169.395 ; gain = 0.000 ; free physical = 5281 ; free virtual = 15053
+archive_project /home/ciprian/Documents/Github/release/Arty-S7/Arty-S7-50-GPIO-hw.xpr.zip -force -include_local_ip_cache -include_config_settings
+INFO: [Coretcl 2-137] starting archive...
+INFO: [Coretcl 2-1499] Saving project copy to temporary location './.Xil/Vivado-197901-K-Legion' for archiving project
+Scanning sources...
+Finished scanning sources
+WARNING: [filemgmt 56-3] Default IP Output Path : Could not find the directory '/home/ciprian/Documents/Github/Arty-S7/hw/proj/hw.srcs/sources_1'.
+INFO: [Coretcl 2-1211] Creating project copy for archival...
+INFO: [Coretcl 2-1213] Including run results for 'synth_1'
+INFO: [Coretcl 2-1213] Including run results for 'impl_1'
+INFO: [Coretcl 2-1212] Importing remotely added design sources and verilog include files (if any)...
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'constrs_1'
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sources_1'
+INFO: [Coretcl 2-1209] Adding archive summary file to the project...
+INFO: [Coretcl 2-1214] Preparing project files for archive...
+INFO: [Coretcl 2-1210] Compressing project files and data...
+INFO: [Coretcl 2-1215] Project archived (/home/ciprian/Documents/Github/release/Arty-S7/Arty-S7-50-GPIO-hw.xpr.zip)
+INFO: [Coretcl 2-1216] To view the archive summary log in GUI, double click on 'Design Sources->Text->archive_project_summary.txt', or open this file from the archived project directory.
+/home/ciprian/Documents/Github/release/Arty-S7/Arty-S7-50-GPIO-hw.xpr.zip
+close_project
+set argv "-r ~/Documents/Github/Arty-S7/hw/"
+-r ~/Documents/Github/Arty-S7/hw/
+source digilent_vivado_checkout.tcl
+# set idx [lsearch ${argv} "-r"]
+# if {${idx} != -1} {
+#     set repo_path [glob -nocomplain [file normalize [lindex ${argv} [expr {${idx}+1}]]]]
+# } else {
+#     # Default
+#     set repo_path [file normalize [file dirname [info script]]/..]
+# }
+# set idx [lsearch ${argv} "-x"]
+# if {${idx} != -1} {
+#     set xpr_path [file normalize [lindex ${argv} [expr {${idx}+1}]]]
+# } else {
+#     # Default
+#     set xpr_path [file join ${repo_path} proj [file tail $repo_path]].xpr]
+# }
+# set idx [lsearch ${argv} "-v"]
+# if {${idx} != -1} {
+#     set vivado_version [lindex ${argv} [expr {${idx}+1}]]
+# } else {
+#     # Default
+#     set vivado_version [version -short]
+# }
+# set vivado_year [lindex [split $vivado_version "."] 0]
+# set proj_name [file rootname [file tail $xpr_path]]
+# puts "INFO: Creating new project \"$proj_name\" in [file dirname $xpr_path]"
+INFO: Creating new project "hw" in /home/ciprian/Documents/Github/Arty-S7/hw/proj
+# create_project $proj_name [file dirname $xpr_path]
+# source $repo_path/project_info.tcl
+## proc set_project_properties_post_create_project {proj_name} {
+##     set project_obj [get_projects $proj_name]
+##     set_property "part" "xc7s50csga324-1" $project_obj
+##     set_property "board_part" "digilentinc.com:arty-s7-50:part0:1.0" $project_obj
+##     set_property "default_lib" "xil_defaultlib" $project_obj
+##     set_property "simulator_language" "Mixed" $project_obj
+##     set_property "target_language" "Verilog" $project_obj
+## }
+## proc set_project_properties_pre_add_repo {proj_name} {
+##     set project_obj [get_projects $proj_name]
+##     # default nothing
+## }
+## proc set_project_properties_post_create_runs {proj_name} {
+##     set project_obj [get_projects $proj_name]
+##     # default nothing
+## }
+# puts "INFO: Capturing board information from $repo_path/project_info.tcl"
+INFO: Capturing board information from /home/ciprian/Documents/Github/Arty-S7/hw/project_info.tcl
+# set_project_properties_post_create_project $proj_name
+# set obj [get_projects $proj_name]
+# set part_name [get_property "part" $obj]
+# puts "INFO: Configuring project IP handling properties"
+INFO: Configuring project IP handling properties
+# set_property "corecontainer.enable" "0" $obj
+# set_property "ip_cache_permissions" "read write" $obj
+# set_property "ip_output_repo" "[file normalize "$repo_path/proj/cache"]" $obj
+# if {[string equal [get_filesets -quiet sources_1] ""]} {
+#     puts "INFO: Creating sources_1 fileset"
+#     create_fileset -srcset sources_1
+# }
+# if {[string equal [get_filesets -quiet constrs_1] ""]} {
+#     puts "INFO: Creating constrs_1 fileset"
+#     create_fileset -constrset constrs_1
+# }
+# puts "INFO: capturing IP-related settings from $repo_path/project_info.tcl"
+INFO: capturing IP-related settings from /home/ciprian/Documents/Github/Arty-S7/hw/project_info.tcl
+# set_project_properties_pre_add_repo $proj_name
+# puts "INFO: Setting IP repository paths"
+INFO: Setting IP repository paths
+# set obj [get_filesets sources_1]
+# set_property "ip_repo_paths" "[file normalize $repo_path/repo]" $obj
+# puts "INFO: Refreshing IP repositories"
+INFO: Refreshing IP repositories
+# update_ip_catalog -rebuild
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/ciprian/Documents/Github/Arty-S7/hw/repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2020.1/data/ip'.
+# puts "INFO: Adding HDL sources"
+INFO: Adding HDL sources
+# add_files -quiet -norecurse $repo_path/src/hdl
+# puts "INFO: Adding XCI IP sources"
+INFO: Adding XCI IP sources
+# add_files -quiet [glob -nocomplain $repo_path/src/ip/*/*.xci]
+# puts "INFO: Adding constraints"
+INFO: Adding constraints
+# add_files -quiet -norecurse -fileset constrs_1 $repo_path/src/constraints
+# set ipi_tcl_files [glob -nocomplain "$repo_path/src/bd/*.tcl"]
+# set ipi_bd_files [glob -nocomplain "$repo_path/src/bd/*/*.bd"]
+# if {[llength $ipi_tcl_files] > 1} {
+#     # TODO: quit and log the error
+#     puts "ERROR: This script cannot handle projects containing more than one block design! More than one tcl script foudn in src/bd"
+# } elseif {[llength $ipi_tcl_files] == 1} {
+#     # Use TCL script to rebuild block design
+#     puts "INFO: Rebuilding block design from script"
+#     # Create local source directory for bd
+#     if {[file exist "[file rootname $xpr_path].srcs"] == 0} {
+#         file mkdir "[file rootname $xpr_path].srcs"
+#     }
+#     if {[file exist "[file rootname $xpr_path].srcs/sources_1"] == 0} {
+#         file mkdir "[file rootname $xpr_path].srcs/sources_1"
+#     }
+#     if {[file exist "[file rootname $xpr_path].srcs/sources_1/bd"] == 0} {
+#         file mkdir "[file rootname $xpr_path].srcs/sources_1/bd"
+#     }
+#     # Force Non-Remote BD Flow
+#     set origin_dir [pwd]
+#     cd "[file rootname $xpr_path].srcs/sources_1"
+#     set run_remote_bd_flow 0
+#     source [lindex $ipi_tcl_files 0]
+#     cd $origin_dir
+# } elseif {[llength $ipi_bd_files] > 1} {
+#     # TODO: quit and log the error
+#     puts "ERROR: This script cannot handle projects containing more than one block design! More than one bd file foudn in src/bd"
+# } elseif {[llength $ipi_bd_files] == 1} {
+#     # Add block design from .bd file and sources
+#     puts "INFO: Rebuilding block design from BD fileset"
+#     add_files -norecurse -quiet -fileset sources_1 [glob -nocomplain $repo_path/src/bd/*/*.bd]
+#     open_bd_design [glob -nocomplain $repo_path/src/bd/*/*.bd]
+#     set design_name [get_bd_designs]
+#     set file "$repo_path/src/bd/$design_name/$design_name.bd"
+#     set file [file normalize $file]
+#     set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
+#     if { ![get_property "is_locked" $file_obj] } {
+#         set_property "synth_checkpoint_mode" "Hierarchical" $file_obj
+#     }
+# }
+WARNING: [Coretcl 2-176] No IPs found
+# foreach ip [get_ips -filter "IS_LOCKED==1"] {
+#     upgrade_ip -vlnv [get_property UPGRADE_VERSIONS $ip] $ip
+#     export_ip_user_files -of_objects $ip -no_script -sync -force -quiet
+# }
+# catch {
+# 	# catch block prevents projects without a block design from erroring at this step
+# 	set bd_name [get_bd_designs -of_objects [get_bd_cells /]]
+# 	set bd_file [get_files $bd_name.bd]
+# 	set wrapper_file [make_wrapper -files $bd_file -top -force]
+# 	import_files -quiet -force -norecurse $wrapper_file
+# 
+# 	set obj [get_filesets sources_1]
+# 	set_property "top" "${bd_name}_wrapper" $obj
+# }
+ERROR: [BD 5-104] A block design must be open to run this command. Please create/open a block design.
+# if {[string equal [get_runs -quiet synth_1] ""]} {
+#     puts "INFO: Creating synth_1 run"
+#     create_run -name synth_1 -part $part_name -flow {Vivado Synthesis $vivado_year} -strategy "Vivado Synthesis Defaults" -constrset constrs_1
+# } else {
+#     set_property strategy "Vivado Synthesis Defaults" [get_runs synth_1]
+#     set_property flow "Vivado Synthesis $vivado_year" [get_runs synth_1]
+# }
+# puts "INFO: Configuring synth_1 run"
+INFO: Configuring synth_1 run
+# set obj [get_runs synth_1]
+# set_property "part" $part_name $obj
+# set_property "steps.synth_design.args.flatten_hierarchy" "none" $obj
+# set_property "steps.synth_design.args.directive" "RuntimeOptimized" $obj
+# set_property "steps.synth_design.args.fsm_extraction" "off" $obj
+# puts "INFO: Setting current synthesis run"
+INFO: Setting current synthesis run
+# current_run -synthesis [get_runs synth_1]
+# if {[string equal [get_runs -quiet impl_1] ""]} {
+#     puts "INFO: Creating impl_1 run"
+#     create_run -name impl_1 -part $part_name -flow {Vivado Implementation $vivado_year} -strategy "Vivado Implementation Defaults" -constrset constrs_1 -parent_run synth_1
+# } else {
+#     set_property strategy "Vivado Implementation Defaults" [get_runs impl_1]
+#     set_property flow "Vivado Implementation $vivado_year" [get_runs impl_1]
+# }
+# puts "INFO: Configuring impl_1 run"
+INFO: Configuring impl_1 run
+# set obj [get_runs impl_1]
+# set_property "part" $part_name $obj
+# set_property "steps.opt_design.args.directive" "RuntimeOptimized" $obj
+# set_property "steps.place_design.args.directive" "RuntimeOptimized" $obj
+# set_property "steps.route_design.args.directive" "RuntimeOptimized" $obj
+# puts "INFO: Setting current implementation run"
+INFO: Setting current implementation run
+# current_run -implementation [get_runs impl_1]
+# puts "INFO: capturing run settings from $repo_path/project_info.tcl"
+INFO: capturing run settings from /home/ciprian/Documents/Github/Arty-S7/hw/project_info.tcl
+# set_project_properties_post_create_runs $proj_name
+# puts "INFO: Project created: [file tail $proj_name]"
+INFO: Project created: hw
+# puts "INFO: Exiting Vivado"
+INFO: Exiting Vivado
+close_project
+open_project /home/ciprian/Documents/Github/Arty-S7/hw/proj/hw.xpr
+Scanning sources...
+Finished scanning sources
+WARNING: [filemgmt 56-3] IP Output Repository Path: Could not find the directory '/home/ciprian/Documents/Github/Arty-S7/hw/proj/cache'.
+WARNING: [filemgmt 56-3] Default IP Output Path : Could not find the directory '/home/ciprian/Documents/Github/Arty-S7/hw/proj/hw.srcs/sources_1'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/ciprian/Documents/Github/Arty-S7/hw/repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2020.1/data/ip'.
+hw
+update_compile_order -fileset sources_1
+launch_runs impl_1 -to_step write_bitstream -jobs 9
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'xadc_wiz_0'...
+[Thu Nov  5 13:31:14 2020] Launched xadc_wiz_0_synth_1, synth_1...
+Run output will be captured here:
+xadc_wiz_0_synth_1: /home/ciprian/Documents/Github/Arty-S7/hw/proj/hw.runs/xadc_wiz_0_synth_1/runme.log
+synth_1: /home/ciprian/Documents/Github/Arty-S7/hw/proj/hw.runs/synth_1/runme.log
+[Thu Nov  5 13:31:14 2020] Launched impl_1...
+Run output will be captured here: /home/ciprian/Documents/Github/Arty-S7/hw/proj/hw.runs/impl_1/runme.log
+0
+wait_on_run impl_1 
+[Thu Nov  5 13:31:14 2020] Waiting for impl_1 to finish...
+
+*** Running vivado
+    with args -log XADCdemo.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source XADCdemo.tcl -notrace
+
+
+****** Vivado v2020.1 (64-bit)
+  **** SW Build 2902540 on Wed May 27 19:54:35 MDT 2020
+  **** IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source XADCdemo.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/ciprian/Documents/Github/Arty-S7/hw/repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2020.1/data/ip'.
+Command: link_design -top XADCdemo -part xc7s50csga324-1
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Device 21-403] Loading part xc7s50csga324-1
+INFO: [Project 1-454] Reading design checkpoint '/home/ciprian/Documents/Github/Arty-S7/hw/src/ip/xadc_wiz/xadc_wiz_0.dcp' for cell 'xadc'
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2116.676 ; gain = 0.000 ; free physical = 4459 ; free virtual = 14202
+INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2020.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/ciprian/Documents/Github/Arty-S7/hw/src/ip/xadc_wiz/xadc_wiz_0.xdc] for cell 'xadc/inst'
+Finished Parsing XDC File [/home/ciprian/Documents/Github/Arty-S7/hw/src/ip/xadc_wiz/xadc_wiz_0.xdc] for cell 'xadc/inst'
+Parsing XDC File [/home/ciprian/Documents/Github/Arty-S7/hw/src/constraints/Arty-S7-50-Master.xdc]
+Finished Parsing XDC File [/home/ciprian/Documents/Github/Arty-S7/hw/src/constraints/Arty-S7-50-Master.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2172.570 ; gain = 0.000 ; free physical = 4335 ; free virtual = 14093
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+11 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+Command: opt_design -directive RuntimeOptimized
+INFO: [Vivado_Tcl 4-136] Directive used for opt_design is: RuntimeOptimized
+Attempting to get a license for feature 'Implementation' and/or device 'xc7s50'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7s50'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 2236.602 ; gain = 64.031 ; free physical = 4323 ; free virtual = 14066
+
+Starting Logic Optimization Task
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 1 Retarget
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 1 Retarget | Checksum: 1d313382d
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2630.172 ; gain = 385.586 ; free physical = 3861 ; free virtual = 13603
+INFO: [Opt 31-389] Phase Retarget created 0 cells and removed 0 cells
+
+Phase 2 Constant propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Phase 2 Constant propagation | Checksum: 1d313382d
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2630.172 ; gain = 385.586 ; free physical = 3861 ; free virtual = 13603
+INFO: [Opt 31-389] Phase Constant propagation created 0 cells and removed 0 cells
+
+Phase 3 Sweep
+Phase 3 Sweep | Checksum: 212a30623
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2630.172 ; gain = 385.586 ; free physical = 3861 ; free virtual = 13603
+INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 0 cells
+
+Phase 4 BUFG optimization
+Phase 4 BUFG optimization | Checksum: 212a30623
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2630.172 ; gain = 385.586 ; free physical = 3861 ; free virtual = 13603
+INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
+
+Phase 5 Shift Register Optimization
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+Phase 5 Shift Register Optimization | Checksum: 212a30623
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2630.172 ; gain = 385.586 ; free physical = 3861 ; free virtual = 13603
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Phase 6 Post Processing Netlist
+Phase 6 Post Processing Netlist | Checksum: 212a30623
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2630.172 ; gain = 385.586 ; free physical = 3861 ; free virtual = 13603
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |               0  |               0  |                                              0  |
+|  Constant propagation         |               0  |               0  |                                              0  |
+|  Sweep                        |               0  |               0  |                                              0  |
+|  BUFG optimization            |               0  |               0  |                                              0  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               0  |                                              0  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2630.172 ; gain = 0.000 ; free physical = 3861 ; free virtual = 13603
+Ending Logic Optimization Task | Checksum: 1b23f2fea
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2630.172 ; gain = 385.586 ; free physical = 3861 ; free virtual = 13603
+
+Starting Netlist Obfuscation Task
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2630.172 ; gain = 0.000 ; free physical = 3861 ; free virtual = 13603
+Ending Netlist Obfuscation Task | Checksum: 1b23f2fea
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2630.172 ; gain = 0.000 ; free physical = 3861 ; free virtual = 13603
+INFO: [Common 17-83] Releasing license: Implementation
+28 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2630.172 ; gain = 457.602 ; free physical = 3861 ; free virtual = 13603
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2670.191 ; gain = 0.000 ; free physical = 3856 ; free virtual = 13599
+INFO: [Common 17-1381] The checkpoint '/home/ciprian/Documents/Github/Arty-S7/hw/proj/hw.runs/impl_1/XADCdemo_opt.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_drc -file XADCdemo_drc_opted.rpt -pb XADCdemo_drc_opted.pb -rpx XADCdemo_drc_opted.rpx
+Command: report_drc -file XADCdemo_drc_opted.rpt -pb XADCdemo_drc_opted.pb -rpx XADCdemo_drc_opted.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Coretcl 2-168] The results of DRC are in file /home/ciprian/Documents/Github/Arty-S7/hw/proj/hw.runs/impl_1/XADCdemo_drc_opted.rpt.
+report_drc completed successfully
+Command: place_design -directive RuntimeOptimized
+Attempting to get a license for feature 'Implementation' and/or device 'xc7s50'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7s50'
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+Starting Placer Task
+INFO: [Place 46-5] The placer was invoked with the 'RuntimeOptimized' directive.
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 8 CPUs
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2805.730 ; gain = 0.000 ; free physical = 3828 ; free virtual = 13579
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: c20f68c3
+
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2805.730 ; gain = 0.000 ; free physical = 3828 ; free virtual = 13579
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2805.730 ; gain = 0.000 ; free physical = 3828 ; free virtual = 13579
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 6c08fbb2
+
+Time (s): cpu = 00:00:00.51 ; elapsed = 00:00:00.19 . Memory (MB): peak = 2805.730 ; gain = 0.000 ; free physical = 3817 ; free virtual = 13569
+
+Phase 1.3 Build Placer Netlist Model
+Phase 1.3 Build Placer Netlist Model | Checksum: 72005376
+
+Time (s): cpu = 00:00:00.66 ; elapsed = 00:00:00.23 . Memory (MB): peak = 2805.730 ; gain = 0.000 ; free physical = 3827 ; free virtual = 13579
+
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: 72005376
+
+Time (s): cpu = 00:00:00.66 ; elapsed = 00:00:00.23 . Memory (MB): peak = 2805.730 ; gain = 0.000 ; free physical = 3827 ; free virtual = 13579
+Phase 1 Placer Initialization | Checksum: 72005376
+
+Time (s): cpu = 00:00:00.67 ; elapsed = 00:00:00.24 . Memory (MB): peak = 2805.730 ; gain = 0.000 ; free physical = 3827 ; free virtual = 13579
+
+Phase 2 Global Placement
+
+Phase 2.1 Floorplanning
+Phase 2.1 Floorplanning | Checksum: bef13a0d
+
+Time (s): cpu = 00:00:00.86 ; elapsed = 00:00:00.26 . Memory (MB): peak = 2805.730 ; gain = 0.000 ; free physical = 3825 ; free virtual = 13577
+
+Phase 2.2 Global Placement Core
+Phase 2.2 Global Placement Core | Checksum: 722f086d
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.43 . Memory (MB): peak = 2805.730 ; gain = 0.000 ; free physical = 3813 ; free virtual = 13564
+Phase 2 Global Placement | Checksum: 722f086d
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.43 . Memory (MB): peak = 2805.730 ; gain = 0.000 ; free physical = 3813 ; free virtual = 13564
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: 722f086d
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.44 . Memory (MB): peak = 2805.730 ; gain = 0.000 ; free physical = 3813 ; free virtual = 13564
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: db745b39
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.44 . Memory (MB): peak = 2805.730 ; gain = 0.000 ; free physical = 3813 ; free virtual = 13565
+
+Phase 3.3 Area Swap Optimization
+Phase 3.3 Area Swap Optimization | Checksum: b385d2f8
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.44 . Memory (MB): peak = 2805.730 ; gain = 0.000 ; free physical = 3813 ; free virtual = 13565
+
+Phase 3.4 Pipeline Register Optimization
+Phase 3.4 Pipeline Register Optimization | Checksum: b385d2f8
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.44 . Memory (MB): peak = 2805.730 ; gain = 0.000 ; free physical = 3813 ; free virtual = 13565
+
+Phase 3.5 Small Shape Detail Placement
+Phase 3.5 Small Shape Detail Placement | Checksum: 13de3579c
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:00.50 . Memory (MB): peak = 2805.730 ; gain = 0.000 ; free physical = 3810 ; free virtual = 13562
+
+Phase 3.6 Re-assign LUT pins
+Phase 3.6 Re-assign LUT pins | Checksum: 13de3579c
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:00.51 . Memory (MB): peak = 2805.730 ; gain = 0.000 ; free physical = 3810 ; free virtual = 13562
+
+Phase 3.7 Pipeline Register Optimization
+Phase 3.7 Pipeline Register Optimization | Checksum: 13de3579c
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:00.51 . Memory (MB): peak = 2805.730 ; gain = 0.000 ; free physical = 3810 ; free virtual = 13562
+Phase 3 Detail Placement | Checksum: 13de3579c
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:00.51 . Memory (MB): peak = 2805.730 ; gain = 0.000 ; free physical = 3810 ; free virtual = 13562
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 4.1.1 Post Placement Optimization
+Post Placement Optimization Initialization | Checksum: c025b4f8
+
+Phase 4.1.1.1 BUFG Insertion
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 8 CPUs
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=6.902 | TNS=0.000 |
+Phase 1 Physical Synthesis Initialization | Checksum: 152e0d767
+
+Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.05 . Memory (MB): peak = 2805.730 ; gain = 0.000 ; free physical = 3811 ; free virtual = 13563
+INFO: [Place 46-56] BUFG insertion identified 0 candidate nets. Inserted BUFG: 0, Replicated BUFG Driver: 0, Skipped due to Placement/Routing Conflicts: 0, Skipped due to Timing Degradation: 0, Skipped due to Illegal Netlist: 0.
+Ending Physical Synthesis Task | Checksum: 15e8ff459
+
+Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.05 . Memory (MB): peak = 2805.730 ; gain = 0.000 ; free physical = 3811 ; free virtual = 13563
+Phase 4.1.1.1 BUFG Insertion | Checksum: c025b4f8
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:00.60 . Memory (MB): peak = 2805.730 ; gain = 0.000 ; free physical = 3812 ; free virtual = 13564
+INFO: [Place 30-746] Post Placement Timing Summary WNS=6.902. For the most accurate timing information please run report_timing.
+Phase 4.1.1 Post Placement Optimization | Checksum: 7572a762
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:00.60 . Memory (MB): peak = 2805.730 ; gain = 0.000 ; free physical = 3812 ; free virtual = 13564
+Phase 4.1 Post Commit Optimization | Checksum: 7572a762
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:00.60 . Memory (MB): peak = 2805.730 ; gain = 0.000 ; free physical = 3812 ; free virtual = 13564
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: 7572a762
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:00.60 . Memory (MB): peak = 2805.730 ; gain = 0.000 ; free physical = 3812 ; free virtual = 13564
+
+Phase 4.3 Placer Reporting
+Phase 4.3 Placer Reporting | Checksum: 7572a762
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:00.60 . Memory (MB): peak = 2805.730 ; gain = 0.000 ; free physical = 3812 ; free virtual = 13564
+
+Phase 4.4 Final Placement Cleanup
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2805.730 ; gain = 0.000 ; free physical = 3812 ; free virtual = 13564
+Phase 4.4 Final Placement Cleanup | Checksum: 1263eb341
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:00.60 . Memory (MB): peak = 2805.730 ; gain = 0.000 ; free physical = 3812 ; free virtual = 13564
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 1263eb341
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:00.60 . Memory (MB): peak = 2805.730 ; gain = 0.000 ; free physical = 3812 ; free virtual = 13564
+Ending Placer Task | Checksum: 11f2c3911
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:00.60 . Memory (MB): peak = 2805.730 ; gain = 0.000 ; free physical = 3812 ; free virtual = 13564
+INFO: [Common 17-83] Releasing license: Implementation
+50 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2805.730 ; gain = 0.000 ; free physical = 3821 ; free virtual = 13574
+INFO: [Common 17-1381] The checkpoint '/home/ciprian/Documents/Github/Arty-S7/hw/proj/hw.runs/impl_1/XADCdemo_placed.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_io -file XADCdemo_io_placed.rpt
+report_io: Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.08 . Memory (MB): peak = 2805.730 ; gain = 0.000 ; free physical = 3813 ; free virtual = 13564
+INFO: [runtcl-4] Executing : report_utilization -file XADCdemo_utilization_placed.rpt -pb XADCdemo_utilization_placed.pb
+INFO: [runtcl-4] Executing : report_control_sets -verbose -file XADCdemo_control_sets_placed.rpt
+report_control_sets: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2805.730 ; gain = 0.000 ; free physical = 3820 ; free virtual = 13572
+Command: phys_opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7s50'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7s50'
+INFO: [Vivado_Tcl 4-383] Design worst setup slack (WNS) is greater than or equal to 0.000 ns. Skipping all physical synthesis optimizations.
+INFO: [Vivado_Tcl 4-232] No setup violation found. The netlist was not modified.
+INFO: [Common 17-83] Releasing license: Implementation
+59 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+phys_opt_design completed successfully
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2805.730 ; gain = 0.000 ; free physical = 3801 ; free virtual = 13554
+INFO: [Common 17-1381] The checkpoint '/home/ciprian/Documents/Github/Arty-S7/hw/proj/hw.runs/impl_1/XADCdemo_physopt.dcp' has been generated.
+Command: route_design -directive RuntimeOptimized
+Attempting to get a license for feature 'Implementation' and/or device 'xc7s50'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7s50'
+Running DRC as a precondition to command route_design
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+INFO: [Route 35-270] Using Router directive 'RuntimeOptimized'.
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 8 CPUs
+Checksum: PlaceDB: 5d74a4b8 ConstDB: 0 ShapeSum: c1b79459 RouteDB: 0
+
+Phase 1 Build RT Design
+Phase 1 Build RT Design | Checksum: 10fc17079
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 2836.121 ; gain = 16.008 ; free physical = 3707 ; free virtual = 13441
+Post Restoration Checksum: NetGraph: 9ab24902 NumContArr: 750f2777 Constraints: 0 Timing: 0
+
+Phase 2 Router Initialization
+
+Phase 2.1 Create Timer
+Phase 2.1 Create Timer | Checksum: 10fc17079
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 2836.121 ; gain = 16.008 ; free physical = 3707 ; free virtual = 13442
+
+Phase 2.2 Fix Topology Constraints
+Phase 2.2 Fix Topology Constraints | Checksum: 10fc17079
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 2836.121 ; gain = 16.008 ; free physical = 3673 ; free virtual = 13408
+
+Phase 2.3 Pre Route Cleanup
+Phase 2.3 Pre Route Cleanup | Checksum: 10fc17079
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 2836.121 ; gain = 16.008 ; free physical = 3673 ; free virtual = 13408
+ Number of Nodes with overlaps = 0
+
+Phase 2.4 Update Timing
+Phase 2.4 Update Timing | Checksum: c4535d8e
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 2836.121 ; gain = 16.008 ; free physical = 3666 ; free virtual = 13401
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=6.810  | TNS=0.000  | WHS=0.098  | THS=0.000  |
+
+Phase 2 Router Initialization | Checksum: f5222993
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 2836.121 ; gain = 16.008 ; free physical = 3666 ; free virtual = 13401
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0 %
+  Global Horizontal Routing Utilization  = 0 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 39
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 39
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+
+Phase 3 Initial Routing
+Phase 3 Initial Routing | Checksum: 1cea1042c
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 2836.121 ; gain = 16.008 ; free physical = 3668 ; free virtual = 13402
+
+Phase 4 Rip-up And Reroute
+
+Phase 4.1 Global Iteration 0
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=6.656  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 4.1 Global Iteration 0 | Checksum: 1e8743dc3
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 2836.121 ; gain = 16.008 ; free physical = 3668 ; free virtual = 13402
+Phase 4 Rip-up And Reroute | Checksum: 1e8743dc3
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 2836.121 ; gain = 16.008 ; free physical = 3668 ; free virtual = 13402
+
+Phase 5 Delay and Skew Optimization
+
+Phase 5.1 Delay CleanUp
+Phase 5.1 Delay CleanUp | Checksum: 1e8743dc3
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 2836.121 ; gain = 16.008 ; free physical = 3668 ; free virtual = 13402
+
+Phase 5.2 Clock Skew Optimization
+Phase 5.2 Clock Skew Optimization | Checksum: 1e8743dc3
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 2836.121 ; gain = 16.008 ; free physical = 3668 ; free virtual = 13402
+Phase 5 Delay and Skew Optimization | Checksum: 1e8743dc3
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 2836.121 ; gain = 16.008 ; free physical = 3668 ; free virtual = 13402
+
+Phase 6 Post Hold Fix
+
+Phase 6.1 Hold Fix Iter
+
+Phase 6.1.1 Update Timing
+Phase 6.1.1 Update Timing | Checksum: 1c8e1465e
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 2836.121 ; gain = 16.008 ; free physical = 3668 ; free virtual = 13402
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=6.750  | TNS=0.000  | WHS=0.336  | THS=0.000  |
+
+Phase 6.1 Hold Fix Iter | Checksum: 1c8e1465e
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 2836.121 ; gain = 16.008 ; free physical = 3668 ; free virtual = 13402
+Phase 6 Post Hold Fix | Checksum: 1c8e1465e
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 2836.121 ; gain = 16.008 ; free physical = 3668 ; free virtual = 13402
+
+Phase 7 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0.0120386 %
+  Global Horizontal Routing Utilization  = 0.0217335 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Phase 7 Route finalize | Checksum: 1c8e1465e
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 2836.121 ; gain = 16.008 ; free physical = 3668 ; free virtual = 13402
+
+Phase 8 Verifying routed nets
+
+ Verification completed successfully
+Phase 8 Verifying routed nets | Checksum: 1c8e1465e
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 2836.121 ; gain = 16.008 ; free physical = 3666 ; free virtual = 13401
+
+Phase 9 Depositing Routes
+Phase 9 Depositing Routes | Checksum: 1e502c21f
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 2836.121 ; gain = 16.008 ; free physical = 3666 ; free virtual = 13401
+
+Phase 10 Post Router Timing
+INFO: [Route 35-57] Estimated Timing Summary | WNS=6.750  | TNS=0.000  | WHS=0.336  | THS=0.000  |
+
+INFO: [Route 35-327] The final timing numbers are based on the router estimated timing analysis. For a complete and accurate timing signoff, please run report_timing_summary.
+Phase 10 Post Router Timing | Checksum: 1e502c21f
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 2836.121 ; gain = 16.008 ; free physical = 3668 ; free virtual = 13402
+INFO: [Route 35-16] Router Completed Successfully
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 2836.121 ; gain = 16.008 ; free physical = 3700 ; free virtual = 13434
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+74 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:00:09 ; elapsed = 00:00:08 . Memory (MB): peak = 2836.121 ; gain = 30.391 ; free physical = 3700 ; free virtual = 13434
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2836.121 ; gain = 0.000 ; free physical = 3700 ; free virtual = 13436
+INFO: [Common 17-1381] The checkpoint '/home/ciprian/Documents/Github/Arty-S7/hw/proj/hw.runs/impl_1/XADCdemo_routed.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_drc -file XADCdemo_drc_routed.rpt -pb XADCdemo_drc_routed.pb -rpx XADCdemo_drc_routed.rpx
+Command: report_drc -file XADCdemo_drc_routed.rpt -pb XADCdemo_drc_routed.pb -rpx XADCdemo_drc_routed.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Coretcl 2-168] The results of DRC are in file /home/ciprian/Documents/Github/Arty-S7/hw/proj/hw.runs/impl_1/XADCdemo_drc_routed.rpt.
+report_drc completed successfully
+INFO: [runtcl-4] Executing : report_methodology -file XADCdemo_methodology_drc_routed.rpt -pb XADCdemo_methodology_drc_routed.pb -rpx XADCdemo_methodology_drc_routed.rpx
+Command: report_methodology -file XADCdemo_methodology_drc_routed.rpt -pb XADCdemo_methodology_drc_routed.pb -rpx XADCdemo_methodology_drc_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [DRC 23-133] Running Methodology with 8 threads
+INFO: [Coretcl 2-1520] The results of Report Methodology are in file /home/ciprian/Documents/Github/Arty-S7/hw/proj/hw.runs/impl_1/XADCdemo_methodology_drc_routed.rpt.
+report_methodology completed successfully
+INFO: [runtcl-4] Executing : report_power -file XADCdemo_power_routed.rpt -pb XADCdemo_power_summary_routed.pb -rpx XADCdemo_power_routed.rpx
+Command: report_power -file XADCdemo_power_routed.rpt -pb XADCdemo_power_summary_routed.pb -rpx XADCdemo_power_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+86 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+INFO: [runtcl-4] Executing : report_route_status -file XADCdemo_route_status.rpt -pb XADCdemo_route_status.pb
+INFO: [runtcl-4] Executing : report_timing_summary -max_paths 10 -file XADCdemo_timing_summary_routed.rpt -pb XADCdemo_timing_summary_routed.pb -rpx XADCdemo_timing_summary_routed.rpx -warn_on_violation 
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+INFO: [runtcl-4] Executing : report_incremental_reuse -file XADCdemo_incremental_reuse_routed.rpt
+INFO: [Vivado_Tcl 4-1062] Incremental flow is disabled. No incremental reuse Info to report.
+INFO: [runtcl-4] Executing : report_clock_utilization -file XADCdemo_clock_utilization_routed.rpt
+INFO: [runtcl-4] Executing : report_bus_skew -warn_on_violation -file XADCdemo_bus_skew_routed.rpt -pb XADCdemo_bus_skew_routed.pb -rpx XADCdemo_bus_skew_routed.rpx
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+Command: write_bitstream -force XADCdemo.bit
+Attempting to get a license for feature 'Implementation' and/or device 'xc7s50'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7s50'
+Running DRC as a precondition to command write_bitstream
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado 12-3199] DRC finished with 0 Errors
+INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
+INFO: [Designutils 20-2272] Running write_bitstream with 8 threads.
+Loading data files...
+Loading site data...
+Loading route data...
+Processing options...
+Creating bitmap...
+Creating bitstream...
+Writing bitstream ./XADCdemo.bit...
+INFO: [Vivado 12-1842] Bitgen Completed Successfully.
+INFO: [Project 1-120] WebTalk data collection is mandatory when using a WebPACK part without a full Vivado license. To see the specific WebTalk data collected for your design, open the usage_statistics_webtalk.html or usage_statistics_webtalk.xml file in the implementation directory.
+INFO: [Common 17-186] '/home/ciprian/Documents/Github/Arty-S7/hw/proj/hw.runs/impl_1/usage_statistics_webtalk.xml' has been successfully sent to Xilinx on Thu Nov  5 13:33:18 2020. For additional details about this file, please refer to the WebTalk help file at /opt/Xilinx/Vivado/2020.1/doc/webtalk_introduction.html.
+INFO: [Common 17-83] Releasing license: Implementation
+106 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+write_bitstream completed successfully
+write_bitstream: Time (s): cpu = 00:00:07 ; elapsed = 00:00:19 . Memory (MB): peak = 3166.812 ; gain = 167.363 ; free physical = 3667 ; free virtual = 13405
+INFO: [Common 17-206] Exiting Vivado at Thu Nov  5 13:33:18 2020...
+[Thu Nov  5 13:33:23 2020] impl_1 finished
+wait_on_run: Time (s): cpu = 00:00:53 ; elapsed = 00:02:09 . Memory (MB): peak = 2169.395 ; gain = 0.000 ; free physical = 5180 ; free virtual = 14918
+archive_project /home/ciprian/Documents/Github/release/Arty-S7/Arty-S7-50-XADC-hw.xpr.zip -force -include_local_ip_cache -include_config_settings
+INFO: [Coretcl 2-137] starting archive...
+INFO: [Coretcl 2-1499] Saving project copy to temporary location './.Xil/Vivado-197901-K-Legion' for archiving project
+Scanning sources...
+Finished scanning sources
+WARNING: [filemgmt 56-3] Default IP Output Path : Could not find the directory '/home/ciprian/Documents/Github/Arty-S7/hw/proj/hw.srcs/sources_1'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/ciprian/Documents/Github/Arty-S7/hw/repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2020.1/data/ip'.
+INFO: [Coretcl 2-1211] Creating project copy for archival...
+INFO: [Coretcl 2-1213] Including run results for 'synth_1'
+INFO: [Coretcl 2-1213] Including run results for 'xadc_wiz_0_synth_1'
+INFO: [Coretcl 2-1213] Including run results for 'impl_1'
+INFO: [Coretcl 2-133] re-setting run 'xadc_wiz_0_impl_1'...
+INFO: [Coretcl 2-1212] Importing remotely added design sources and verilog include files (if any)...
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'xadc_wiz_0'
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'constrs_1'
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sources_1'
