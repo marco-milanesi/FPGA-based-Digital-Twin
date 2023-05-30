@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='D:/Github/embeddedFPGA-DT/Vivado/callPWMFixed/callPWM/callPWM.runs/synth_1'
+HD_PWD='D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/Marco Milanesi/Downloads/Arty-S7-50-XADC-hw.xpr/hw/hw.runs/synth_1'
+HD_PWD='D:/Github/FPGA-based-Digital-Twin/Vivado/XADC FPGA Reading/hw.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

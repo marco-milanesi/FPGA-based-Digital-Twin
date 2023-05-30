@@ -17,7 +17,7 @@ proc create_report { reportName command } {
   }
 }
 namespace eval ::optrace {
-  variable script "C:/Users/Marco Milanesi/Downloads/Arty-S7-50-XADC-hw.xpr/hw/hw.runs/impl_1/top_module.tcl"
+  variable script "D:/Github/FPGA-based-Digital-Twin/Vivado/XADC FPGA Reading/hw.runs/impl_1/top_module.tcl"
   variable category "vivado_impl"
 }
 
@@ -131,18 +131,18 @@ OPTRACE "create in-memory project" START { }
   set_param project.singleFileAddWarning.threshold 0
 OPTRACE "create in-memory project" END { }
 OPTRACE "set parameters" START { }
-  set_property webtalk.parent_dir {C:/Users/Marco Milanesi/Downloads/Arty-S7-50-XADC-hw.xpr/hw/hw.cache/wt} [current_project]
-  set_property parent.project_path {C:/Users/Marco Milanesi/Downloads/Arty-S7-50-XADC-hw.xpr/hw/hw.xpr} [current_project]
-  set_property ip_repo_paths C:/repo [current_project]
+  set_property webtalk.parent_dir {D:/Github/FPGA-based-Digital-Twin/Vivado/XADC FPGA Reading/hw.cache/wt} [current_project]
+  set_property parent.project_path {D:/Github/FPGA-based-Digital-Twin/Vivado/XADC FPGA Reading/hw.xpr} [current_project]
+  set_property ip_repo_paths D:/../repo [current_project]
   update_ip_catalog
-  set_property ip_output_repo {{C:/Users/Marco Milanesi/Downloads/Arty-S7-50-XADC-hw.xpr/hw/hw.cache/ip}} [current_project]
+  set_property ip_output_repo {{D:/Github/FPGA-based-Digital-Twin/Vivado/XADC FPGA Reading/hw.cache/ip}} [current_project]
   set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
-  add_files -quiet {{C:/Users/Marco Milanesi/Downloads/Arty-S7-50-XADC-hw.xpr/hw/hw.runs/synth_1/top_module.dcp}}
-  read_ip -quiet {{C:/Users/Marco Milanesi/Downloads/Arty-S7-50-XADC-hw.xpr/hw/hw.srcs/xadc_wiz_0/ip/xadc_wiz_0/xadc_wiz_0.xci}}
+  add_files -quiet {{D:/Github/FPGA-based-Digital-Twin/Vivado/XADC FPGA Reading/hw.runs/synth_1/top_module.dcp}}
+  read_ip -quiet {{D:/Github/FPGA-based-Digital-Twin/Vivado/XADC FPGA Reading/hw.srcs/xadc_wiz_0/ip/xadc_wiz_0/xadc_wiz_0.xci}}
 OPTRACE "read constraints: implementation" START { }
-  read_xdc {{C:/Users/Marco Milanesi/Downloads/Arty-S7-50-XADC-hw.xpr/hw/hw.srcs/constrs_1/imports/constraints/Arty-S7-50-Master.xdc}}
+  read_xdc {{D:/Github/FPGA-based-Digital-Twin/Vivado/XADC FPGA Reading/hw.srcs/constrs_1/imports/constraints/Arty-S7-50-Master.xdc}}
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "add files" END { }
 OPTRACE "link_design" START { }

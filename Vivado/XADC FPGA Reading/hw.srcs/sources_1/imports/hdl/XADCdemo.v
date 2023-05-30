@@ -41,7 +41,6 @@ module XADCdemo(
    input vauxn11,
    
    output reg [5:0] LED
-
  );
    
    wire enable;  
@@ -50,7 +49,8 @@ module XADCdemo(
    wire ready_rising;
    wire ready_falling;
    wire [15:0] data;   
-   reg [6:0] Address_in;     
+   reg [6:0] Address_in;
+   reg [15:0] data_out_adc;     
 
    //xadc instantiation connect the eoc_out .den_in to get continuous conversion
 
@@ -103,6 +103,7 @@ module XADCdemo(
       begin
           if (ready_rising == 1)
           begin
+          data_out_adc <= data;
               case (data[15:13])
                 2:  LED <= 6'b000001;
                 3:  LED <= 6'b000011;
@@ -115,6 +116,7 @@ module XADCdemo(
           end
           else
               LED <= LED;
+              data_out_adc <= data;
        end
            
       //switch driver to choose channel

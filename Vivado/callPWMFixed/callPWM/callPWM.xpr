@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="61" Path="D:/Github/embeddedFPGA-DT/Vivado/callPWMFixed/callPWM/callPWM.xpr">
+<Project Version="7" Minor="61" Path="D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="546c3ddef4ea4ad78a2955739b43a7b7"/>
@@ -91,7 +91,7 @@
       <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/sources_1/ip/xadc_wiz_0/xadc_wiz_0.xci">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../../FPGA-based-Digital-Twin/Vivado/XADC FPGA Reading/hw.srcs/xadc_wiz_0/ip/xadc_wiz_0/xadc_wiz_0.xci"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../XADC FPGA Reading/hw.srcs/xadc_wiz_0/ip/xadc_wiz_0/xadc_wiz_0.xci"/>
           <Attr Name="ImportTime" Val="1684180496"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -116,7 +116,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/hdl/XADCdemo.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../../FPGA-based-Digital-Twin/Vivado/XADC FPGA Reading/hw.srcs/sources_1/imports/hdl/XADCdemo.v"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../XADC FPGA Reading/hw.srcs/sources_1/imports/hdl/XADCdemo.v"/>
           <Attr Name="ImportTime" Val="1685443034"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -238,7 +238,7 @@
       <Filter Type="Constrs"/>
       <File Path="$PSRCDIR/constrs_1/imports/digilent-xdc-master/Arty-S7-50-Master.xdc">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../../FPGA-based-Digital-Twin/Vivado/callPWM.srcs/constrs_1/imports/digilent-xdc-master/Arty-S7-50-Master.xdc"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../callPWM.srcs/constrs_1/imports/digilent-xdc-master/Arty-S7-50-Master.xdc"/>
           <Attr Name="ImportTime" Val="1685434577"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>

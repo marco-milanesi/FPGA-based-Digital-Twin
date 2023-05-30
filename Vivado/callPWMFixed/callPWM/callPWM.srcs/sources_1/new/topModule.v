@@ -410,6 +410,8 @@ module topModule(
 
 // ------------------------------- XDC implementation starts --------------------------------
 
+wire [15:0] data_out_adc_top;
+
     XADCdemo u1 (
    .CLK100MHZ(clk),
    .vp_in(vp_in),
@@ -430,8 +432,15 @@ module topModule(
    .vauxn10(vauxn10),
    .vauxp11(vauxp11),
    .vauxn11(vauxn11),
-   .LED(LED)
+   .LED(LED),
+   .data_out_adc(data_out_adc_top)
 );
+
+reg [15:0] data_out_adc_reg;
+
+always @(posedge clk) begin
+   data_out_adc_reg <= data_out_adc_top;
+end
 
 // ------------------------------- XDC implementation stops --------------------------------
         

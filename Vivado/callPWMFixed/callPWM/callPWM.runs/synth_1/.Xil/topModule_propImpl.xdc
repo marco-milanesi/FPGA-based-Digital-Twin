@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:D:/Github/embeddedFPGA-DT/Vivado/callPWMFixed/callPWM/callPWM.srcs/constrs_1/imports/digilent-xdc-master/Arty-S7-50-Master.xdc rfile:../../../callPWM.srcs/constrs_1/imports/digilent-xdc-master/Arty-S7-50-Master.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/constrs_1/imports/digilent-xdc-master/Arty-S7-50-Master.xdc rfile:../../../callPWM.srcs/constrs_1/imports/digilent-xdc-master/Arty-S7-50-Master.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:7 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN F14   IOSTANDARD LVCMOS33 } [get_ports { clk }]; #IO_L13P_T2_MRCC_15 Sch=uclk
 set_property src_info {type:XDC file:1 line:10 export:INPUT save:INPUT read:READ} [current_design]

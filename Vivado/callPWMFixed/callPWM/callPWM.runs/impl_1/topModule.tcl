@@ -17,7 +17,7 @@ proc create_report { reportName command } {
   }
 }
 namespace eval ::optrace {
-  variable script "D:/Github/embeddedFPGA-DT/Vivado/callPWMFixed/callPWM/callPWM.runs/impl_1/topModule.tcl"
+  variable script "D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.runs/impl_1/topModule.tcl"
   variable category "vivado_impl"
 }
 
@@ -123,6 +123,7 @@ set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
   set_param chipscope.maxJobs 3
+  set_param xicom.use_bs_reader 1
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xc7s50csga324-1
   set_property board_part digilentinc.com:arty-s7-50:part0:1.1 [current_project]
@@ -130,16 +131,16 @@ OPTRACE "create in-memory project" START { }
   set_param project.singleFileAddWarning.threshold 0
 OPTRACE "create in-memory project" END { }
 OPTRACE "set parameters" START { }
-  set_property webtalk.parent_dir D:/Github/embeddedFPGA-DT/Vivado/callPWMFixed/callPWM/callPWM.cache/wt [current_project]
-  set_property parent.project_path D:/Github/embeddedFPGA-DT/Vivado/callPWMFixed/callPWM/callPWM.xpr [current_project]
-  set_property ip_output_repo D:/Github/embeddedFPGA-DT/Vivado/callPWMFixed/callPWM/callPWM.cache/ip [current_project]
+  set_property webtalk.parent_dir D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.cache/wt [current_project]
+  set_property parent.project_path D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.xpr [current_project]
+  set_property ip_output_repo D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
-  add_files -quiet D:/Github/embeddedFPGA-DT/Vivado/callPWMFixed/callPWM/callPWM.runs/synth_1/topModule.dcp
-  read_ip -quiet D:/Github/embeddedFPGA-DT/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/ip/xadc_wiz_0/xadc_wiz_0.xci
+  add_files -quiet D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.runs/synth_1/topModule.dcp
+  read_ip -quiet D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/ip/xadc_wiz_0/xadc_wiz_0.xci
 OPTRACE "read constraints: implementation" START { }
-  read_xdc D:/Github/embeddedFPGA-DT/Vivado/callPWMFixed/callPWM/callPWM.srcs/constrs_1/imports/digilent-xdc-master/Arty-S7-50-Master.xdc
+  read_xdc D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/constrs_1/imports/digilent-xdc-master/Arty-S7-50-Master.xdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "add files" END { }
 OPTRACE "link_design" START { }

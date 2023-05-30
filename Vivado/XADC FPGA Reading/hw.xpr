@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="61" Path="C:/Users/Marco Milanesi/Downloads/Arty-S7-50-XADC-hw.xpr/hw/hw.xpr">
+<Project Version="7" Minor="61" Path="D:/Github/FPGA-based-Digital-Twin/Vivado/XADC FPGA Reading/hw.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="a2902dfa757f4341ba597b81fc8d5880"/>

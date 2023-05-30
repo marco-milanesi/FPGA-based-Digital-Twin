@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "C:/Users/Marco Milanesi/Downloads/Arty-S7-50-XADC-hw.xpr/hw/hw.runs/synth_1/top_module.tcl"
+  variable script "D:/Github/FPGA-based-Digital-Twin/Vivado/XADC FPGA Reading/hw.runs/synth_1/top_module.tcl"
   variable category "vivado_synth"
 }
 
@@ -79,24 +79,24 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir {C:/Users/Marco Milanesi/Downloads/Arty-S7-50-XADC-hw.xpr/hw/hw.cache/wt} [current_project]
-set_property parent.project_path {C:/Users/Marco Milanesi/Downloads/Arty-S7-50-XADC-hw.xpr/hw/hw.xpr} [current_project]
+set_property webtalk.parent_dir {D:/Github/FPGA-based-Digital-Twin/Vivado/XADC FPGA Reading/hw.cache/wt} [current_project]
+set_property parent.project_path {D:/Github/FPGA-based-Digital-Twin/Vivado/XADC FPGA Reading/hw.xpr} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property board_part digilentinc.com:arty-s7-50:part0:1.1 [current_project]
-set_property ip_repo_paths c:/repo [current_project]
+set_property ip_repo_paths d:repo [current_project]
 update_ip_catalog
-set_property ip_output_repo {c:/Users/Marco Milanesi/Downloads/Arty-S7-50-XADC-hw.xpr/hw/hw.cache/ip} [current_project]
+set_property ip_output_repo {d:/Github/FPGA-based-Digital-Twin/Vivado/XADC FPGA Reading/hw.cache/ip} [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
-  {C:/Users/Marco Milanesi/Downloads/Arty-S7-50-XADC-hw.xpr/hw/hw.srcs/sources_1/imports/hdl/XADCdemo.v}
-  {C:/Users/Marco Milanesi/Downloads/Arty-S7-50-XADC-hw.xpr/hw/hw.srcs/sources_1/new/top_module.v}
+  {D:/Github/FPGA-based-Digital-Twin/Vivado/XADC FPGA Reading/hw.srcs/sources_1/imports/hdl/XADCdemo.v}
+  {D:/Github/FPGA-based-Digital-Twin/Vivado/XADC FPGA Reading/hw.srcs/sources_1/new/top_module.v}
 }
-read_ip -quiet {{C:/Users/Marco Milanesi/Downloads/Arty-S7-50-XADC-hw.xpr/hw/hw.srcs/xadc_wiz_0/ip/xadc_wiz_0/xadc_wiz_0.xci}}
-set_property used_in_implementation false [get_files -all {{c:/Users/Marco Milanesi/Downloads/Arty-S7-50-XADC-hw.xpr/hw/hw.gen/xadc_wiz_0/ip/xadc_wiz_0/xadc_wiz_0_ooc.xdc}}]
-set_property used_in_implementation false [get_files -all {{c:/Users/Marco Milanesi/Downloads/Arty-S7-50-XADC-hw.xpr/hw/hw.gen/xadc_wiz_0/ip/xadc_wiz_0/xadc_wiz_0.xdc}}]
+read_ip -quiet {{D:/Github/FPGA-based-Digital-Twin/Vivado/XADC FPGA Reading/hw.srcs/xadc_wiz_0/ip/xadc_wiz_0/xadc_wiz_0.xci}}
+set_property used_in_implementation false [get_files -all {{d:/Github/FPGA-based-Digital-Twin/Vivado/XADC FPGA Reading/hw.gen/xadc_wiz_0/ip/xadc_wiz_0/xadc_wiz_0_ooc.xdc}}]
+set_property used_in_implementation false [get_files -all {{d:/Github/FPGA-based-Digital-Twin/Vivado/XADC FPGA Reading/hw.gen/xadc_wiz_0/ip/xadc_wiz_0/xadc_wiz_0.xdc}}]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -107,8 +107,8 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc {{C:/Users/Marco Milanesi/Downloads/Arty-S7-50-XADC-hw.xpr/hw/hw.srcs/constrs_1/imports/constraints/Arty-S7-50-Master.xdc}}
-set_property used_in_implementation false [get_files {{C:/Users/Marco Milanesi/Downloads/Arty-S7-50-XADC-hw.xpr/hw/hw.srcs/constrs_1/imports/constraints/Arty-S7-50-Master.xdc}}]
+read_xdc {{D:/Github/FPGA-based-Digital-Twin/Vivado/XADC FPGA Reading/hw.srcs/constrs_1/imports/constraints/Arty-S7-50-Master.xdc}}
+set_property used_in_implementation false [get_files {{D:/Github/FPGA-based-Digital-Twin/Vivado/XADC FPGA Reading/hw.srcs/constrs_1/imports/constraints/Arty-S7-50-Master.xdc}}]
 
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]
