@@ -1,0 +1,83 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Fri Jan 13 11:32:35 2023
+# Process ID: 21948
+# Current directory: C:/FPGAXilinxGenerator/FPGA Codes/testScript/testScript/callPWM
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent15800 C:\FPGAXilinxGenerator\FPGA Codes\testScript\testScript\callPWM\callPWM.xpr
+# Log file: C:/FPGAXilinxGenerator/FPGA Codes/testScript/testScript/callPWM/vivado.log
+# Journal file: C:/FPGAXilinxGenerator/FPGA Codes/testScript/testScript/callPWM\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {C:/FPGAXilinxGenerator/FPGA Codes/testScript/testScript/callPWM/callPWM.xpr}
+INFO: [Project 1-313] Project file moved from 'C:/FPGACodes/testScript/callPWM' since last save.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.2/data/ip'.
+open_project: Time (s): cpu = 00:00:23 ; elapsed = 00:00:12 . Memory (MB): peak = 933.539 ; gain = 261.129
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+[Fri Jan 13 11:36:28 2023] Launched synth_1...
+Run output will be captured here: C:/FPGAXilinxGenerator/FPGA Codes/testScript/testScript/callPWM/callPWM.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 4
+[Fri Jan 13 11:46:58 2023] Launched impl_1...
+Run output will be captured here: C:/FPGAXilinxGenerator/FPGA Codes/testScript/testScript/callPWM/callPWM.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Fri Jan 13 11:48:30 2023] Launched impl_1...
+Run output will be captured here: C:/FPGAXilinxGenerator/FPGA Codes/testScript/testScript/callPWM/callPWM.runs/impl_1/runme.log
+open_run impl_1
+INFO: [Device 21-403] Loading part xc7s25csga324-1
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.031 . Memory (MB): peak = 1231.117 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 319 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2019.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.395 . Memory (MB): peak = 1787.883 ; gain = 0.000
+Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.396 . Memory (MB): peak = 1787.883 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1787.883 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+open_run: Time (s): cpu = 00:00:35 ; elapsed = 00:00:28 . Memory (MB): peak = 1905.910 ; gain = 889.129
+WARNING: [Timing 38-313] There are no user specified timing constraints. Timing constraints are needed for proper timing analysis.
+close_project
+create_project project_1 {C:/FPGAXilinxGenerator/FPGA Codes/sysGenWrapper/project_1} -part xc7s25csga324-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.2/data/ip'.
+set_property board_part digilentinc.com:arty-s7-25:part0:1.1 [current_project]
+file mkdir C:/FPGAXilinxGenerator/FPGA Codes/sysGenWrapper/project_1/project_1.srcs/sources_1/new
+can't create directory "C:/FPGAXilinxGenerator/FPGA": file already exists
+file mkdir C:/FPGAXilinxGenerator/FPGA Codes/sysGenWrapper/project_1/project_1.srcs/sources_1/new
+can't create directory "C:/FPGAXilinxGenerator/FPGA": file already exists
+file mkdir C:/FPGAXilinxGenerator/FPGA Codes/sysGenWrapper/project_1/project_1.srcs/sources_1/new
+can't create directory "C:/FPGAXilinxGenerator/FPGA": file already exists
+file mkdir C:/FPGAXilinxGenerator/FPGA Codes/sysGenWrapper/project_1/project_1.srcs/sources_1/new
+can't create directory "C:/FPGAXilinxGenerator/FPGA": file already exists
+file mkdir C:/FPGAXilinxGenerator/FPGA Codes/sysGenWrapper/project_1/project_1.srcs/sources_1/new
+can't create directory "C:/FPGAXilinxGenerator/FPGA": file already exists
+file mkdir C:/FPGAXilinxGenerator/FPGA Codes/sysGenWrapper/project_1/project_1.srcs/sources_1/new
+can't create directory "C:/FPGAXilinxGenerator/FPGA": file already exists
+file mkdir {C:/FPGAXilinxGenerator/FPGA Codes/sysGenWrapper/project_1/project_1.srcs/sources_1/new}
+close [ open {C:/FPGAXilinxGenerator/FPGA Codes/sysGenWrapper/project_1/project_1.srcs/sources_1/new/a.v} w ]
+add_files {{C:/FPGAXilinxGenerator/FPGA Codes/sysGenWrapper/project_1/project_1.srcs/sources_1/new/a.v}}
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files {{C:/FPGAXilinxGenerator/FPGA Codes/sysGenWrapper/project_1/project_1.srcs/sources_1/new/a.v}}] -no_script -reset -force -quiet
+remove_files  {{C:/FPGAXilinxGenerator/FPGA Codes/sysGenWrapper/project_1/project_1.srcs/sources_1/new/a.v}}
+remove_files  {{C:/FPGAXilinxGenerator/FPGA Codes/sysGenWrapper/project_1/project_1.srcs/sources_1/new/a.v}}
+WARNING: [Vivado 12-818] No files matched 'C:/FPGAXilinxGenerator/FPGA Codes/sysGenWrapper/project_1/project_1.srcs/sources_1/new/a.v'
+add_files -norecurse {{C:/FPGAXilinxGenerator/FPGA Codes/sysGenWrapper/project_1/project_1.srcs/sources_1/new/labled_stub.v}}
+exit
+INFO: [Common 17-206] Exiting Vivado at Fri Jan 13 14:32:18 2023...
