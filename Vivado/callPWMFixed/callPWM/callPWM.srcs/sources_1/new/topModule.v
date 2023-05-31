@@ -47,7 +47,7 @@ module topModule(
         
         output PWMOut,            //PWM output
                DIR, out,              //PWM turning sense 
-               TxD, TxD2, TxD3,          //Serial port transmitter (control/encoder)
+               TxD, TxD2, TxD3, TxD4,          //Serial port transmitter (control/encoder)
                [5:0] LED          // ADC Output leds
     );
     
@@ -68,6 +68,10 @@ module topModule(
     wire TxD_startEncoder;
     wire BaudTickEncoder;
     wire TxD_busyEncoder;
+    
+    wire TxD_startADC;
+    wire BaudTickADC;
+    wire TxD_busyADC;
     
     wire TxD_startError;
     wire BaudTickError;
@@ -106,8 +110,70 @@ module topModule(
     //clock to initialize Tx 
     divisor_freq clk_TxDstartError(.clk(clk), .freq_base(32'd35000), .freq_sal(TxD_startError)); //fb=124999=200Hz
 
+// ------------------------------- XDC implementation starts --------------------------------
+
+    wire [15:0] data_out_adc_top;
     
-    //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+        XADCdemo u1 (
+       .CLK100MHZ(clk),
+       .vp_in(vp_in),
+       .vn_in(vn_in),
+       .vauxp0(vauxp0),
+       .vauxn0(vauxn0),
+       .vauxp1(vauxp1),
+       .vauxn1(vauxn1),
+       .vauxp2(vauxp2),
+       .vauxn2(vauxn2),
+       .vauxp3(vauxp3),
+       .vauxn3(vauxn3),
+       .vauxp8(vauxp8),
+       .vauxn8(vauxn8),
+       .vauxp9(vauxp9),
+       .vauxn9(vauxn9),
+       .vauxp10(vauxp10),
+       .vauxn10(vauxn10),
+       .vauxp11(vauxp11),
+       .vauxn11(vauxn11),
+       .LED(LED),
+       .data_out_adc(data_out_adc_top)
+    );
+    
+    reg [15:0] data_out_adc_reg;
+    
+    always @(posedge clk) begin
+       data_out_adc_reg <= data_out_adc_top;
+    end
+
+// ------------------------------- XDC implementation stops --------------------------------
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+    //TX UART Instance for ADC
+     reg [15:0] contADC=16'd0; 
+     //reg [9:0]  outDataADC;
+     transmisor_async adcTx(.BaudTick(BaudTickADC), .TxD_start(TxD_startADC), .TxD_data(data_out_adc_reg),.TxD(TxD4), .TxD_busy(TxD_busyADC));     
+   
+    //ROM to translate into ASCII characters for ADC signal
+    reg [10:0] numberADC=16'd0; 
+    wire [9:0] uniADC, decADC, centADC;
+    ROM_grados_numericos   ROM_adc(.grad(numberADC), .unidades(uniADC), .decenas(decADC),.centenas(centADC)); //outputs are registers
+    //send each data by serial1 by dividing the number in characters ()
+    wire freqSendADC;
+    divisor_freq sendUartADC(.clk(clk), .freq_base(32'd35000), .freq_sal(freqSendADC));//fb=109-1 ... baud=55555
+    
+         always @(posedge freqSendADC)
+             begin 
+               case(contADC)
+                 16'b0000_0000_0000_0000: begin data_out_adc_reg<=centADC; contADC<=contADC+16'b0000_0000_0000_0001;end		
+                 16'b0000_0000_0000_0001: begin data_out_adc_reg<=decADC; contADC<=contADC+16'b0000_0000_0000_0001;end
+                 16'b0000_0000_0000_0010: begin data_out_adc_reg<=uniADC; contADC<=contADC+16'b0000_0000_0000_0001;end
+                 16'b0000_0000_0000_0011: begin data_out_adc_reg<=16'b0000_0000_0000_1010;  contADC<=16'b0000_0000_0000_0000;end
+                 default:    contADC<=1'b0;// outData<=16'b0000_0000_0000_0000;	
+                endcase
+             end
+    
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+    
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
     //TX UART Instance for encoder
      reg [15:0] contEncoder=16'd0; 
      reg [9:0]  outDataEncoder;
@@ -116,8 +182,7 @@ module topModule(
     //ROM to translate into ASCII characters for encoder signal
     reg [10:0] numberEncoder=16'd0; 
     wire [9:0] uniE, decE, centE;
-    ROM_grados_numericos   ROM_de_grados(.grad(numberEncoder), .unidades(uniE), .decenas(decE), 
-                                                  .centenas(centE)); //outputs are registers
+    ROM_grados_numericos   ROM_de_grados(.grad(numberEncoder), .unidades(uniE), .decenas(decE),.centenas(centE)); //outputs are registers
     //send each data by serial1 by dividing the number in characters ()
     wire freqSendEncoder;
     divisor_freq sendUart(.clk(clk), .freq_base(32'd35000), .freq_sal(freqSendEncoder));//fb=109-1 ... baud=55555
@@ -133,7 +198,7 @@ module topModule(
                 endcase
              end
     
-    //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
     //TX UART Instance for control action 
     reg [15:0] contControl=16'd0; 
     reg [9:0] outDataControl;
@@ -142,8 +207,7 @@ module topModule(
     //ROM to translate into ASCII characters for control action 
     reg [10:0]numberControl=10'd0312;
     wire [9:0] uniC, decC, centC;
-    ROM_grados_numericos   ROM_control(.grad(numberControl), .unidades(uniC), .decenas(decC), 
-                                                  .centenas(centC)); //outputs are registers
+    ROM_grados_numericos   ROM_control(.grad(numberControl), .unidades(uniC), .decenas(decC),.centenas(centC)); //outputs are registers
     //send each data by serialControl by dividing the number in characters ()
     wire freqSendControl;
     divisor_freq sendUart1(.clk(clk), .freq_base(32'd35000), .freq_sal(freqSendControl));//fb=109-1 ... baud=55555
@@ -160,7 +224,8 @@ module topModule(
              end
 
     //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
-
+    
+    
 //     //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 //        //TX UART Instance for error signal 
 //        reg [15:0] contError=16'd0; 
@@ -200,17 +265,14 @@ module topModule(
         reg [10:0]numberMVDT=10'd0312;
         
         wire [9:0] uniErr, decErr, centErr;
-        ROM_grados_numericos   ROM_error(.grad(numberError), .unidades(uniErr), .decenas(decErr), 
-                                                      .centenas(centErr)); //outputs are registers
+        ROM_grados_numericos   ROM_error(.grad(numberError), .unidades(uniErr), .decenas(decErr),.centenas(centErr)); //outputs are registers
                                                       
                                                       
         wire [9:0] uniMV, decMV, centMV;
-        ROM_grados_numericos   ROM_MV(.grad(numberMV), .unidades(uniMV), .decenas(decMV), 
-                                                      .centenas(centMV)); //outputs are registers                                              
+        ROM_grados_numericos   ROM_MV(.grad(numberMV), .unidades(uniMV), .decenas(decMV),.centenas(centMV)); //outputs are registers                                              
        
        wire [9:0] uniMVDT, decMVDT, centMVDT;
-        ROM_grados_numericos   ROM_MVDT(.grad(numberMVDT), .unidades(uniMVDT), .decenas(decMVDT), 
-                                                      .centenas(centMVDT)); //outputs are registers   
+        ROM_grados_numericos   ROM_MVDT(.grad(numberMVDT), .unidades(uniMVDT), .decenas(decMVDT),.centenas(centMVDT)); //outputs are registers   
                                                       
                                                       
         //send each data by serialControl by dividing the number in characters ()
@@ -243,10 +305,14 @@ module topModule(
                     16'b0000_0000_0001_0000: begin outDataError<=centMVDT; contError<=contError+16'b0000_0000_0000_0001;end		
                     16'b0000_0000_0001_0001: begin outDataError<=decMVDT; contError<=contError+16'b0000_0000_0000_0001;end
                     16'b0000_0000_0001_0010: begin outDataError<=uniMVDT; contError<=contError+16'b0000_0000_0000_0001;end                    
+                    16'b0000_0000_0001_0011: begin outDataError<=16'b0000_0000_0000_1010;  contError<=16'b0000_0000_0000_0000;end  //LF plus restart counter
                     
-                     
-                     16'b0000_0000_0001_0011: begin outDataError<=16'b0000_0000_0000_1010;  contError<=16'b0000_0000_0000_0000;end  //LF plus restart counter
-                     default:    outDataError<=1'b0;// outData<=16'b0000_0000_0000_0000;	
+                    16'b0000_0000_0001_0000: begin outDataError<=centADC; contError<=contError+16'b0000_0000_0000_0001;end		
+                    16'b0000_0000_0001_0001: begin outDataError<=decADC; contError<=contError+16'b0000_0000_0000_0001;end
+                    16'b0000_0000_0001_0010: begin outDataError<=uniADC; contError<=contError+16'b0000_0000_0000_0001;end                    
+                    16'b0000_0000_0001_0011: begin outDataError<=16'b0000_0000_0000_1010;  contError<=16'b0000_0000_0000_0000;end  //LF plus restart counter
+                                       
+                    default:    outDataError<=1'b0;// outData<=16'b0000_0000_0000_0000;	
                     endcase
                  end
     
@@ -407,42 +473,6 @@ module topModule(
     always@(posedge clk)
         MV_Print=MV;
  // ------------------------------ DT implementation stops ----------------------------------
-
-// ------------------------------- XDC implementation starts --------------------------------
-
-wire [15:0] data_out_adc_top;
-
-    XADCdemo u1 (
-   .CLK100MHZ(clk),
-   .vp_in(vp_in),
-   .vn_in(vn_in),
-   .vauxp0(vauxp0),
-   .vauxn0(vauxn0),
-   .vauxp1(vauxp1),
-   .vauxn1(vauxn1),
-   .vauxp2(vauxp2),
-   .vauxn2(vauxn2),
-   .vauxp3(vauxp3),
-   .vauxn3(vauxn3),
-   .vauxp8(vauxp8),
-   .vauxn8(vauxn8),
-   .vauxp9(vauxp9),
-   .vauxn9(vauxn9),
-   .vauxp10(vauxp10),
-   .vauxn10(vauxn10),
-   .vauxp11(vauxp11),
-   .vauxn11(vauxn11),
-   .LED(LED),
-   .data_out_adc(data_out_adc_top)
-);
-
-reg [15:0] data_out_adc_reg;
-
-always @(posedge clk) begin
-   data_out_adc_reg <= data_out_adc_top;
-end
-
-// ------------------------------- XDC implementation stops --------------------------------
         
         
     //evaluating the turning sense assuming that control action is always positive

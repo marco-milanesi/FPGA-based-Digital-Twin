@@ -25,6 +25,8 @@ set_property src_info {type:XDC file:1 line:29 export:INPUT save:INPUT read:READ
 set_property -dict { PACKAGE_PIN E13   IOSTANDARD LVCMOS33 } [get_ports { LED[2] }]; #IO_L17N_T2_A25_15 Sch=led[4]
 set_property src_info {type:XDC file:1 line:30 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN H15   IOSTANDARD LVCMOS33 } [get_ports { LED[3] }]; #IO_L18P_T2_A24_15 Sch=led[5]
+set_property src_info {type:XDC file:1 line:88 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN T14   IOSTANDARD LVCMOS33 } [get_ports { TxD4 }]; #IO_L13N_T2_MRCC_14      Sch=ck_io[4]
 set_property src_info {type:XDC file:1 line:89 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN R16   IOSTANDARD LVCMOS33 } [get_ports { B }]; #IO_L14P_T2_SRCC_14      Sch=ck_io[5]
 set_property src_info {type:XDC file:1 line:90 export:INPUT save:INPUT read:READ} [current_design]
