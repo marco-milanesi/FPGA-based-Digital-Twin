@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
-| Date             : Wed May 31 11:05:31 2023
+| Date             : Thu Jun  1 09:36:34 2023
 | Host             : Milanesi-Dell running 64-bit major release  (build 9200)
 | Command          : report_power -file topModule_power_routed.rpt -pb topModule_power_summary_routed.pb -rpx topModule_power_routed.rpx
 | Design           : topModule
@@ -29,20 +29,20 @@ Table of Contents
 1. Summary
 ----------
 
-+--------------------------+----------------------------------+
-| Total On-Chip Power (W)  | 99.895 (Junction temp exceeded!) |
-| Design Power Budget (W)  | Unspecified*                     |
-| Power Budget Margin (W)  | NA                               |
-| Dynamic (W)              | 99.409                           |
-| Device Static (W)        | 0.486                            |
-| Effective TJA (C/W)      | 4.9                              |
-| Max Ambient (C)          | 0.0                              |
-| Junction Temperature (C) | 125.0                            |
-| Confidence Level         | Low                              |
-| Setting File             | ---                              |
-| Simulation Activity File | ---                              |
-| Design Nets Matched      | NA                               |
-+--------------------------+----------------------------------+
++--------------------------+-----------------------------------+
+| Total On-Chip Power (W)  | 108.981 (Junction temp exceeded!) |
+| Design Power Budget (W)  | Unspecified*                      |
+| Power Budget Margin (W)  | NA                                |
+| Dynamic (W)              | 108.495                           |
+| Device Static (W)        | 0.486                             |
+| Effective TJA (C/W)      | 4.9                               |
+| Max Ambient (C)          | 0.0                               |
+| Junction Temperature (C) | 125.0                             |
+| Confidence Level         | Low                               |
+| Setting File             | ---                               |
+| Simulation Activity File | ---                               |
+| Design Nets Matched      | NA                                |
++--------------------------+-----------------------------------+
 * Specify Design Power Budget using, set_operating_conditions -design_power_budget <value in Watts>
 
 
@@ -52,19 +52,19 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |    18.315 |     2585 |       --- |             --- |
-|   LUT as Logic |    15.985 |     1509 |     32600 |            4.63 |
-|   CARRY4       |     1.895 |      294 |      8150 |            3.61 |
+| Slice Logic    |    19.034 |     2652 |       --- |             --- |
+|   LUT as Logic |    16.614 |     1568 |     32600 |            4.81 |
+|   CARRY4       |     1.979 |      301 |      8150 |            3.69 |
 |   Register     |     0.308 |      438 |     65200 |            0.67 |
-|   F7/F8 Muxes  |     0.099 |       69 |     32600 |            0.21 |
+|   F7/F8 Muxes  |     0.105 |       69 |     32600 |            0.21 |
 |   BUFG         |     0.027 |        2 |        32 |            6.25 |
 |   Others       |     0.000 |       37 |       --- |             --- |
-| Signals        |    27.951 |     4592 |       --- |             --- |
-| DSPs           |    41.710 |       53 |       120 |           44.17 |
+| Signals        |    30.672 |     5103 |       --- |             --- |
+| DSPs           |    47.358 |       61 |       120 |           50.83 |
 | I/O            |    11.311 |       36 |       210 |           17.14 |
 | XADC           |     0.121 |        1 |       --- |             --- |
 | Static Power   |     0.486 |          |           |                 |
-| Total          |    99.895 |          |           |                 |
+| Total          |   108.981 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -74,7 +74,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |    88.452 |      88.111 |      0.341 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |    97.538 |      97.197 |      0.341 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.467 |       0.414 |      0.053 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     3.172 |       3.171 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -139,23 +139,23 @@ Table of Contents
 +--------------------+-----------+
 | Name               | Power (W) |
 +--------------------+-----------+
-| topModule          |    99.409 |
-|   DT_inst          |    83.398 |
-|   ROM_MV           |     0.245 |
-|   ROM_control      |     0.568 |
-|   ROM_de_grados    |     0.554 |
-|   ROM_error        |     0.067 |
-|   clk_TxDstart     |     0.121 |
-|   controlTx        |     0.069 |
-|   encoderTx        |     0.029 |
-|   errorTx          |     0.029 |
-|   gen_baud         |     0.057 |
-|   indicador_grados |     0.755 |
-|   pwm8             |     0.176 |
-|   reloj_100k       |     0.056 |
-|   reloj_20khz      |     0.072 |
+| topModule          |   108.495 |
+|   DT_inst          |    92.447 |
+|   ROM_MV           |     0.251 |
+|   ROM_control      |     0.612 |
+|   ROM_de_grados    |     0.562 |
+|   ROM_error        |     0.065 |
+|   clk_TxDstart     |     0.104 |
+|   controlTx        |     0.067 |
+|   encoderTx        |     0.031 |
+|   errorTx          |     0.031 |
+|   gen_baud         |     0.058 |
+|   indicador_grados |     0.764 |
+|   pwm8             |     0.161 |
+|   reloj_100k       |     0.046 |
+|   reloj_20khz      |     0.065 |
 |   u1               |     0.160 |
-|     xadc           |     0.138 |
+|     xadc           |     0.139 |
 +--------------------+-----------+
 
 

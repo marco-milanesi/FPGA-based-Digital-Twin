@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
-| Date         : Wed May 31 11:05:31 2023
+| Date         : Thu Jun  1 09:36:35 2023
 | Host         : Milanesi-Dell running 64-bit major release  (build 9200)
 | Command      : report_timing_summary -max_paths 10 -file topModule_timing_summary_routed.rpt -pb topModule_timing_summary_routed.pb -rpx topModule_timing_summary_routed.rpx -warn_on_violation
 | Design       : topModule
@@ -42,7 +42,7 @@ Timing Summary Report
 Rule       Severity          Description                     Violations  
 ---------  ----------------  ------------------------------  ----------  
 TIMING-17  Critical Warning  Non-clocked sequential cell     416         
-SYNTH-10   Warning           Wide multiplier                 52          
+SYNTH-10   Warning           Wide multiplier                 60          
 TIMING-20  Warning           Non-clocked latch               40          
 LATCH-1    Advisory          Existing latches in the design  1           
 

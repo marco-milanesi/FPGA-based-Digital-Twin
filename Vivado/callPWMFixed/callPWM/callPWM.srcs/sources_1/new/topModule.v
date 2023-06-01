@@ -138,10 +138,10 @@ module topModule(
        .data_out_adc(data_out_adc_top)
     );
     
-    reg [15:0] data_out_adc_reg;
+    reg [9:0] data_out_adc_reg;
     
     always @(posedge clk) begin
-       data_out_adc_reg <= data_out_adc_top;
+       data_out_adc_reg <= data_out_adc_top/10;
     end
 
 // ------------------------------- XDC implementation stops --------------------------------
