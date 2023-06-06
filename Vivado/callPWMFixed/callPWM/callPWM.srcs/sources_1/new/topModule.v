@@ -273,7 +273,8 @@ module topModule(
        
        wire [9:0] uniMVDT, decMVDT, centMVDT;
         ROM_grados_numericos   ROM_MVDT(.grad(numberMVDT), .unidades(uniMVDT), .decenas(decMVDT),.centenas(centMVDT)); //outputs are registers   
-                                                      
+ 
+                                              
                                                       
         //send each data by serialControl by dividing the number in characters ()
         wire freqSendError;
@@ -530,7 +531,7 @@ module topModule(
     begin
         numberError=grad;
         numberMV=controlOut_unsigned;
-        //numberMVDT=MV_Print;
+        numberADC=data_out_adc_reg;
         numberMVDT=contSpeed;
     end
     // numberError=compOut; 

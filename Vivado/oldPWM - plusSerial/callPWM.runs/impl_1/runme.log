@@ -1,0 +1,67 @@
+
+*** Running vivado
+    with args -log topModule.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source topModule.tcl -notrace
+
+
+
+****** Vivado v2022.2 (64-bit)
+  **** SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+  **** IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+source topModule.tcl -notrace
+Command: link_design -top topModule -part xc7s50csga324-1
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Device 21-403] Loading part xc7s50csga324-1
+INFO: [Project 1-454] Reading design checkpoint 'd:/Github/FPGA-based-Digital-Twin/Vivado/oldPWM - plusSerial/callPWM.gen/sources_1/ip/xadc_wiz_0/xadc_wiz_0.dcp' for cell 'u1/xadc'
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.032 . Memory (MB): peak = 980.246 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 343 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2020.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [d:/Github/FPGA-based-Digital-Twin/Vivado/oldPWM - plusSerial/callPWM.gen/sources_1/ip/xadc_wiz_0/xadc_wiz_0.xdc] for cell 'u1/xadc/inst'
+Finished Parsing XDC File [d:/Github/FPGA-based-Digital-Twin/Vivado/oldPWM - plusSerial/callPWM.gen/sources_1/ip/xadc_wiz_0/xadc_wiz_0.xdc] for cell 'u1/xadc/inst'
+Parsing XDC File [D:/Github/FPGA-based-Digital-Twin/Vivado/oldPWM - plusSerial/callPWM.srcs/constrs_1/imports/digilent-xdc-master/Arty-S7-50-Master.xdc]
+WARNING: [Vivado 12-584] No ports matched 'CLK100MHZ'. [D:/Github/FPGA-based-Digital-Twin/Vivado/oldPWM - plusSerial/callPWM.srcs/constrs_1/imports/digilent-xdc-master/Arty-S7-50-Master.xdc:10]
+CRITICAL WARNING: [Vivado 12-4739] create_clock:No valid object(s) found for '-objects [get_ports CLK100MHZ]'. [D:/Github/FPGA-based-Digital-Twin/Vivado/oldPWM - plusSerial/callPWM.srcs/constrs_1/imports/digilent-xdc-master/Arty-S7-50-Master.xdc:10]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-584] No ports matched 'TxD4'. [D:/Github/FPGA-based-Digital-Twin/Vivado/oldPWM - plusSerial/callPWM.srcs/constrs_1/imports/digilent-xdc-master/Arty-S7-50-Master.xdc:88]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Github/FPGA-based-Digital-Twin/Vivado/oldPWM - plusSerial/callPWM.srcs/constrs_1/imports/digilent-xdc-master/Arty-S7-50-Master.xdc:88]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [D:/Github/FPGA-based-Digital-Twin/Vivado/oldPWM - plusSerial/callPWM.srcs/constrs_1/imports/digilent-xdc-master/Arty-S7-50-Master.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1096.238 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+8 Infos, 2 Warnings, 2 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+INFO: [Common 17-600] The following parameters have non-default value.
+tcl.statsThreshold
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7s50'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7s50'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 2 threads
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data_out_adc_reg[0] has multiple drivers: data_out_adc_reg_reg[0]/Q, and data_out_adc_reg_reg[0]__0/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data_out_adc_reg[1] has multiple drivers: data_out_adc_reg_reg[1]__0/Q, and data_out_adc_reg_reg[1]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data_out_adc_reg[2] has multiple drivers: data_out_adc_reg_reg[2]__0/Q, and data_out_adc_reg_reg[2]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data_out_adc_reg[3] has multiple drivers: data_out_adc_reg_reg[3]__0/Q, and data_out_adc_reg_reg[3]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data_out_adc_reg[4] has multiple drivers: data_out_adc_reg_reg[4]/Q, and data_out_adc_reg_reg[4]__0/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net data_out_adc_reg[5] has multiple drivers: data_out_adc_reg_reg[5]/Q, and data_out_adc_reg_reg[5]__0/Q.
+INFO: [Project 1-461] DRC finished with 6 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+ERROR: [Vivado_Tcl 4-78] Error(s) found during DRC. Opt_design not run.
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 1124.062 ; gain = 27.824
+INFO: [Common 17-83] Releasing license: Implementation
+14 Infos, 2 Warnings, 2 Critical Warnings and 7 Errors encountered.
+opt_design failed
+INFO: [Common 17-600] The following parameters have non-default value.
+tcl.statsThreshold
+ERROR: [Common 17-39] 'opt_design' failed due to earlier errors.
+
+INFO: [Common 17-206] Exiting Vivado at Thu Jun  1 15:04:18 2023...

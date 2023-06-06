@@ -1,0 +1,31 @@
+set_property SRC_FILE_INFO {cfile:C:/Users/justu/Documents/embedded_DT/Vivado/callPWM.srcs/constrs_1/imports/digilent-xdc-master/Arty-S7-50-Master.xdc rfile:../../../callPWM.srcs/constrs_1/imports/digilent-xdc-master/Arty-S7-50-Master.xdc id:1} [current_design]
+set_property src_info {type:XDC file:1 line:7 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN F14   IOSTANDARD LVCMOS33 } [get_ports { clk }]; #IO_L13P_T2_MRCC_15 Sch=uclk
+set_property src_info {type:XDC file:1 line:10 export:INPUT save:INPUT read:READ} [current_design]
+create_clock -add -name sys_clk_pin -period 10.000 -waveform {0 5.000}  [get_ports { CLK100MHZ }];
+set_property src_info {type:XDC file:1 line:13 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN H14   IOSTANDARD LVCMOS33 } [get_ports { SPSW[0] }]; #IO_L20N_T3_A19_15 Sch=sw[0]
+set_property src_info {type:XDC file:1 line:14 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN H18   IOSTANDARD LVCMOS33 } [get_ports { SPSW[1] }]; #IO_L21P_T3_DQS_15 Sch=sw[1]
+set_property src_info {type:XDC file:1 line:15 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN G18   IOSTANDARD LVCMOS33 } [get_ports { SPSW[2] }]; #IO_L21N_T3_DQS_A18_15 Sch=sw[2]
+set_property src_info {type:XDC file:1 line:16 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN M5    IOSTANDARD SSTL135 } [get_ports { clearEncoder }]; #IO_L6N_T0_VREF_34 Sch=sw[3]
+set_property src_info {type:XDC file:1 line:19 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN J15   IOSTANDARD LVCMOS33 } [get_ports { out }]; #IO_L23N_T3_FWE_B_15 Sch=led0_r
+set_property src_info {type:XDC file:1 line:27 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN E18   IOSTANDARD LVCMOS33 } [get_ports { led }]; #IO_L16N_T2_A27_15 Sch=led[2]
+set_property src_info {type:XDC file:1 line:88 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN R16   IOSTANDARD LVCMOS33 } [get_ports { B }]; #IO_L14P_T2_SRCC_14      Sch=ck_io[5]
+set_property src_info {type:XDC file:1 line:89 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN R17   IOSTANDARD LVCMOS33 } [get_ports { A }]; #IO_L14N_T2_SRCC_14      Sch=ck_io[6]
+set_property src_info {type:XDC file:1 line:90 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN V17   IOSTANDARD LVCMOS33 } [get_ports { TxD }]; #IO_L16N_T2_A15_D31_14   Sch=ck_io[7]
+set_property src_info {type:XDC file:1 line:91 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN R15   IOSTANDARD LVCMOS33 } [get_ports { TxD2 }]; #IO_L17P_T2_A14_D30_14   Sch=ck_io[8]
+set_property src_info {type:XDC file:1 line:92 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN T15   IOSTANDARD LVCMOS33 } [get_ports { TxD3 }]; #IO_L17N_T2_A13_D29_14   Sch=ck_io[9]
+set_property src_info {type:XDC file:1 line:97 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN H17   IOSTANDARD LVCMOS33 } [get_ports { PWMOut }]; #IO_L22N_T3_A16_15   Sch=ck_io11_mosi
+set_property src_info {type:XDC file:1 line:99 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN G16   IOSTANDARD LVCMOS33 } [get_ports { DIR  }]; #IO_L14P_T2_SRCC_15  Sch=ck_io13_sck
