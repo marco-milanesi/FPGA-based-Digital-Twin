@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
-| Date             : Tue Jun  6 19:30:21 2023
+| Date             : Fri Jun  9 23:19:05 2023
 | Host             : Milanesi-Dell running 64-bit major release  (build 9200)
 | Command          : report_power -file topModule_power_routed.rpt -pb topModule_power_summary_routed.pb -rpx topModule_power_routed.rpx
 | Design           : topModule
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+-----------------------------------+
-| Total On-Chip Power (W)  | 108.981 (Junction temp exceeded!) |
+| Total On-Chip Power (W)  | 108.124 (Junction temp exceeded!) |
 | Design Power Budget (W)  | Unspecified*                      |
 | Power Budget Margin (W)  | NA                                |
-| Dynamic (W)              | 108.495                           |
+| Dynamic (W)              | 107.638                           |
 | Device Static (W)        | 0.486                             |
 | Effective TJA (C/W)      | 4.9                               |
 | Max Ambient (C)          | 0.0                               |
@@ -52,19 +52,19 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |    19.034 |     2652 |       --- |             --- |
-|   LUT as Logic |    16.614 |     1568 |     32600 |            4.81 |
-|   CARRY4       |     1.979 |      301 |      8150 |            3.69 |
-|   Register     |     0.308 |      438 |     65200 |            0.67 |
-|   F7/F8 Muxes  |     0.105 |       69 |     32600 |            0.21 |
+| Slice Logic    |    18.904 |     2629 |       --- |             --- |
+|   LUT as Logic |    16.526 |     1569 |     32600 |            4.81 |
+|   CARRY4       |     1.964 |      298 |      8150 |            3.66 |
+|   Register     |     0.328 |      456 |     65200 |            0.70 |
+|   F7/F8 Muxes  |     0.058 |       33 |     32600 |            0.10 |
 |   BUFG         |     0.027 |        2 |        32 |            6.25 |
-|   Others       |     0.000 |       37 |       --- |             --- |
-| Signals        |    30.672 |     5103 |       --- |             --- |
-| DSPs           |    47.358 |       61 |       120 |           50.83 |
-| I/O            |    11.311 |       36 |       210 |           17.14 |
+|   Others       |     0.000 |       31 |       --- |             --- |
+| Signals        |    29.929 |     5204 |       --- |             --- |
+| DSPs           |    47.366 |       61 |       120 |           50.83 |
+| I/O            |    11.319 |       36 |       210 |           17.14 |
 | XADC           |     0.121 |        1 |       --- |             --- |
 | Static Power   |     0.486 |          |           |                 |
-| Total          |   108.981 |          |           |                 |
+| Total          |   108.124 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -74,9 +74,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |    97.538 |      97.197 |      0.341 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |    96.673 |      96.333 |      0.341 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.467 |       0.414 |      0.053 |       NA    | Unspecified | NA         |
-| Vcco33    |       3.300 |     3.172 |       3.171 |      0.001 |       NA    | Unspecified | NA         |
+| Vcco33    |       3.300 |     3.174 |       3.173 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -139,23 +139,23 @@ Table of Contents
 +--------------------+-----------+
 | Name               | Power (W) |
 +--------------------+-----------+
-| topModule          |   108.495 |
-|   DT_inst          |    92.447 |
-|   ROM_MV           |     0.251 |
-|   ROM_control      |     0.612 |
-|   ROM_de_grados    |     0.562 |
-|   ROM_error        |     0.065 |
-|   clk_TxDstart     |     0.104 |
-|   controlTx        |     0.067 |
-|   encoderTx        |     0.031 |
-|   errorTx          |     0.031 |
-|   gen_baud         |     0.058 |
-|   indicador_grados |     0.764 |
-|   pwm8             |     0.161 |
-|   reloj_100k       |     0.046 |
-|   reloj_20khz      |     0.065 |
-|   u1               |     0.160 |
-|     xadc           |     0.139 |
+| topModule          |   107.638 |
+|   DT_inst          |    91.359 |
+|   ROM_MV           |     0.398 |
+|   ROM_MVDT         |     0.016 |
+|   ROM_de_grados    |     1.190 |
+|   ROM_error        |     0.101 |
+|   clk_TxDstart     |     0.128 |
+|   controlTx        |     0.070 |
+|   encoderTx        |     0.034 |
+|   errorTx          |     0.032 |
+|   gen_baud         |     0.066 |
+|   indicador_grados |     0.654 |
+|   pwm8             |     0.162 |
+|   reloj_100k       |     0.062 |
+|   reloj_20khz      |     0.070 |
+|   u1               |     0.158 |
+|     xadc           |     0.138 |
 +--------------------+-----------+
 
 

@@ -157,19 +157,19 @@ module topModule(
     wire [9:0] uniADC, decADC, centADC;
     ROM_grados_numericos   ROM_adc(.grad(numberADC), .unidades(uniADC), .decenas(decADC),.centenas(centADC)); //outputs are registers
     //send each data by serial1 by dividing the number in characters ()
-    wire freqSendADC;
-    divisor_freq sendUartADC(.clk(clk), .freq_base(32'd35000), .freq_sal(freqSendADC));//fb=109-1 ... baud=55555
+//    wire freqSendADC;
+//    divisor_freq sendUartADC(.clk(clk), .freq_base(32'd35000), .freq_sal(freqSendADC));//fb=109-1 ... baud=55555
     
-         always @(posedge freqSendADC)
-             begin 
-               case(contADC)
-                 16'b0000_0000_0000_0000: begin data_out_adc_reg<=centADC; contADC<=contADC+16'b0000_0000_0000_0001;end		
-                 16'b0000_0000_0000_0001: begin data_out_adc_reg<=decADC; contADC<=contADC+16'b0000_0000_0000_0001;end
-                 16'b0000_0000_0000_0010: begin data_out_adc_reg<=uniADC; contADC<=contADC+16'b0000_0000_0000_0001;end
-                 16'b0000_0000_0000_0011: begin data_out_adc_reg<=16'b0000_0000_0000_1010;  contADC<=16'b0000_0000_0000_0000;end
-                 default:    contADC<=1'b0;// outData<=16'b0000_0000_0000_0000;	
-                endcase
-             end
+//         always @(posedge freqSendADC)
+//             begin 
+//               case(contADC)
+//                 16'b0000_0000_0000_0000: begin data_out_adc_reg<=centADC; contADC<=contADC+16'b0000_0000_0000_0001;end		
+//                 16'b0000_0000_0000_0001: begin data_out_adc_reg<=decADC; contADC<=contADC+16'b0000_0000_0000_0001;end
+//                 16'b0000_0000_0000_0010: begin data_out_adc_reg<=uniADC; contADC<=contADC+16'b0000_0000_0000_0001;end
+//                 16'b0000_0000_0000_0011: begin data_out_adc_reg<=16'b0000_0000_0000_1010;  contADC<=16'b0000_0000_0000_0000;end
+//                 default:    contADC<=1'b0;// outData<=16'b0000_0000_0000_0000;	
+//                endcase
+//             end
     
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
     
@@ -306,12 +306,12 @@ module topModule(
                     16'b0000_0000_0001_0000: begin outDataError<=centMVDT; contError<=contError+16'b0000_0000_0000_0001;end		
                     16'b0000_0000_0001_0001: begin outDataError<=decMVDT; contError<=contError+16'b0000_0000_0000_0001;end
                     16'b0000_0000_0001_0010: begin outDataError<=uniMVDT; contError<=contError+16'b0000_0000_0000_0001;end                    
-                    16'b0000_0000_0001_0011: begin outDataError<=16'b0000_0000_0000_1010;  contError<=16'b0000_0000_0000_0000;end  //LF plus restart counter
+                    16'b0000_0000_0001_0011: begin outDataError<=16'b0000_0000_0010_0000;  contError<=contError+16'b0000_0000_0000_0001;end //space plus one counter
                     
-                    16'b0000_0000_0001_0000: begin outDataError<=centADC; contError<=contError+16'b0000_0000_0000_0001;end		
-                    16'b0000_0000_0001_0001: begin outDataError<=decADC; contError<=contError+16'b0000_0000_0000_0001;end
-                    16'b0000_0000_0001_0010: begin outDataError<=uniADC; contError<=contError+16'b0000_0000_0000_0001;end                    
-                    16'b0000_0000_0001_0011: begin outDataError<=16'b0000_0000_0000_1010;  contError<=16'b0000_0000_0000_0000;end  //LF plus restart counter
+                    16'b0000_0000_0001_0100: begin outDataError<=centADC; contError<=contError+16'b0000_0000_0000_0001;end		
+                    16'b0000_0000_0001_0101: begin outDataError<=decADC; contError<=contError+16'b0000_0000_0000_0001;end
+                    16'b0000_0000_0001_0110: begin outDataError<=uniADC; contError<=contError+16'b0000_0000_0000_0001;end                    
+                    16'b0000_0000_0001_0111: begin outDataError<=16'b0000_0000_0000_1010;  contError<=16'b0000_0000_0000_0000;end  //LF plus restart counter
                                        
                     default:    outDataError<=1'b0;// outData<=16'b0000_0000_0000_0000;	
                     endcase
@@ -519,9 +519,9 @@ module topModule(
     //modify the error lecture at the same rate as the UART sending speed (200hz)
     //for printing purposes only, the control keeps working faster
 
-    always @(posedge freqSendControl)
-   // numberControl=controlOut_unsigned;
-     numberControl=DTRealError;
+//    always @(posedge freqSendControl)
+//   // numberControl=controlOut_unsigned;
+//     numberControl=DTRealError;
      
     always @(posedge freqSendEncoder)
     //numberEncoder=grad;
@@ -537,10 +537,3 @@ module topModule(
     // numberError=compOut; 
      
 endmodule
-
-
-
-
-
-
-

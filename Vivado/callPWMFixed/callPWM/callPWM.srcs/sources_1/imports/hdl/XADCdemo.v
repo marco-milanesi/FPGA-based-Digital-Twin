@@ -104,7 +104,7 @@ module XADCdemo(
       begin
           if (ready_rising == 1)
           begin
-          data_out_adc <= data;
+          data_out_adc <= data*(3/32768);
               case (data[15:13])
                 2:  LED <= 6'b000001;
                 3:  LED <= 6'b000011;
@@ -117,7 +117,7 @@ module XADCdemo(
           end
           else
               LED <= LED;
-              data_out_adc <= data;
+              data_out_adc <= data*(3/32768);
        end
            
       //switch driver to choose channel

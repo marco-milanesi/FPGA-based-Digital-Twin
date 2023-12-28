@@ -2,8 +2,8 @@
 # Vivado v2022.2 (64-bit)
 # SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
 # IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
-# Start of session at: Tue Jun  6 19:27:35 2023
-# Process ID: 27448
+# Start of session at: Fri Jun  9 23:16:21 2023
+# Process ID: 18180
 # Current directory: D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.runs/synth_1
 # Command line: vivado.exe -log topModule.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source topModule.tcl
 # Log file: D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.runs/synth_1/topModule.vds
@@ -11,7 +11,7 @@
 # Running On: Milanesi-Dell, OS: Windows, CPU Frequency: 2208 MHz, CPU Physical cores: 6, Host memory: 16879 MB
 #-----------------------------------------------------------
 source topModule.tcl -notrace
-create_project: Time (s): cpu = 00:00:04 ; elapsed = 00:00:08 . Memory (MB): peak = 558.191 ; gain = 134.863
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 558.152 ; gain = 125.984
 Command: synth_design -top topModule -part xc7s50csga324-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7s50'
@@ -19,17 +19,17 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7s50'
 INFO: [Device 21-403] Loading part xc7s50csga324-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 1180
+INFO: [Synth 8-7075] Helper process launched with PID 21268
 INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [D:/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1369.625 ; gain = 408.770
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1369.004 ; gain = 407.695
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'topModule' [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/new/topModule.v:24]
 INFO: [Synth 8-6157] synthesizing module 'divisor_freq' [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/imports/Submodulos/divisor_freq.v:8]
 INFO: [Synth 8-6155] done synthesizing module 'divisor_freq' (0#1) [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/imports/Submodulos/divisor_freq.v:8]
 INFO: [Synth 8-6157] synthesizing module 'XADCdemo' [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/imports/hdl/XADCdemo.v:22]
-INFO: [Synth 8-6157] synthesizing module 'xadc_wiz_0' [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.runs/synth_1/.Xil/Vivado-27448-Milanesi-Dell/realtime/xadc_wiz_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'xadc_wiz_0' (0#1) [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.runs/synth_1/.Xil/Vivado-27448-Milanesi-Dell/realtime/xadc_wiz_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'xadc_wiz_0' [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.runs/synth_1/.Xil/Vivado-18180-Milanesi-Dell/realtime/xadc_wiz_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'xadc_wiz_0' (0#1) [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.runs/synth_1/.Xil/Vivado-18180-Milanesi-Dell/realtime/xadc_wiz_0_stub.v:5]
 WARNING: [Synth 8-7071] port 'vccaux_alarm_out' of module 'xadc_wiz_0' is unconnected for instance 'xadc' [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/imports/hdl/XADCdemo.v:58]
 WARNING: [Synth 8-7071] port 'vccint_alarm_out' of module 'xadc_wiz_0' is unconnected for instance 'xadc' [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/imports/hdl/XADCdemo.v:58]
 WARNING: [Synth 8-7023] instance 'xadc' of module 'xadc_wiz_0' has 33 connections declared, but only 31 given [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/imports/hdl/XADCdemo.v:58]
@@ -39,22 +39,30 @@ INFO: [Synth 8-6155] done synthesizing module 'transmisor_async' (0#1) [D:/Githu
 WARNING: [Synth 8-689] width (10) of port connection 'TxD_data' does not match port width (8) of module 'transmisor_async' [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/new/topModule.v:153]
 INFO: [Synth 8-6157] synthesizing module 'ROM_grados_numericos' [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/imports/Submodulos/ROM_grados_numericos.v:8]
 INFO: [Synth 8-155] case statement is not full and has no default [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/imports/Submodulos/ROM_grados_numericos.v:26]
-INFO: [Synth 8-155] case statement is not full and has no default [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/imports/Submodulos/ROM_grados_numericos.v:428]
-INFO: [Synth 8-155] case statement is not full and has no default [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/imports/Submodulos/ROM_grados_numericos.v:830]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/imports/Submodulos/ROM_grados_numericos.v:1031]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/imports/Submodulos/ROM_grados_numericos.v:2036]
 INFO: [Synth 8-6155] done synthesizing module 'ROM_grados_numericos' (0#1) [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/imports/Submodulos/ROM_grados_numericos.v:8]
-WARNING: [Synth 8-689] width (11) of port connection 'grad' does not match port width (9) of module 'ROM_grados_numericos' [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/new/topModule.v:158]
+WARNING: [Synth 8-689] width (10) of port connection 'unidades' does not match port width (16) of module 'ROM_grados_numericos' [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/new/topModule.v:158]
+WARNING: [Synth 8-689] width (10) of port connection 'decenas' does not match port width (16) of module 'ROM_grados_numericos' [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/new/topModule.v:158]
+WARNING: [Synth 8-689] width (10) of port connection 'centenas' does not match port width (16) of module 'ROM_grados_numericos' [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/new/topModule.v:158]
 WARNING: [Synth 8-689] width (10) of port connection 'TxD_data' does not match port width (8) of module 'transmisor_async' [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/new/topModule.v:180]
-WARNING: [Synth 8-689] width (11) of port connection 'grad' does not match port width (9) of module 'ROM_grados_numericos' [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/new/topModule.v:185]
+WARNING: [Synth 8-689] width (10) of port connection 'unidades' does not match port width (16) of module 'ROM_grados_numericos' [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/new/topModule.v:185]
+WARNING: [Synth 8-689] width (10) of port connection 'decenas' does not match port width (16) of module 'ROM_grados_numericos' [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/new/topModule.v:185]
+WARNING: [Synth 8-689] width (10) of port connection 'centenas' does not match port width (16) of module 'ROM_grados_numericos' [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/new/topModule.v:185]
 WARNING: [Synth 8-689] width (10) of port connection 'TxD_data' does not match port width (8) of module 'transmisor_async' [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/new/topModule.v:205]
-WARNING: [Synth 8-689] width (11) of port connection 'grad' does not match port width (9) of module 'ROM_grados_numericos' [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/new/topModule.v:210]
+WARNING: [Synth 8-689] width (10) of port connection 'unidades' does not match port width (16) of module 'ROM_grados_numericos' [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/new/topModule.v:210]
+WARNING: [Synth 8-689] width (10) of port connection 'decenas' does not match port width (16) of module 'ROM_grados_numericos' [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/new/topModule.v:210]
+WARNING: [Synth 8-689] width (10) of port connection 'centenas' does not match port width (16) of module 'ROM_grados_numericos' [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/new/topModule.v:210]
 WARNING: [Synth 8-689] width (10) of port connection 'TxD_data' does not match port width (8) of module 'transmisor_async' [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/new/topModule.v:260]
-WARNING: [Synth 8-689] width (11) of port connection 'grad' does not match port width (9) of module 'ROM_grados_numericos' [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/new/topModule.v:268]
-WARNING: [Synth 8-689] width (11) of port connection 'grad' does not match port width (9) of module 'ROM_grados_numericos' [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/new/topModule.v:272]
-WARNING: [Synth 8-689] width (11) of port connection 'grad' does not match port width (9) of module 'ROM_grados_numericos' [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/new/topModule.v:275]
-WARNING: [Synth 8-151] case item 16'b0000000000010000 is unreachable [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/new/topModule.v:285]
-WARNING: [Synth 8-151] case item 16'b0000000000010001 is unreachable [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/new/topModule.v:285]
-WARNING: [Synth 8-151] case item 16'b0000000000010010 is unreachable [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/new/topModule.v:285]
-WARNING: [Synth 8-151] case item 16'b0000000000010011 is unreachable [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/new/topModule.v:285]
+WARNING: [Synth 8-689] width (10) of port connection 'unidades' does not match port width (16) of module 'ROM_grados_numericos' [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/new/topModule.v:268]
+WARNING: [Synth 8-689] width (10) of port connection 'decenas' does not match port width (16) of module 'ROM_grados_numericos' [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/new/topModule.v:268]
+WARNING: [Synth 8-689] width (10) of port connection 'centenas' does not match port width (16) of module 'ROM_grados_numericos' [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/new/topModule.v:268]
+WARNING: [Synth 8-689] width (10) of port connection 'unidades' does not match port width (16) of module 'ROM_grados_numericos' [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/new/topModule.v:272]
+WARNING: [Synth 8-689] width (10) of port connection 'decenas' does not match port width (16) of module 'ROM_grados_numericos' [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/new/topModule.v:272]
+WARNING: [Synth 8-689] width (10) of port connection 'centenas' does not match port width (16) of module 'ROM_grados_numericos' [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/new/topModule.v:272]
+WARNING: [Synth 8-689] width (10) of port connection 'unidades' does not match port width (16) of module 'ROM_grados_numericos' [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/new/topModule.v:275]
+WARNING: [Synth 8-689] width (10) of port connection 'decenas' does not match port width (16) of module 'ROM_grados_numericos' [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/new/topModule.v:275]
+WARNING: [Synth 8-689] width (10) of port connection 'centenas' does not match port width (16) of module 'ROM_grados_numericos' [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/new/topModule.v:275]
 INFO: [Synth 8-226] default block is never used [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/new/topModule.v:339]
 INFO: [Synth 8-6157] synthesizing module 'rotary_decoder' [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/imports/Submodulos/rotary_decoder.v:9]
 INFO: [Synth 8-6155] done synthesizing module 'rotary_decoder' (0#1) [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/imports/Submodulos/rotary_decoder.v:9]
@@ -73,24 +81,24 @@ WARNING: [Synth 8-689] width (17) of port connection 'pwm_in' does not match por
 INFO: [Synth 8-6155] done synthesizing module 'topModule' (0#1) [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/new/topModule.v:24]
 WARNING: [Synth 8-6014] Unused sequential element e_k_unsigned_reg was removed.  [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/new/topModule.v:389]
 WARNING: [Synth 8-6014] Unused sequential element MV_Print_reg was removed.  [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/new/topModule.v:475]
-WARNING: [Synth 8-3936] Found unconnected internal register 'DTRealError_reg' and it is trimmed from '17' to '11' bits. [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/new/topModule.v:513]
+WARNING: [Synth 8-6014] Unused sequential element DTRealError_reg was removed.  [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/new/topModule.v:513]
 WARNING: [Synth 8-3848] Net BaudTickADC in module/entity topModule does not have driver. [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/new/topModule.v:73]
 WARNING: [Synth 8-3848] Net TxD_startADC in module/entity topModule does not have driver. [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/new/topModule.v:72]
 WARNING: [Synth 8-3848] Net contSpeed in module/entity topModule does not have driver. [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/new/topModule.v:353]
 WARNING: [Synth 8-3917] design topModule has port DIR driven by constant 0
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:09 . Memory (MB): peak = 1467.355 ; gain = 506.500
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1476.516 ; gain = 515.207
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:10 . Memory (MB): peak = 1467.355 ; gain = 506.500
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1476.516 ; gain = 515.207
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:10 . Memory (MB): peak = 1467.355 ; gain = 506.500
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1476.516 ; gain = 515.207
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.029 . Memory (MB): peak = 1467.355 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.029 . Memory (MB): peak = 1476.516 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -107,31 +115,30 @@ Parsing XDC File [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/
 Finished Parsing XDC File [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1524.555 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1562.035 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1524.555 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 1562.035 ; gain = 0.000
 INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [D:/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:19 . Memory (MB): peak = 1524.555 ; gain = 563.699
+Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 1562.035 ; gain = 600.727
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7s50csga324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:19 . Memory (MB): peak = 1524.555 ; gain = 563.699
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 1562.035 ; gain = 600.727
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 Applied set_property KEEP_HIERARCHY = SOFT for u1/xadc. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:19 . Memory (MB): peak = 1524.555 ; gain = 563.699
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 1562.035 ; gain = 600.727
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'transmisor_async'
-INFO: [Synth 8-802] inferred FSM for state register 'contADC_reg' in module 'topModule'
 INFO: [Synth 8-802] inferred FSM for state register 'contEncoder_reg' in module 'topModule'
 INFO: [Synth 8-802] inferred FSM for state register 'contControl_reg' in module 'topModule'
 INFO: [Synth 8-802] inferred FSM for state register 'contError_reg' in module 'topModule'
@@ -153,8 +160,8 @@ INFO: [Synth 8-802] inferred FSM for state register 'contError_reg' in module 't
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'transmisor_async'
 WARNING: [Synth 8-327] inferring latch for variable 'unidades_reg' [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/imports/Submodulos/ROM_grados_numericos.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'decenas_reg' [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/imports/Submodulos/ROM_grados_numericos.v:429]
-WARNING: [Synth 8-327] inferring latch for variable 'centenas_reg' [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/imports/Submodulos/ROM_grados_numericos.v:831]
+WARNING: [Synth 8-327] inferring latch for variable 'decenas_reg' [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/imports/Submodulos/ROM_grados_numericos.v:1032]
+WARNING: [Synth 8-327] inferring latch for variable 'centenas_reg' [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/imports/Submodulos/ROM_grados_numericos.v:2037]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -176,45 +183,39 @@ INFO: [Synth 8-3354] encoded FSM with state register 'contEncoder_reg' using enc
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
-                iSTATE10 |                            00000 |                 0000000000000000
+                iSTATE11 |                            00000 |                 0000000000000000
                  iSTATE8 |                            00001 |                 0000000000000001
                  iSTATE6 |                            00010 |                 0000000000000010
                  iSTATE4 |                            00011 |                 0000000000000011
-                iSTATE17 |                            00100 |                 0000000000000100
-                iSTATE16 |                            00101 |                 0000000000000101
-                iSTATE13 |                            00110 |                 0000000000000110
-                iSTATE12 |                            00111 |                 0000000000000111
-                iSTATE15 |                            01000 |                 0000000000001000
-                iSTATE14 |                            01001 |                 0000000000001001
-                iSTATE11 |                            01010 |                 0000000000001010
-                 iSTATE9 |                            01011 |                 0000000000001011
+                iSTATE22 |                            00100 |                 0000000000000100
+                iSTATE20 |                            00101 |                 0000000000000101
+                iSTATE16 |                            00110 |                 0000000000000110
+                iSTATE14 |                            00111 |                 0000000000000111
+                iSTATE19 |                            01000 |                 0000000000001000
+                iSTATE18 |                            01001 |                 0000000000001001
+                iSTATE13 |                            01010 |                 0000000000001010
+                iSTATE10 |                            01011 |                 0000000000001011
                  iSTATE1 |                            01100 |                 0000000000001100
                  iSTATE0 |                            01101 |                 0000000000001101
                   iSTATE |                            01110 |                 0000000000001110
-                iSTATE18 |                            01111 |                 0000000000001111
+                iSTATE21 |                            01111 |                 0000000000001111
                  iSTATE7 |                            10000 |                 0000000000010000
                  iSTATE5 |                            10001 |                 0000000000010001
                  iSTATE3 |                            10010 |                 0000000000010010
                  iSTATE2 |                            10011 |                 0000000000010011
+                iSTATE17 |                            10100 |                 0000000000010100
+                iSTATE15 |                            10101 |                 0000000000010101
+                iSTATE12 |                            10110 |                 0000000000010110
+                 iSTATE9 |                            10111 |                 0000000000010111
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'contError_reg' using encoding 'sequential' in module 'topModule'
----------------------------------------------------------------------------------------------------
-                   State |                     New Encoding |                Previous Encoding 
----------------------------------------------------------------------------------------------------
-                  iSTATE |                             0001 |                 0000000000000000
-                 iSTATE0 |                             0010 |                 0000000000000001
-                 iSTATE1 |                             0100 |                 0000000000000010
-                 iSTATE2 |                             1000 |                 0000000000000011
----------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'contADC_reg' using encoding 'one-hot' in module 'topModule'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:20 . Memory (MB): peak = 1524.555 ; gain = 563.699
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1562.035 ; gain = 600.727
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-223] decloning instance 'gen_baud' (divisor_freq) to 'gen_baudEncoder'
 INFO: [Synth 8-223] decloning instance 'gen_baud' (divisor_freq) to 'gen_baudError'
 INFO: [Synth 8-223] decloning instance 'clk_TxDstart' (divisor_freq) to 'clk_TxDstartEncoder'
 INFO: [Synth 8-223] decloning instance 'clk_TxDstart' (divisor_freq) to 'clk_TxDstartError'
-INFO: [Synth 8-223] decloning instance 'clk_TxDstart' (divisor_freq) to 'sendUartADC'
 INFO: [Synth 8-223] decloning instance 'clk_TxDstart' (divisor_freq) to 'sendUart'
 INFO: [Synth 8-223] decloning instance 'clk_TxDstart' (divisor_freq) to 'sendUart1'
 INFO: [Synth 8-223] decloning instance 'clk_TxDstart' (divisor_freq) to 'sendUartE'
@@ -227,7 +228,6 @@ Detailed RTL Component Info :
 	   2 Input   64 Bit       Adders := 4     
 	   2 Input   17 Bit       Adders := 1     
 	   3 Input   17 Bit       Adders := 1     
-	   3 Input   11 Bit       Adders := 1     
 	   2 Input    8 Bit       Adders := 1     
 +---XORs : 
 	   4 Input      1 Bit         XORs := 1     
@@ -236,8 +236,8 @@ Detailed RTL Component Info :
 	               64 Bit    Registers := 2     
 	               17 Bit    Registers := 3     
 	               16 Bit    Registers := 1     
-	               11 Bit    Registers := 5     
-	               10 Bit    Registers := 6     
+	               11 Bit    Registers := 3     
+	               10 Bit    Registers := 7     
 	                9 Bit    Registers := 2     
 	                8 Bit    Registers := 5     
 	                7 Bit    Registers := 1     
@@ -253,20 +253,20 @@ Detailed RTL Component Info :
 +---Muxes : 
 	   2 Input   64 Bit        Muxes := 2     
 	   2 Input   17 Bit        Muxes := 3     
+	1001 Input   16 Bit        Muxes := 18    
 	  12 Input   12 Bit        Muxes := 4     
-	 361 Input   10 Bit        Muxes := 18    
-	   4 Input   10 Bit        Muxes := 3     
-	  20 Input   10 Bit        Muxes := 1     
+	   4 Input   10 Bit        Muxes := 2     
+	  24 Input   10 Bit        Muxes := 1     
 	   8 Input    9 Bit        Muxes := 1     
 	   7 Input    6 Bit        Muxes := 1     
-	  20 Input    5 Bit        Muxes := 1     
+	  24 Input    5 Bit        Muxes := 1     
 	   2 Input    2 Bit        Muxes := 1     
 	   4 Input    2 Bit        Muxes := 1     
-	   2 Input    1 Bit        Muxes := 7     
+	   2 Input    1 Bit        Muxes := 13    
 	  12 Input    1 Bit        Muxes := 4     
-	 361 Input    1 Bit        Muxes := 6     
-	   4 Input    1 Bit        Muxes := 2     
-	  20 Input    1 Bit        Muxes := 1     
+	1001 Input    1 Bit        Muxes := 6     
+	   4 Input    1 Bit        Muxes := 1     
+	  24 Input    1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -283,14 +283,6 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
-WARNING: [Synth 8-3936] Found unconnected internal register 'numberError_reg' and it is trimmed from '11' to '9' bits. [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/new/topModule.v:268]
-WARNING: [Synth 8-3936] Found unconnected internal register 'numberControl_reg' and it is trimmed from '11' to '9' bits. [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/new/topModule.v:210]
-WARNING: [Synth 8-3936] Found unconnected internal register 'DTRealError_reg' and it is trimmed from '11' to '9' bits. [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/new/topModule.v:513]
-WARNING: [Synth 8-3936] Found unconnected internal register 'numberEncoder_reg' and it is trimmed from '10' to '9' bits. [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/new/topModule.v:185]
-WARNING: [Synth 8-3936] Found unconnected internal register 'PV_Print_reg' and it is trimmed from '10' to '9' bits. [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/new/topModule.v:473]
-WARNING: [Synth 8-3936] Found unconnected internal register 'numberADC_reg' and it is trimmed from '10' to '9' bits. [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/new/topModule.v:158]
-WARNING: [Synth 8-3936] Found unconnected internal register 'numberMV_reg' and it is trimmed from '11' to '9' bits. [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/new/topModule.v:272]
-WARNING: [Synth 8-3936] Found unconnected internal register 'numberMVDT_reg' and it is trimmed from '11' to '9' bits. [D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.srcs/sources_1/new/topModule.v:275]
 DSP Report: Generating DSP grados1, operation Mode is: A2*(B:0x168).
 DSP Report: register cont_reg is absorbed into DSP grados1.
 DSP Report: operator grados1 is absorbed into DSP grados1.
@@ -490,6 +482,26 @@ DSP Report: operator Product_mul_temp is absorbed into DSP Product_mul_temp.
 DSP Report: Generating DSP Product_mul_temp, operation Mode is: (PCIN>>17)+A*B.
 DSP Report: operator Product_mul_temp is absorbed into DSP Product_mul_temp.
 DSP Report: operator Product_mul_temp is absorbed into DSP Product_mul_temp.
+WARNING: [Synth 8-6040] Register numberADC_reg_rep driving address of a ROM cannot be packed in BRAM/URAM because of presence of initial value.
+WARNING: [Synth 8-6040] Register numberADC_reg_rep driving address of a ROM cannot be packed in BRAM/URAM because of presence of initial value.
+WARNING: [Synth 8-6040] Register numberADC_reg_rep driving address of a ROM cannot be packed in BRAM/URAM because of presence of initial value.
+WARNING: [Synth 8-6040] Register numberADC_reg driving address of a ROM cannot be packed in BRAM/URAM because of presence of initial value.
+WARNING: [Synth 8-6040] Register numberEncoder_reg_rep driving address of a ROM cannot be packed in BRAM/URAM because of presence of initial value.
+WARNING: [Synth 8-6040] Register numberEncoder_reg_rep driving address of a ROM cannot be packed in BRAM/URAM because of presence of initial value.
+WARNING: [Synth 8-6040] Register numberEncoder_reg_rep driving address of a ROM cannot be packed in BRAM/URAM because of presence of initial value.
+WARNING: [Synth 8-6040] Register numberEncoder_reg driving address of a ROM cannot be packed in BRAM/URAM because of presence of initial value.
+WARNING: [Synth 8-6040] Register numberError_reg_rep driving address of a ROM cannot be packed in BRAM/URAM because of presence of initial value.
+WARNING: [Synth 8-6040] Register numberError_reg_rep driving address of a ROM cannot be packed in BRAM/URAM because of presence of initial value.
+WARNING: [Synth 8-6040] Register numberError_reg_rep driving address of a ROM cannot be packed in BRAM/URAM because of presence of initial value.
+WARNING: [Synth 8-6040] Register numberError_reg_rep driving address of a ROM cannot be packed in BRAM/URAM because of presence of initial value.
+WARNING: [Synth 8-6040] Register numberMV_reg_rep driving address of a ROM cannot be packed in BRAM/URAM because of presence of initial value.
+WARNING: [Synth 8-6040] Register numberMV_reg_rep driving address of a ROM cannot be packed in BRAM/URAM because of presence of initial value.
+WARNING: [Synth 8-6040] Register numberMV_reg_rep driving address of a ROM cannot be packed in BRAM/URAM because of presence of initial value.
+WARNING: [Synth 8-6040] Register numberMV_reg_rep driving address of a ROM cannot be packed in BRAM/URAM because of presence of initial value.
+WARNING: [Synth 8-6040] Register numberMVDT_reg_rep driving address of a ROM cannot be packed in BRAM/URAM because of presence of initial value.
+WARNING: [Synth 8-6040] Register numberMVDT_reg_rep driving address of a ROM cannot be packed in BRAM/URAM because of presence of initial value.
+WARNING: [Synth 8-6040] Register numberMVDT_reg_rep driving address of a ROM cannot be packed in BRAM/URAM because of presence of initial value.
+WARNING: [Synth 8-6040] Register numberMVDT_reg_rep driving address of a ROM cannot be packed in BRAM/URAM because of presence of initial value.
 WARNING: [Synth 8-3917] design topModule has port DIR driven by constant 0
 WARNING: [Synth 8-3332] Sequential element (adcTx/FSM_onehot_state_reg[11]) is unused and will be removed from module topModule.
 WARNING: [Synth 8-3332] Sequential element (adcTx/FSM_onehot_state_reg[10]) is unused and will be removed from module topModule.
@@ -511,44 +523,121 @@ WARNING: [Synth 8-3332] Sequential element (ROM_adc/decenas_reg[3]) is unused an
 WARNING: [Synth 8-3332] Sequential element (ROM_adc/decenas_reg[2]) is unused and will be removed from module topModule.
 WARNING: [Synth 8-3332] Sequential element (ROM_adc/decenas_reg[1]) is unused and will be removed from module topModule.
 WARNING: [Synth 8-3332] Sequential element (ROM_adc/decenas_reg[0]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_adc/centenas_reg[3]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_adc/centenas_reg[2]) is unused and will be removed from module topModule.
 WARNING: [Synth 8-3332] Sequential element (ROM_adc/centenas_reg[1]) is unused and will be removed from module topModule.
 WARNING: [Synth 8-3332] Sequential element (ROM_adc/centenas_reg[0]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_control/unidades_reg[15]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_control/unidades_reg[14]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_control/unidades_reg[13]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_control/unidades_reg[12]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_control/unidades_reg[11]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_control/unidades_reg[10]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_control/unidades_reg[9]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_control/unidades_reg[8]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_control/unidades_reg[7]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_control/unidades_reg[6]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_control/unidades_reg[5]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_control/unidades_reg[4]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_control/unidades_reg[3]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_control/unidades_reg[2]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_control/unidades_reg[1]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_control/unidades_reg[0]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_control/decenas_reg[15]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_control/decenas_reg[14]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_control/decenas_reg[13]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_control/decenas_reg[12]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_control/decenas_reg[11]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_control/decenas_reg[10]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_control/decenas_reg[9]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_control/decenas_reg[8]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_control/decenas_reg[7]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_control/decenas_reg[6]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_control/decenas_reg[5]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_control/decenas_reg[4]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_control/decenas_reg[3]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_control/decenas_reg[2]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_control/decenas_reg[1]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_control/decenas_reg[0]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_control/centenas_reg[15]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_control/centenas_reg[14]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_control/centenas_reg[13]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_control/centenas_reg[12]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_control/centenas_reg[11]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_control/centenas_reg[10]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_control/centenas_reg[9]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_control/centenas_reg[8]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_control/centenas_reg[7]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_control/centenas_reg[6]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_control/centenas_reg[5]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_control/centenas_reg[4]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_control/centenas_reg[3]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_control/centenas_reg[2]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_control/centenas_reg[1]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_control/centenas_reg[0]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_error/unidades_reg[3]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_error/unidades_reg[2]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_error/unidades_reg[1]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_error/unidades_reg[0]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_error/decenas_reg[3]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_error/decenas_reg[2]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_error/decenas_reg[1]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_error/decenas_reg[0]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_error/centenas_reg[3]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_error/centenas_reg[2]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_error/centenas_reg[1]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_error/centenas_reg[0]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_MV/unidades_reg[3]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_MV/unidades_reg[2]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_MV/unidades_reg[1]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_MV/unidades_reg[0]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_MV/decenas_reg[3]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_MV/decenas_reg[2]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_MV/decenas_reg[1]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_MV/decenas_reg[0]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_MV/centenas_reg[3]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_MV/centenas_reg[2]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_MV/centenas_reg[1]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_MV/centenas_reg[0]) is unused and will be removed from module topModule.
 WARNING: [Synth 8-3332] Sequential element (ROM_MVDT/unidades_reg[3]) is unused and will be removed from module topModule.
 WARNING: [Synth 8-3332] Sequential element (ROM_MVDT/unidades_reg[2]) is unused and will be removed from module topModule.
-WARNING: [Synth 8-3332] Sequential element (ROM_MVDT/decenas_reg[3]) is unused and will be removed from module topModule.
-WARNING: [Synth 8-3332] Sequential element (ROM_MVDT/decenas_reg[2]) is unused and will be removed from module topModule.
-WARNING: [Synth 8-3332] Sequential element (ROM_MVDT/decenas_reg[1]) is unused and will be removed from module topModule.
-WARNING: [Synth 8-3332] Sequential element (FSM_onehot_contADC_reg[3]) is unused and will be removed from module topModule.
-WARNING: [Synth 8-3332] Sequential element (FSM_onehot_contADC_reg[2]) is unused and will be removed from module topModule.
-WARNING: [Synth 8-3332] Sequential element (FSM_onehot_contADC_reg[1]) is unused and will be removed from module topModule.
-WARNING: [Synth 8-3332] Sequential element (FSM_onehot_contADC_reg[0]) is unused and will be removed from module topModule.
-WARNING: [Synth 8-3332] Sequential element (ROM_adc/centenas_reg[4]) is unused and will be removed from module topModule.
-WARNING: [Synth 8-3332] Sequential element (ROM_adc/centenas_reg[7]) is unused and will be removed from module topModule.
-WARNING: [Synth 8-3332] Sequential element (ROM_MVDT/centenas_reg[4]) is unused and will be removed from module topModule.
-WARNING: [Synth 8-3332] Sequential element (ROM_MV/centenas_reg[4]) is unused and will be removed from module topModule.
-WARNING: [Synth 8-3332] Sequential element (ROM_error/centenas_reg[4]) is unused and will be removed from module topModule.
+WARNING: [Synth 8-3332] Sequential element (ROM_MVDT/unidades_reg[1]) is unused and will be removed from module topModule.
 WARNING: [Synth 8-3332] Sequential element (ROM_MVDT/unidades_reg[0]) is unused and will be removed from module topModule.
-WARNING: [Synth 8-3332] Sequential element (ROM_MV/centenas_reg[7]) is unused and will be removed from module topModule.
-WARNING: [Synth 8-3332] Sequential element (ROM_error/centenas_reg[7]) is unused and will be removed from module topModule.
-WARNING: [Synth 8-3332] Sequential element (ROM_de_grados/centenas_reg[4]) is unused and will be removed from module topModule.
-WARNING: [Synth 8-3332] Sequential element (ROM_de_grados/centenas_reg[7]) is unused and will be removed from module topModule.
-WARNING: [Synth 8-3332] Sequential element (ROM_control/decenas_reg[4]) is unused and will be removed from module topModule.
-WARNING: [Synth 8-3332] Sequential element (ROM_control/decenas_reg[7]) is unused and will be removed from module topModule.
-WARNING: [Synth 8-3332] Sequential element (ROM_MVDT/centenas_reg[0]) is unused and will be removed from module topModule.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:33 . Memory (MB): peak = 1524.555 ; gain = 563.699
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:33 ; elapsed = 00:00:37 . Memory (MB): peak = 1562.035 ; gain = 600.727
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 
 ROM: Preliminary Mapping Report
-+------------+------------+---------------+----------------+
-|Module Name | RTL Object | Depth x Width | Implemented As | 
-+------------+------------+---------------+----------------+
-|topModule   | O20        | 32x5          | LUT            | 
-|topModule   | O20        | 32x5          | LUT            | 
-+------------+------------+---------------+----------------+
++------------+------------------------+---------------+----------------+
+|Module Name | RTL Object             | Depth x Width | Implemented As | 
++------------+------------------------+---------------+----------------+
+|topModule   | O20                    | 32x5          | LUT            | 
+|topModule   | ROM_adc/unidades       | 1024x16       | LUT            | 
+|topModule   | ROM_adc/unidades       | 1024x1        | LUT            | 
+|topModule   | ROM_adc/decenas        | 1024x16       | LUT            | 
+|topModule   | ROM_adc/centenas       | 1024x16       | LUT            | 
+|topModule   | ROM_de_grados/unidades | 1024x16       | LUT            | 
+|topModule   | ROM_de_grados/unidades | 1024x1        | LUT            | 
+|topModule   | ROM_de_grados/decenas  | 1024x16       | LUT            | 
+|topModule   | ROM_de_grados/centenas | 1024x16       | LUT            | 
+|topModule   | ROM_error/unidades     | 1024x16       | LUT            | 
+|topModule   | ROM_error/unidades     | 1024x1        | LUT            | 
+|topModule   | ROM_error/decenas      | 1024x16       | LUT            | 
+|topModule   | ROM_error/centenas     | 1024x16       | LUT            | 
+|topModule   | ROM_MV/unidades        | 1024x16       | LUT            | 
+|topModule   | ROM_MV/unidades        | 1024x1        | LUT            | 
+|topModule   | ROM_MV/decenas         | 1024x16       | LUT            | 
+|topModule   | ROM_MV/centenas        | 1024x16       | LUT            | 
+|topModule   | ROM_MVDT/unidades      | 1024x16       | LUT            | 
+|topModule   | ROM_MVDT/unidades      | 1024x1        | LUT            | 
+|topModule   | ROM_MVDT/decenas       | 1024x16       | LUT            | 
+|topModule   | ROM_MVDT/centenas      | 1024x16       | LUT            | 
+|topModule   | O20                    | 32x5          | LUT            | 
++------------+------------------------+---------------+----------------+
 
 
 DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
@@ -626,19 +715,19 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:37 ; elapsed = 00:00:45 . Memory (MB): peak = 1530.883 ; gain = 570.027
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:43 ; elapsed = 00:00:48 . Memory (MB): peak = 1562.035 ; gain = 600.727
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:37 ; elapsed = 00:00:45 . Memory (MB): peak = 1533.691 ; gain = 572.836
+Finished Timing Optimization : Time (s): cpu = 00:00:43 ; elapsed = 00:00:48 . Memory (MB): peak = 1562.035 ; gain = 600.727
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:37 ; elapsed = 00:00:45 . Memory (MB): peak = 1562.289 ; gain = 601.434
+Finished Technology Mapping : Time (s): cpu = 00:00:44 ; elapsed = 00:00:48 . Memory (MB): peak = 1565.066 ; gain = 603.758
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -656,37 +745,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:43 ; elapsed = 00:00:51 . Memory (MB): peak = 1567.164 ; gain = 606.309
+Finished IO Insertion : Time (s): cpu = 00:00:49 ; elapsed = 00:00:54 . Memory (MB): peak = 1568.953 ; gain = 607.645
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:43 ; elapsed = 00:00:51 . Memory (MB): peak = 1567.164 ; gain = 606.309
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:49 ; elapsed = 00:00:54 . Memory (MB): peak = 1568.953 ; gain = 607.645
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:43 ; elapsed = 00:00:51 . Memory (MB): peak = 1567.164 ; gain = 606.309
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:49 ; elapsed = 00:00:54 . Memory (MB): peak = 1568.953 ; gain = 607.645
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:43 ; elapsed = 00:00:51 . Memory (MB): peak = 1567.164 ; gain = 606.309
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:49 ; elapsed = 00:00:54 . Memory (MB): peak = 1568.953 ; gain = 607.645
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:43 ; elapsed = 00:00:51 . Memory (MB): peak = 1567.164 ; gain = 606.309
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:49 ; elapsed = 00:00:54 . Memory (MB): peak = 1568.953 ; gain = 607.645
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:43 ; elapsed = 00:00:51 . Memory (MB): peak = 1567.164 ; gain = 606.309
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:49 ; elapsed = 00:00:54 . Memory (MB): peak = 1568.953 ; gain = 607.645
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -773,44 +862,44 @@ Report Cell Usage:
 +------+---------+------+
 |1     |xadc_wiz |     1|
 |2     |BUFG     |     2|
-|3     |CARRY4   |   301|
+|3     |CARRY4   |   298|
 |4     |DSP48E1  |    61|
-|7     |LUT1     |    49|
-|8     |LUT2     |   781|
+|7     |LUT1     |    50|
+|8     |LUT2     |   787|
 |9     |LUT3     |   353|
-|10    |LUT4     |   251|
+|10    |LUT4     |   242|
 |11    |LUT5     |    90|
-|12    |LUT6     |   282|
-|13    |MUXF7    |    52|
-|14    |MUXF8    |    17|
-|15    |FDRE     |   391|
+|12    |LUT6     |   288|
+|13    |MUXF7    |    27|
+|14    |MUXF8    |     6|
+|15    |FDRE     |   437|
 |16    |FDSE     |     7|
-|17    |LD       |    40|
+|17    |LD       |    12|
 |18    |IBUF     |    25|
 |19    |OBUF     |    13|
 +------+---------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:43 ; elapsed = 00:00:51 . Memory (MB): peak = 1567.164 ; gain = 606.309
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:49 ; elapsed = 00:00:54 . Memory (MB): peak = 1568.953 ; gain = 607.645
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 57 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:35 ; elapsed = 00:00:49 . Memory (MB): peak = 1567.164 ; gain = 549.109
-Synthesis Optimization Complete : Time (s): cpu = 00:00:43 ; elapsed = 00:00:51 . Memory (MB): peak = 1567.164 ; gain = 606.309
+Synthesis finished with 0 errors, 0 critical warnings and 143 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:40 ; elapsed = 00:00:52 . Memory (MB): peak = 1568.953 ; gain = 522.125
+Synthesis Optimization Complete : Time (s): cpu = 00:00:49 ; elapsed = 00:00:54 . Memory (MB): peak = 1568.953 ; gain = 607.645
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.053 . Memory (MB): peak = 1567.164 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 471 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.052 . Memory (MB): peak = 1581.039 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 404 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1567.164 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1584.688 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 40 instances were transformed.
-  LD => LDCE: 40 instances
+  A total of 12 instances were transformed.
+  LD => LDCE: 12 instances
 
-Synth Design complete, checksum: c4b9fea
+Synth Design complete, checksum: 5a83aada
 INFO: [Common 17-83] Releasing license: Synthesis
-57 Infos, 91 Warnings, 0 Critical Warnings and 0 Errors encountered.
+55 Infos, 167 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:46 ; elapsed = 00:01:03 . Memory (MB): peak = 1567.164 ; gain = 979.125
+synth_design: Time (s): cpu = 00:00:54 ; elapsed = 00:01:00 . Memory (MB): peak = 1584.688 ; gain = 994.543
 INFO: [Common 17-1381] The checkpoint 'D:/Github/FPGA-based-Digital-Twin/Vivado/callPWMFixed/callPWM/callPWM.runs/synth_1/topModule.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file topModule_utilization_synth.rpt -pb topModule_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Jun  6 19:28:54 2023...
+INFO: [Common 17-206] Exiting Vivado at Fri Jun  9 23:17:32 2023...
